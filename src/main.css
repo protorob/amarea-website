@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* amarea brand tokens — see docs/brand-guidelines.md. Mirrors the token
+   names used in ballaraw-booking-engine's src/styles/tokens.css so the
+   embedded widget and this site read as one system. */
+
+@font-face {
+  font-family: "Aminute";
+  src:
+    url("/assets/fonts/Aminute.woff2") format("woff2"),
+    url("/assets/fonts/Aminute.woff") format("woff"),
+    url("/assets/fonts/Aminute.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mairo";
+  src: url("/assets/fonts/mairo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-title: "Aminute", ui-sans-serif, system-ui, sans-serif;
+  --font-logo: "Mairo", var(--font-title);
+
+  --color-ink: #1b2333;
+  --color-ink-soft: #5b6478;
+
+  --color-primary: #1c45d9; /* main blue — buttons, links, primary actions */
+  --color-primary-strong: color-mix(in srgb, #1c45d9 82%, black);
+  --color-secondary: #5475e8; /* pale blue — hover tints */
+  --color-accent: #8d821c; /* olive green — eyebrow labels, notice border */
+  --color-accent-soft: #fdf6cf; /* pale cream — notice/badge backgrounds */
+  --color-highlight: #f0d051; /* happy yellow — focus rings only */
+  --color-line: #e1e5f0;
+}
+
+body {
+  animation: page-fade-in 0.4s ease;
+}
+
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
