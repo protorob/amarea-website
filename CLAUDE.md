@@ -28,14 +28,18 @@ booking engine's Coolify domain.
 
 - **Kirby CMS 5** (Plainkit) — flat-file CMS, no database
 - **Multi-language** (Kirby's built-in i18n) — 5 languages: `en` (default,
-  unprefixed), `it`, `es`, `de`, `fr`, defined in `site/languages/*.php`.
-  Content files must be suffixed with the language code (`home.en.txt`,
-  not `home.txt`) — Kirby silently ignores unsuffixed content files once
-  any language file exists. UI strings (nav, forms, buttons) are
-  translated via `t('key')` and Kirby's `translations` array in each
-  language file; page *copy* lives in per-language content files and is
-  currently English-only — other languages fall back to English content
-  until translated.
+  unprefixed), `it`, `fr`, `es`, `de`, defined in `site/languages/*.php`.
+  The files are named `1-en.php` … `5-de.php` — Kirby has no explicit
+  sort field for languages, it just `glob()`s the directory alphabetically
+  (see `Languages::load()`), so the numeric prefix is what keeps the
+  language switcher in EN/IT/FR/ES/DE order (same trick as the numbered
+  content folders). Content files must be suffixed with the language code
+  (`home.en.txt`, not `home.txt`) — Kirby silently ignores unsuffixed
+  content files once any language file exists. UI strings (nav, forms,
+  buttons) are translated via `t('key')` and Kirby's `translations` array
+  in each language file; page *copy* lives in per-language content files
+  and is currently English-only — other languages fall back to English
+  content until translated.
 - **Composer** — installs `kirby/` and `vendor/`, both gitignored and restored on `composer install`
 - **Tailwind CSS v4** via `@tailwindcss/vite` — no `tailwind.config.js`; theme customization happens in `src/main.css` via `@theme`
 - **`@tailwindcss/typography`** — loaded via `@plugin` in `main.css`; used for `.prose` blocks
@@ -73,7 +77,8 @@ content/
   5_faq/                          ← faq.en.txt
   6_contact/                      ← contact.en.txt
 site/
-  languages/        ← en.php (default), it.php, es.php, de.php, fr.php
+  languages/        ← 1-en.php (default) … 5-de.php — numeric prefixes
+                       control the language-switcher order (EN/IT/FR/ES/DE)
   blueprints/
     site.yml         ← site-wide settings (contact info, footer, Elfsight widget class)
     pages/           ← home, about, locations, property, unit, community, workation, faq, contact, default
@@ -82,9 +87,13 @@ site/
   config/
     config.php       ← SMTP transport (env vars, see "Lead-capture form" below) + the /lead route
   snippets/
-    header.php       ← nav + transparent/sticky header (see "Hero + header" below)
-    footer.php       ← footer + lead-form-modal + Elfsight platform.js
-    hero.php         ← full-bleed video/image hero, used on Home
+    header.php       ← nav (uppercase, FAQ hidden, Locations dropdown) +
+                        transparent/sticky header (see "Hero + header" below)
+    footer.php       ← fixed, reveal-on-scroll footer with an ocean-waves
+                        video bg + lead-form-modal + Elfsight platform.js
+    hero.php         ← full-bleed video/image hero, used on Home only
+    page-hero.php    ← banner hero (title bottom-aligned) for interior
+                        pages — see "Hero + header pattern" below
     lead-form.php    ← shared form fields (used by both the modal and Contact page)
     lead-form-modal.php
     faq-widget.php   ← "FAQs about this page" widget, filters faq.yml's structure by category
@@ -98,9 +107,37 @@ assets/             ← Vite build output (gitignored, rebuilt via bun run build
 ## Key conventions
 
 - Layout container: `max-w-6xl mx-auto px-4` (main content), `max-w-3xl`/`max-w-4xl` for prose-heavy sections — used across templates to keep things aligned.
-- `header.php` and `footer.php` open/close the `<html>`/`<body>` tags (not split into separate `<head>` snippets) — every page template calls `snippet('header')` then `snippet('footer')`.
-- Nav is driven by `$site->children()->listed()` — add pages in the Panel and they appear automatically; no manual nav config.
-- **Hero + header pattern**: a page opts into the video-hero treatment via a `hasHero: true` toggle field (only `home.yml` has it right now). `header.php` renders transparent-over-hero when `hasHero` is true, solid from the start otherwise. `src/main.js` adds a scroll listener that swaps the header to solid/sticky (with logo swap) once you scroll past the hero — see `docs/v1-build-plan.md` §4 for the design reference this followed.
+- `header.php` and `footer.php` open/close the `<html>`/`<body>` tags (not split into separate `<head>` snippets) — every page template calls `snippet('header')` then `snippet('footer')`. Between them, `header.php` opens `#page-wrap` and `footer.php` closes it (see "Reveal footer" below) — don't insert page markup outside that pair.
+- Nav is driven by `$site->children()->listed()` — add pages in the Panel and they appear automatically; no manual nav config. It's uppercase, FAQ is excluded (`->not($site->find('faq'))`, footer-only), and any item whose children include a `property`-template page (i.e. Locations) renders as a dropdown on desktop / accordion on mobile instead of a flat link — see the nav loop in `header.php`.
+- **Hero + header pattern**: two hero treatments share one header behavior.
+  Home opts into the full-bleed video/image hero via `hasHero: true`
+  (`hero.php` — centered content, bouncing scroll chevron). The 7 interior
+  templates (about, locations, community, workation, faq, contact,
+  property — everything except home and unit/room pages, which are still
+  TBD) always render a shorter banner hero via `page-hero.php`: the
+  page's own `heroImage` field, or a fallback to
+  `page('home')->file('hero-ocean-waves.jpg')` so there's never a flat
+  hero, with the title bottom-aligned in the banner. `header.php` treats
+  both cases as "has a hero" (`$hasHero`, see `$pageHeroTemplates`),
+  rendering transparent-over-hero on load and going solid/sticky within
+  ~24px of scroll (`src/main.js`) — the logo cross-fades white→blue on a
+  slight delay rather than popping instantly. See `docs/v1-build-plan.md`
+  §4 for the design reference this followed.
+- **Reveal footer**: `footer.php` is `position: fixed` to the viewport
+  bottom, with the same ocean-waves video as a background, and sits
+  *behind* everything else (`z-0`). `#page-wrap` — opened at the end of
+  `header.php`, closed at the start of `footer.php` — is the opaque,
+  higher-stacked layer (`z-10`) that scrolls up to reveal the fixed
+  footer underneath instead of it scrolling in normally. `main.js` keeps
+  `#page-wrap`'s `margin-bottom` synced to the footer's real height on
+  load/resize so there's always exactly enough scroll room.
+- **Mobile menu collapses via `grid-template-rows` (`0fr` ↔ `1fr`), not
+  `opacity`/`pointer-events`** — an opacity-only closed state still lays
+  out at full height inside the fixed header, which then got painted
+  (and blurred) as part of the header once scrolled solid. Keep any
+  future mobile-nav additions (the menu itself and the Locations
+  accordion) on this pattern rather than reintroducing an opacity-only
+  toggle.
 - **Property/Unit blueprints are shared on purpose**: `property.yml` powers both Beach House and City Apartments; `unit.yml` powers every room and both apartments. Don't fork these per-page — add fields to the shared blueprint if a new property/unit type needs them, so future properties (more villas, more apartments) don't need new content models.
 - **Blueprint gotcha**: `structure` and `tags` are *field* types, not *section* types. A section can only be `fields`, `files`, `info`, `pages`, or `stats` — wrap any structure/tags field inside a `fields`-type section (see any `pages/*.yml` for the pattern). Nesting a structure field directly as a section produces "Invalid section type" in the Panel.
 - **FAQ categorization**: `faq.yml`'s `faqs` structure has an optional `category` tag field. `snippet('faq-widget', ['category' => $page->slug()])` filters to that category; omit the param for the flat list. Works with zero categories filled in.
