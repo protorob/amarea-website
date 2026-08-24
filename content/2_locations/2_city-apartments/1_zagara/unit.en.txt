@@ -2,11 +2,11 @@ Title: Zagara
 
 ----
 
-subtitle: A Sicilian Home in the Heart of Syracuse
+Subtitle: A Sicilian Home in the Heart of Syracuse
 
 ----
 
-description:
+Description:
 
 Discover Zagara, the most spacious apartment at A'Marea City Apartments. A private and fully equipped home designed for those who want the comfort and intimacy of living on their own, while staying right in the heart of Syracuse.
 
@@ -18,4 +18,8 @@ With two spacious bedrooms, a cosy living room, a charming mezzanine library and
 
 ----
 
-features: 2 double bedrooms, Private bathroom, Mezzanine office with workstation, Living room, Fully equipped kitchen, Washing machine, Shared courtyard
+Features: 2 double bedrooms, Private bathroom, Mezzanine office with workstation, Living room, Fully equipped kitchen, Washing machine, Shared courtyard
+
+----
+
+Uuid: nlrh7mfxfcdesmjr

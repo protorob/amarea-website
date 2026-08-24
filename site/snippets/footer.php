@@ -1,7 +1,26 @@
-<?php $navItems = $site->children()->listed() ?>
+</div><!-- #page-wrap -->
 
-<footer class="mt-auto bg-ink text-white">
-  <div class="max-w-site mx-auto px-4 py-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+<?php
+$navItems     = $site->children()->listed();
+$footerVideo  = page('home')?->file('hero-ocean-waves.mp4');
+$footerPoster = page('home')?->file('hero-ocean-waves.jpg');
+?>
+
+<footer id="site-footer" class="fixed inset-x-0 bottom-0 z-0 text-white overflow-hidden">
+  <?php if ($footerVideo): ?>
+    <video
+      class="absolute inset-0 h-full w-full object-cover"
+      autoplay muted loop playsinline
+      <?= $footerPoster ? 'poster="' . $footerPoster->url() . '"' : '' ?>
+    >
+      <source src="<?= $footerVideo->url() ?>" type="<?= $footerVideo->mime() ?>">
+    </video>
+  <?php elseif ($footerPoster): ?>
+    <img src="<?= $footerPoster->url() ?>" alt="" class="absolute inset-0 h-full w-full object-cover">
+  <?php endif ?>
+  <div class="absolute inset-0 bg-ink/80"></div>
+
+  <div class="relative z-10 max-w-site mx-auto px-4 py-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
 
     <div class="lg:col-span-1">
       <img src="<?= url('assets/images/amarea-logo-textonly-white.svg') ?>" alt="<?= $site->title() ?>" class="h-7 w-auto mb-3">
@@ -37,7 +56,7 @@
     <?php endif ?>
   </div>
 
-  <div class="border-t border-white/10">
+  <div class="relative z-10 border-t border-white/10">
     <div class="max-w-site mx-auto px-4 py-4 text-xs text-white/50">
       &copy; <?= date('Y') ?> <?= $site->title() ?>
     </div>

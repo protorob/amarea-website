@@ -5,6 +5,18 @@ tabs:
   content:
     label: Content
     sections:
+      hero:
+        type: fields
+        fields:
+          heroImage:
+            type: files
+            label: Hero image
+            help: Full-width banner behind the page title. Leave empty to use the default A'Marea ocean-waves shot.
+            query: page.files
+            accept: image
+            multiple: false
+            layout: cards
+
       intro:
         type: fields
         fields:

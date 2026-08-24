@@ -1,15 +1,16 @@
 <?php snippet('header') ?>
 
-<main class="flex-1 w-full pt-32">
+<main class="flex-1 w-full">
 
-  <section class="max-w-3xl mx-auto px-4 pb-10 text-center">
-    <h1 class="text-3xl sm:text-4xl font-title mb-6"><?= $page->title() ?></h1>
-    <?php if ($page->introText()->isNotEmpty()): ?>
+  <?php snippet('page-hero') ?>
+
+  <?php if ($page->introText()->isNotEmpty()): ?>
+    <section class="max-w-3xl mx-auto px-4 pt-16 pb-10 text-center">
       <div class="prose max-w-none mx-auto text-ink-soft"><?= $page->introText()->kt() ?></div>
-    <?php endif ?>
-  </section>
+    </section>
+  <?php endif ?>
 
-  <section class="max-w-3xl mx-auto px-4 pb-20">
+  <section class="max-w-3xl mx-auto px-4 <?= $page->introText()->isNotEmpty() ? '' : 'pt-16 ' ?>pb-20">
     <?php snippet('faq-widget') ?>
   </section>
 

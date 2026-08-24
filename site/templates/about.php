@@ -1,9 +1,11 @@
 <?php snippet('header') ?>
 
-<main class="flex-1 w-full pt-32">
+<main class="flex-1 w-full">
 
-  <section class="max-w-3xl mx-auto px-4 pb-16 text-center">
-    <h1 class="text-3xl sm:text-4xl font-title mb-6"><?= $page->introTitle() ?></h1>
+  <?php snippet('page-hero') ?>
+
+  <section class="max-w-3xl mx-auto px-4 pt-16 pb-16 text-center">
+    <h2 class="text-3xl sm:text-4xl font-title mb-6"><?= $page->introTitle() ?></h2>
     <div class="prose max-w-none mx-auto text-ink-soft"><?= $page->introText()->kt() ?></div>
   </section>
 

@@ -1,21 +1,56 @@
 import './main.css'
 
-// Mobile menu toggle
+// Reveal footer: the footer is fixed to the viewport bottom (see
+// footer.php) and #page-wrap sits above it at a higher z-index with an
+// opaque background, so it visually covers the footer until the page is
+// scrolled all the way down. That only works if #page-wrap reserves
+// exactly the footer's height at its own bottom, so keep the two in sync.
+const pageWrap = document.getElementById('page-wrap')
+const siteFooter = document.getElementById('site-footer')
+
+if (pageWrap && siteFooter) {
+  const syncFooterSpace = () => {
+    pageWrap.style.marginBottom = `${siteFooter.offsetHeight}px`
+  }
+  syncFooterSpace()
+  window.addEventListener('resize', syncFooterSpace)
+  window.addEventListener('load', syncFooterSpace)
+}
+
+// Mobile menu toggle — collapses via grid-template-rows (0fr <-> 1fr) so
+// the closed state is actually zero height, not just invisible. An
+// opacity-only closed state used to leave the menu's full height inside
+// the fixed header, which then got painted (and blurred) as part of the
+// header once scrolled.
 const toggle = document.getElementById('menu-toggle')
 const mobileMenu = document.getElementById('mobile-menu')
 
 if (toggle && mobileMenu) {
   toggle.addEventListener('click', () => {
-    const isOpen = !mobileMenu.classList.contains('pointer-events-none')
-    mobileMenu.classList.toggle('opacity-0', isOpen)
+    const isOpen = mobileMenu.classList.contains('grid-rows-[1fr]')
+    mobileMenu.classList.toggle('grid-rows-[1fr]', !isOpen)
+    mobileMenu.classList.toggle('grid-rows-[0fr]', isOpen)
     mobileMenu.classList.toggle('opacity-100', !isOpen)
-    mobileMenu.classList.toggle('-translate-y-1', isOpen)
-    mobileMenu.classList.toggle('translate-y-0', !isOpen)
-    mobileMenu.classList.toggle('pointer-events-none', isOpen)
-    mobileMenu.classList.toggle('pointer-events-auto', !isOpen)
+    mobileMenu.classList.toggle('opacity-0', isOpen)
     toggle.setAttribute('aria-expanded', String(!isOpen))
   })
 }
+
+// Mobile nav accordions (Locations -> Beach House / City Apartments)
+document.querySelectorAll('[data-mobile-accordion]').forEach((accordion) => {
+  const trigger = accordion.querySelector('[data-accordion-toggle]')
+  const panel = accordion.querySelector('[data-accordion-panel]')
+  const chevron = accordion.querySelector('[data-accordion-chevron]')
+  if (!trigger || !panel) return
+
+  trigger.addEventListener('click', () => {
+    const isOpen = panel.classList.contains('grid-rows-[1fr]')
+    panel.classList.toggle('grid-rows-[1fr]', !isOpen)
+    panel.classList.toggle('grid-rows-[0fr]', isOpen)
+    chevron?.classList.toggle('rotate-180', !isOpen)
+    trigger.setAttribute('aria-expanded', String(!isOpen))
+  })
+})
 
 // Header: transparent-over-hero at the top, solid + sticky once scrolled.
 // Pages without a hero render the solid state from the start (see header.php).
@@ -23,16 +58,18 @@ const header = document.getElementById('site-header')
 
 if (header && header.dataset.hasHero === 'true') {
   const SOLID_CLASSES = ['bg-white/95', 'backdrop-blur', 'text-ink', 'shadow-sm']
-  const logo = header.querySelector('img[data-logo-light]')
-  const scrollThreshold = () => Math.max(window.innerHeight * 0.8, 200)
+  const logoLight = header.querySelector('img[data-logo-light]')
+  const logoDark = header.querySelector('img[data-logo-dark]')
+  const scrollThreshold = () => 24
 
   const setScrolled = (isScrolled) => {
     header.classList.toggle('bg-transparent', !isScrolled)
     header.classList.toggle('text-white', !isScrolled)
     SOLID_CLASSES.forEach((cls) => header.classList.toggle(cls, isScrolled))
-    if (logo) {
-      logo.src = isScrolled ? logo.dataset.logoDark : logo.dataset.logoLight
-    }
+    // The blue logo has a transition-delay (see header.php) so it only turns
+    // fully blue once the header background is already mostly solid.
+    logoLight?.classList.toggle('opacity-0', isScrolled)
+    logoDark?.classList.toggle('opacity-0', !isScrolled)
   }
 
   let ticking = false

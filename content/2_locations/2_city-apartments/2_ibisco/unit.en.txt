@@ -2,11 +2,11 @@ Title: Ibisco
 
 ----
 
-subtitle: A Contemporary Sicilian Hideaway
+Subtitle: A Contemporary Sicilian Hideaway
 
 ----
 
-description:
+Description:
 
 Discover Ibisco, a beautifully renovated apartment where contemporary style meets the warmth of Sicilian living. Bright, comfortable and easy-going, it features a spacious double bedroom, a modern bathroom with separate anteroom, and an inviting living area with a fully equipped kitchen.
 
@@ -16,4 +16,8 @@ Ibisco is a great place to slow down, settle in and feel at home in Syracuse.
 
 ----
 
-features: 1 double bedroom, Private bathroom, Fully equipped kitchen, Living area, Modern interiors, Shared courtyard
+Features: 1 double bedroom, Private bathroom, Fully equipped kitchen, Living area, Modern interiors, Shared courtyard
+
+----
+
+Uuid: ncxfkx2eruwartt8
