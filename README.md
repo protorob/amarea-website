@@ -1,13 +1,21 @@
 # amarea — website
 
-Marketing/booking site for amarea (a four-room house in Syracuse), built on
-[Kirby CMS](https://getkirby.com) (Plainkit) + Tailwind CSS v4, managed with
-Composer. Scaffolded from
+Marketing site for A'Marea, a Mediterranean co-living business in Fontane
+Bianche/Siracusa with two properties — **Beach House** (8 bookable rooms)
+and **City Apartments** (two independent apartments, Zagara and Ibisco).
+Built on [Kirby CMS](https://getkirby.com) (Plainkit) + Tailwind CSS v4,
+managed with Composer. Scaffolded from
 [protorob/kirbycms-tailwind-base](https://github.com/protorob/kirbycms-tailwind-base).
 
-The booking flow itself is not part of this repo — it's embedded from
+**v1 ships waitlist-only.** The booking flow itself is not part of this
+repo — it will eventually be embedded from
 [ballaraw-booking-engine](https://github.com/protorob/ballaraw-booking-engine),
-a separately deployed widget served from its own Coolify service.
+a separately deployed widget served from its own Coolify service. Until
+then, every "Start Booking" CTA opens the lead-capture form instead (see
+"Lead-capture form" below).
+
+Site is multi-language: English (default), Italian, Spanish, German,
+French. See "Languages" below.
 
 ## Requirements
 
@@ -52,9 +60,44 @@ bun run build   # production build → assets/css/ and assets/js/
 ```
 
 - `src/main.css` — Tailwind entry point, `@theme` customizations, custom CSS
-- `src/main.js` — entry point for JS behavior (mobile menu, etc.)
+- `src/main.js` — mobile menu, header scroll behavior (transparent → sticky/solid past the hero), lead-capture modal + form submit
 - `site/snippets/header.php` / `site/snippets/footer.php` — shared page chrome
-- `site/templates/default.php` — default page template
+- `site/templates/` — one PHP template per blueprint (home, about, locations, property, unit, community, workation, faq, contact)
+
+## Languages
+
+Defined in `site/languages/` — `en` (default, unprefixed URLs), `it`,
+`es`, `de`, `fr` (prefixed, e.g. `/it/locations`). UI strings (nav,
+buttons, form labels/errors) are translated in all 5 via each language
+file's `translations` array and read in templates with `t('key')`. Page
+copy lives in per-language content files (`home.en.txt`, `home.it.txt`,
+…) — only English content exists right now, so other languages currently
+fall back to showing the English copy until translated.
+
+**Gotcha**: once any `site/languages/*.php` file exists, Kirby requires
+content files to carry the language suffix (`home.en.txt`) — a plain
+`home.txt` is silently ignored, not read as a fallback.
+
+## Lead-capture form
+
+v1's single lead-capture form (`site/snippets/lead-form.php`) is used as
+both a site-wide modal and the embedded Contact page form. It posts to
+`POST /lead` (a route in `site/config/config.php`), which validates
+required fields and emails the submission via Kirby's `email()` helper.
+
+SMTP transport is configured via environment variables — set on the
+deploy target, never committed:
+
+```
+SMTP_HOST
+SMTP_PORT
+SMTP_USERNAME
+SMTP_PASSWORD
+SMTP_FROM
+```
+
+Without these set, submissions fail gracefully with a JSON error instead
+of crashing.
 
 ## Deploying to the shared server
 
@@ -110,18 +153,36 @@ engine's PocketBase API; this site never talks to PocketBase server-side.
 ## Project structure
 
 ```
-content/        ← pages and uploaded files
+content/
+  home/                        ← home.en.txt
+  1_about-us/                  ← about.en.txt
+  2_locations/                 ← locations.en.txt (hub)
+    1_beach-house/              ← property.en.txt
+      1_sole … 8_isola/          ← unit.en.txt × 8 rooms
+    2_city-apartments/          ← property.en.txt (intro/grouping only)
+      1_zagara, 2_ibisco/        ← unit.en.txt × 2 independent apartments
+  3_community-experiences/
+  4_workation-and-retreats/
+  5_faq/
+  6_contact/
 src/            ← Tailwind CSS + JS source (compiles to assets/)
 site/
-  blueprints/   ← Panel field definitions
-  config/       ← config.php (email, SMTP, plugin settings)
-  plugins/      ← custom and third-party plugins
-  templates/    ← PHP templates
-  snippets/     ← reusable template partials (header, footer)
+  languages/    ← en (default), it, es, de, fr
+  blueprints/   ← site.yml + pages/ (property.yml and unit.yml are each
+                  shared by multiple pages — see docs/v1-build-plan.md §3)
+  config/       ← config.php (SMTP transport + the /lead route)
+  plugins/      ← custom and third-party plugins — none yet
+  templates/    ← PHP templates, one per blueprint
+  snippets/     ← header, footer, hero, lead-form(-modal), faq-widget
 ```
+
+Planning docs, kept up to date as the site evolves:
+- `docs/site-structure-notes.md` — sitemap discovery and decisions
+- `docs/v1-build-plan.md` — content model, shared components, build sequence
 
 ## Notes
 
 - `vendor/` and `kirby/` are not committed — restored by `composer install`
 - Never commit `site/accounts/`, `site/sessions/`, or `site/cache/`
 - `deploy.sh` contains server credentials and is gitignored — never commit it
+- SMTP credentials for the lead-capture form are environment variables, never committed (see "Lead-capture form" above)

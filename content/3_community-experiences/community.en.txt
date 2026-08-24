@@ -1,0 +1,63 @@
+Title: Community & Experiences
+
+----
+
+Introtitle: Where deep work meets the Sicilian way of life
+
+----
+
+Introtext:
+
+Here, your workday can start with a coffee on the terrace, move into a focused morning at your desk, and end with a swim in the sea or an aperitivo at sunset. In Fontane Bianche, we've created a place where work, creativity, connection and slow living naturally fit together.
+
+**Space to focus**
+Fast, reliable 1 Gbps Wi-Fi throughout the house. Comfortable workstations designed for focused work, dedicated coworking areas when you need a little more focus, and quiet corners around the house for those moments when you just need to put your head down and get things done.
+
+**Move, breathe, recharge**
+Outdoor gym surrounded by our Mediterranean garden. Stand-up paddle boards and snorkeling gear for spontaneous sea adventures. And, of course, the Mediterranean just a few minutes walking.
+
+**A community that happens naturally**
+Shared dinners, long lunches and sunset aperitivos. Creative moments, workshops and experiences to discover together. Beach days, swims, hikes and spontaneous plans. A community of remote workers, travelers and creatives from around the world — with plenty of space to connect, or simply do your own thing. Mara, our Community Manager, is here to connect you with the people, places and experiences that make A'Marea feel like home.
+
+**Discover Sicily, your way**
+Fontane Bianche is your starting point for exploring south-eastern Sicily. Spend the morning at the beach, wander through the streets of Ortigia, discover the baroque beauty of Noto, hike through Vendicari or take a road trip to Etna. Our local team knows the places worth discovering — from hidden beaches and small trattorias to the best spots for sunset, seafood and a good glass of Sicilian wine.
+
+**Work well. Live slowly. Explore freely.**
+A'Marea is for people who can work from anywhere, but want to feel somewhere. Come for the focus. Stay for the sea, the people, the food and all the little moments in between.
+
+----
+
+Showugcfeed: true
+
+----
+
+Activities:
+
+-
+  name: Yoga sessions or wellness activities
+-
+  name: Excursions and boat trips
+-
+  name: Guided tour of Castello Pupillo Winery and tasting of three signature wines
+-
+  name: Wine tasting at Castello Pupillo
+-
+  name: Picnic in the vineyards at Castello Pupillo
+-
+  name: Fuga workshop
+-
+  name: Cooking class
+-
+  name: Guided tour of Ortigia and the Archaeological Park by Piaggio Ape
+-
+  name: Half-day sailing tour of Ortigia
+-
+  name: Trekking with a naturalist guide at Cavagrande Nature Reserve
+
+----
+
+Waitlisttitle: Join us in Fontane Bianche and find your rhythm.
+
+----
+
+Uuid: a8hd3chcilx5qnv0

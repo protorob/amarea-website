@@ -1,0 +1,21 @@
+Title: Luna
+
+----
+
+Roomnumber: 3
+
+----
+
+Subtitle: Garden View
+
+----
+
+Description: A quiet, light-filled room overlooking the Mediterranean garden. Simple, comfortable and made for slow mornings, deep focus and switching off at the end of the day.
+
+----
+
+Features: Double bed, Private bathroom, Garden view, Desk, Wardrobe, A/C
+
+----
+
+Uuid: ymeyzzlgemdhbobs

@@ -1,0 +1,17 @@
+Title: A'Marea
+
+----
+
+instagramHandle: @amarea_coliving
+
+----
+
+address: Fontane Bianche, Siracusa, Sicilia
+
+----
+
+footerClaim: Mediterranean Co-Living
+
+----
+
+elfsightWidgetClass: elfsight-app-b9732c5e-fb14-494a-bebd-847bf5025bed

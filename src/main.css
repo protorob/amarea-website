@@ -1,9 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* amarea brand tokens — see docs/brand-guidelines.md. Mirrors the token
-   names used in ballaraw-booking-engine's src/styles/tokens.css so the
-   embedded widget and this site read as one system. */
+/* amarea brand tokens — see docs/brand-guidelines.md */
 
 @font-face {
   font-family: "Aminute";

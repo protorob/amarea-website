@@ -1,0 +1,49 @@
+Title: A'Marea — City Apartments
+
+----
+
+Subtitle: Live privately. Work freely. Feel at home. Between the city and the sea.
+
+----
+
+Introtext: Two independent apartments in the heart of Syracuse — for those who want their own place, with the same A'Marea welcome, coworking spaces and community events close by.
+
+----
+
+Amenities:
+
+-
+  icon: 🌿
+  label: Your own private apartment
+-
+  icon: ⚡
+  label: All utilities + 1 Gbps high-speed Wi-Fi
+-
+  icon: 🍋
+  label: Fully equipped private kitchen
+-
+  icon: 💻
+  label: Your own comfortable workstation
+-
+  icon: 🧹
+  label: Weekly cleaning service
+-
+  icon: 🤿
+  label: Snorkeling gear
+-
+  icon: 🖥️
+  label: Access to A'Marea - Beach House coworking spaces
+-
+  icon: 🥳
+  label: Access to A'Marea - Beach House events
+-
+  icon: ☀️
+  label: Your own space to work, relax & slow down
+
+----
+
+Ctalabel: Find your apartment
+
+----
+
+Uuid: b0fn6zribckpckt2

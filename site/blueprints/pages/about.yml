@@ -1,0 +1,71 @@
+title: About Us/Team
+icon: users
+
+tabs:
+  content:
+    label: Content
+    sections:
+      intro:
+        type: fields
+        fields:
+          introTitle:
+            type: text
+            default: Where the sea meets a new way of living
+          introText:
+            type: textarea
+
+      symbol:
+        type: fields
+        fields:
+          symbolTitle:
+            type: text
+            default: The Symbol
+          symbolText:
+            type: textarea
+
+      philosophy:
+        type: fields
+        fields:
+          philosophyTitle:
+            type: text
+            default: Our Philosophy
+          philosophyIntro:
+            type: textarea
+          philosophyHome:
+            type: textarea
+            label: "Pillar 1 — Home"
+          philosophyFlow:
+            type: textarea
+            label: "Pillar 2 — Flow"
+          philosophyBelonging:
+            type: textarea
+            label: "Pillar 3 — Belonging"
+          philosophyMediterranean:
+            type: textarea
+            label: "Pillar 4 — The Mediterranean Way"
+
+      team:
+        type: fields
+        fields:
+          team:
+            type: structure
+            label: Meet the Team
+            min: 1
+            fields:
+              photo:
+                type: files
+                multiple: false
+              name:
+                type: text
+              role:
+                type: text
+              bio:
+                type: textarea
+            columns:
+              photo:
+                type: files
+                width: 1/4
+              name:
+                width: 1/4
+              role:
+                width: 1/2

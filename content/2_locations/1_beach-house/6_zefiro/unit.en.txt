@@ -1,0 +1,21 @@
+Title: Zefiro
+
+----
+
+Roomnumber: 6
+
+----
+
+Subtitle: Garden View & Private Balcony
+
+----
+
+Description: Your own little corner of A'Marea. This cosy double room opens onto a private balcony overlooking the garden, with a small table and chairs for your morning coffee or a little work outside.
+
+----
+
+Features: Double bed, Private bathroom, Private balcony, Garden view, Desk, A/C
+
+----
+
+Uuid: 3szr0o97vunfhyob

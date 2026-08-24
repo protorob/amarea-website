@@ -1,0 +1,50 @@
+title: Community & Experiences
+icon: users
+
+tabs:
+  content:
+    label: Content
+    sections:
+      intro:
+        type: fields
+        fields:
+          introTitle:
+            type: text
+            default: Where deep work meets the Sicilian way of life
+          introText:
+            type: textarea
+          gallery:
+            type: files
+            label: Gallery
+
+      ugcFeed:
+        type: fields
+        fields:
+          showUgcFeed:
+            type: toggle
+            default: true
+
+      activities:
+        type: fields
+        fields:
+          activities:
+            type: structure
+            label: Weekly Activity Ideas
+            help: Not included in the stay, selected together based on availability
+            fields:
+              name:
+                type: text
+
+      calendar:
+        type: fields
+        fields:
+          calendarEmbed:
+            type: textarea
+            label: Calendar of events embed (HTML/iframe)
+
+      waitlistCta:
+        type: fields
+        fields:
+          waitlistTitle:
+            type: text
+            default: Join us in Fontane Bianche and find your rhythm.

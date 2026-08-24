@@ -1,0 +1,15 @@
+title: Contact
+icon: email
+
+tabs:
+  content:
+    label: Content
+    sections:
+      intro:
+        type: fields
+        fields:
+          introTitle:
+            type: text
+            default: Have another question?
+          introText:
+            type: textarea

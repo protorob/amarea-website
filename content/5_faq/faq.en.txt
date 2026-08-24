@@ -1,0 +1,77 @@
+Title: FAQ
+
+----
+
+Introtext: Everything you need to know before joining the A'Marea waitlist. Have a different question? Get in touch.
+
+----
+
+Faqs:
+
+-
+  question: When will A'Marea open, and when can I book?
+  answer: A'Marea will open in Fontane Bianche, Syracuse, in 2027. Join our waitlist to be among the first to hear about the opening date, available rooms and early access to bookings.
+  category: booking
+-
+  question: What is the minimum length of stay?
+  answer: We'll share our minimum stay requirements soon. Join the waitlist to be the first to receive booking details and availability.
+  category: booking
+-
+  question: What is included in the price?
+  answer: >
+    Your stay at A'Marea includes: your own private ensuite bedroom, all
+    utilities plus 1 Gbps high-speed Wi-Fi, a fully equipped shared
+    kitchen, pasta and fresh local fruit & vegetables, your own
+    comfortable workstation, weekly cleaning service, stand-up paddle
+    boards and snorkeling gear, an outdoor gym surrounded by our garden,
+    coworking spaces throughout the house, access to laundry, and plenty
+    of space to work, relax and slow down.
+  category: beach-house
+-
+  question: How do I get to Fontane Bianche from the airport?
+  answer: >
+    A'Marea is located in Fontane Bianche, just outside Syracuse, around
+    70 km from Catania Fontanarossa Airport. Address: Via Bordighera, 4 —
+    Fontane Bianche, Syracuse. By car it's approximately 50 minutes from
+    Catania Airport, 15 minutes from Syracuse, and 20 minutes from Noto.
+    The Fontane Bianche railway station is a 10-minute walk away, one
+    stop from Syracuse and two stops from Noto. Local bus lines 21 and 22
+    connect Fontane Bianche to Syracuse, and Interbus connects Catania to
+    Syracuse. Free street parking is available directly in front of
+    A'Marea.
+  category: location
+-
+  question: Can I work remotely with a reliable internet connection?
+  answer: >
+    Absolutely! A'Marea is designed for remote workers, with 1 Gbps
+    high-speed Wi-Fi throughout the house, comfortable workstations and
+    coworking spaces. There are also quiet corners around the house for
+    when you need to focus, as well as plenty of outdoor spaces for a
+    change of scenery.
+  category: beach-house
+-
+  question: Are pets allowed?
+  answer: >
+    We're happy to welcome pets whenever possible. If you're travelling
+    with an animal, please get in touch with us in advance and we'll
+    evaluate your request together based on the pet and the type of
+    accommodation. We want both our guests and their four-legged
+    companions to feel comfortable at A'Marea. 🐾
+  category: booking
+-
+  question: Can I rent the entire property for a private event?
+  answer: >
+    Yes. A'Marea Beach House can be booked exclusively for retreats, team
+    offsites, creative gatherings and private events. Exclusive bookings
+    include all 8 bedrooms, accommodating up to 18 people, as well as
+    full access to the living room, kitchen, dining spaces, terrace,
+    Mediterranean garden, coworking areas and outdoor spaces. Optional
+    services and experiences can also be arranged, including breakfast,
+    wellness sessions, activities and local experiences. Our event
+    manager and co-founder, Diane, can help you organise everything for
+    your stay.
+  category: workation-and-retreats
+
+----
+
+Uuid: dzilbzc8numsabif

@@ -1,0 +1,105 @@
+title: Home
+icon: home
+
+tabs:
+  content:
+    label: Content
+    sections:
+      hero:
+        type: fields
+        fields:
+          hasHero:
+            type: toggle
+            label: Show video hero (transparent header on load)
+            default: true
+          heroVideo:
+            type: files
+            label: Hero background video
+            query: site.files
+            multiple: false
+            layout: cards
+          heroEyebrow:
+            type: text
+            label: Hero eyebrow
+            default: For remote workers, travelers & creatives
+          heroTitle:
+            type: textarea
+            label: Hero headline
+            size: small
+            default: Where the tide sets your pace.
+          heroText:
+            type: textarea
+            label: Hero supporting text
+          ctaSecondaryLabel:
+            type: text
+            label: Secondary CTA label
+            default: "Discover A'Marea"
+          ctaSecondaryTarget:
+            type: text
+            label: Secondary CTA target (anchor or URL)
+            default: "#intro"
+
+      intro:
+        type: fields
+        fields:
+          introTitle:
+            type: text
+            default: Your new space & community are waiting
+          introText:
+            type: textarea
+
+      fontaneBianche:
+        type: fields
+        fields:
+          teaserTitle:
+            type: text
+            default: "Fontane Bianche, Siracusa"
+          teaserText:
+            type: textarea
+          teaserImage:
+            type: files
+            multiple: false
+
+      whyAmarea:
+        type: fields
+        fields:
+          whyAmarea:
+            type: structure
+            label: "Why A'Marea — feature blocks"
+            min: 1
+            fields:
+              title:
+                type: text
+              text:
+                type: textarea
+
+      communityTeaser:
+        type: fields
+        fields:
+          communityTitle:
+            type: text
+            default: More than a place to stay
+          communityText:
+            type: textarea
+          communityGallery:
+            type: files
+            label: Gallery
+          instagramCtaLabel:
+            type: text
+            default: "A'Marea Instagram"
+
+      ugcFeed:
+        type: fields
+        fields:
+          showUgcFeed:
+            type: toggle
+            default: true
+
+      waitlistCta:
+        type: fields
+        fields:
+          waitlistTitle:
+            type: text
+            default: Ready to change the way you live & work?
+          waitlistText:
+            type: textarea

@@ -1,0 +1,21 @@
+Title: Isola
+
+----
+
+Roomnumber: 8
+
+----
+
+Subtitle: Shared Bathroom & Garden View
+
+----
+
+Description: A peaceful private room overlooking the garden, designed for simple Mediterranean living. A comfortable space to settle in, slow down and make yourself at home, with a bathroom shared with just one other room.
+
+----
+
+Features: Double bed, Shared bathroom, Garden view, Desk, Wardrobe, A/C
+
+----
+
+Uuid: tacnd2elejrghkt1

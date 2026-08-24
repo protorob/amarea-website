@@ -1,0 +1,21 @@
+Title: Azzurra
+
+----
+
+Roomnumber: 7
+
+----
+
+Subtitle: Shared Bathroom & Sea View
+
+----
+
+Description: A cosy private room with a glimpse of the sea and everything you need for an easy stay. Your own space to rest, work and recharge, with a bathroom shared with just one other room.
+
+----
+
+Features: Double bed, Shared bathroom, Sea view, Desk, Wardrobe, A/C
+
+----
+
+Uuid: i7m5hzt9l8jatbtn

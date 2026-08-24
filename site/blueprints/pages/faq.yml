@@ -1,0 +1,32 @@
+title: FAQ
+icon: question
+
+tabs:
+  content:
+    label: Content
+    sections:
+      intro:
+        type: fields
+        fields:
+          introText:
+            type: textarea
+
+      faqs:
+        type: fields
+        fields:
+          faqs:
+            type: structure
+            label: Questions
+            min: 1
+            fields:
+              question:
+                type: text
+              answer:
+                type: textarea
+              category:
+                type: text
+                help: >
+                  Optional — lets a "FAQs about this page" widget filter to
+                  just this category (e.g. "booking", "house rules",
+                  "location"). Categories are TBD; leave empty for now, this
+                  page still shows the full flat list either way.

@@ -1,5 +1,47 @@
 title: Site
 
-sections:
-  pages:
-    type: pages
+tabs:
+  content:
+    label: Pages
+    sections:
+      pages:
+        type: pages
+
+  settings:
+    label: Global settings
+    sections:
+      contact:
+        type: fields
+        fields:
+          email:
+            type: email
+            label: Contact email
+          whatsapp:
+            type: text
+            label: WhatsApp number
+            help: Include country code, e.g. +39 333 1234567
+          instagramUrl:
+            type: url
+            label: Instagram URL
+          instagramHandle:
+            type: text
+            label: Instagram handle
+            help: "e.g. @amarea_coliving"
+          address:
+            type: textarea
+            label: Address
+            size: small
+      footer:
+        type: fields
+        fields:
+          footerClaim:
+            type: text
+            label: Footer claim
+            default: Mediterranean Co-Living
+      integrations:
+        type: fields
+        fields:
+          elfsightWidgetClass:
+            type: text
+            label: Elfsight widget CSS class
+            help: "e.g. elfsight-app-b9732c5e-fb14-494a-bebd-847bf5025bed — from the Elfsight embed snippet"

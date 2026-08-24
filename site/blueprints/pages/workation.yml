@@ -1,0 +1,75 @@
+title: Workation and Retreats
+icon: calendar
+
+tabs:
+  content:
+    label: Content
+    sections:
+      intro:
+        type: fields
+        fields:
+          introTitle:
+            type: text
+            default: Make A'Marea yours for a while
+          introSubtitle:
+            type: text
+            default: Bring your retreat, team or creative project to Sicily.
+          introText:
+            type: textarea
+
+      ugcFeed:
+        type: fields
+        fields:
+          showUgcFeed:
+            type: toggle
+            default: true
+
+      exclusive:
+        type: fields
+        fields:
+          exclusiveTitle:
+            type: text
+            default: Your own Mediterranean home
+          exclusiveIntro:
+            type: textarea
+          maxBedrooms:
+            type: number
+            width: 1/2
+            default: 8
+          maxGuests:
+            type: number
+            width: 1/2
+            default: 18
+          inclusions:
+            type: structure
+            label: Included with an exclusive booking
+            fields:
+              label:
+                type: text
+          gallery:
+            type: files
+            label: Gallery
+
+      outboundLink:
+        type: fields
+        fields:
+          outboundLabel:
+            type: text
+            default: Terra di Sicilia
+          outboundUrl:
+            type: url
+            default: "https://terradisiciliadmc.com/fr/retraites"
+
+      eventManager:
+        type: fields
+        fields:
+          eventManagerText:
+            type: textarea
+            help: "e.g. Diane, our event manager and co-founder, will help organize it all"
+
+      waitlistCta:
+        type: fields
+        fields:
+          waitlistTitle:
+            type: text
+            default: Be among the first to experience A'Marea.
