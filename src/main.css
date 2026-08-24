@@ -37,6 +37,8 @@
   --color-accent-soft: #fdf6cf; /* pale cream — notice/badge backgrounds */
   --color-highlight: #f0d051; /* happy yellow — focus rings only */
   --color-line: #e1e5f0;
+
+  --container-site: 1440px; /* main layout container — max-w-site */
 }
 
 body {

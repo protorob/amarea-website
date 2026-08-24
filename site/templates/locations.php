@@ -8,7 +8,7 @@
   </section>
 
   <?php if ($page->introGallery()->toFiles()->count()): ?>
-    <section class="max-w-6xl mx-auto px-4 pb-16">
+    <section class="max-w-site mx-auto px-4 pb-16">
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <?php foreach ($page->introGallery()->toFiles() as $img): ?>
           <img src="<?= $img->url() ?>" alt="" class="rounded-xl aspect-square object-cover w-full">
@@ -17,7 +17,7 @@
     </section>
   <?php endif ?>
 
-  <section class="max-w-6xl mx-auto px-4 py-20">
+  <section class="max-w-site mx-auto px-4 py-20">
     <h2 class="text-2xl font-title mb-4 text-center"><?= $page->areaGuideTitle() ?></h2>
     <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 mt-10">
       <?php
@@ -46,7 +46,7 @@
   </section>
 
   <section class="bg-accent-soft/40">
-    <div class="max-w-6xl mx-auto px-4 py-20 grid gap-8 sm:grid-cols-2">
+    <div class="max-w-site mx-auto px-4 py-20 grid gap-8 sm:grid-cols-2">
       <?php foreach ($page->children()->listed()->filterBy('intendedTemplate', 'property') as $property): ?>
         <a href="<?= $property->url() ?>" class="group block rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
           <?php if ($img = $property->gallery()->toFiles()->first()): ?>

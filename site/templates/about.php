@@ -43,7 +43,7 @@
   </section>
 
   <?php if ($page->team()->toStructure()->count()): ?>
-    <section class="max-w-6xl mx-auto px-4 py-20">
+    <section class="max-w-site mx-auto px-4 py-20">
       <h2 class="text-2xl font-title mb-10 text-center">Meet the Team</h2>
       <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
         <?php foreach ($page->team()->toStructure() as $member): ?>

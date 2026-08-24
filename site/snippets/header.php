@@ -18,7 +18,7 @@ $langCode = $kirby->language()?->code() ?? 'en';
   data-has-hero="<?= $hasHero ? 'true' : 'false' ?>"
   class="fixed top-0 inset-x-0 z-50 transition-colors duration-300 <?= $hasHero ? 'bg-transparent text-white' : 'bg-white text-ink shadow-sm' ?>"
 >
-  <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between gap-6">
+  <div class="max-w-site mx-auto px-4 h-20 flex items-center justify-between gap-6">
 
     <a href="<?= $site->url() ?>" class="shrink-0">
       <img
@@ -37,14 +37,7 @@ $langCode = $kirby->language()?->code() ?? 'en';
         </a>
       <?php endforeach ?>
 
-      <div class="flex items-center gap-1 text-xs uppercase tracking-wide opacity-80">
-        <?php foreach ($kirby->languages() as $language): ?>
-          <a
-            href="<?= $page->url($language->code()) ?>"
-            class="px-1.5 py-1 hover:opacity-100 transition-opacity <?= $language->code() === $langCode ? 'font-semibold underline underline-offset-4' : '' ?>"
-          ><?= $language->code() ?></a>
-        <?php endforeach ?>
-      </div>
+      <?php snippet('lang-switcher', ['id' => 'lang-desktop']) ?>
 
       <button type="button" data-open-lead-modal class="inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-white hover:bg-primary-strong transition-colors">
         <?= t('nav.startBooking') ?>
@@ -66,13 +59,7 @@ $langCode = $kirby->language()?->code() ?? 'en';
         </a>
       <?php endforeach ?>
 
-      <div class="flex items-center gap-3 text-xs uppercase tracking-wide text-ink-soft">
-        <?php foreach ($kirby->languages() as $language): ?>
-          <a href="<?= $page->url($language->code()) ?>" class="<?= $language->code() === $langCode ? 'font-semibold underline underline-offset-4' : '' ?>">
-            <?= $language->code() ?>
-          </a>
-        <?php endforeach ?>
-      </div>
+      <?php snippet('lang-switcher', ['id' => 'lang-mobile']) ?>
 
       <button type="button" data-open-lead-modal class="inline-flex justify-center rounded-full bg-primary px-5 py-2.5 text-white">
         <?= t('nav.startBooking') ?>

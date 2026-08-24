@@ -49,6 +49,38 @@ if (header && header.dataset.hasHero === 'true') {
   onScroll()
 }
 
+// Language dropdown (site/snippets/lang-switcher.php) — one or more may
+// exist at once (desktop + mobile nav), each self-contained.
+document.querySelectorAll('[data-lang-switcher]').forEach((switcher) => {
+  const toggleBtn = switcher.querySelector('[data-lang-toggle]')
+  const menu = switcher.querySelector('[data-lang-menu]')
+  const chevron = switcher.querySelector('[data-lang-chevron]')
+  if (!toggleBtn || !menu) return
+
+  const closeMenu = () => {
+    menu.classList.add('hidden')
+    chevron?.classList.remove('rotate-180')
+    toggleBtn.setAttribute('aria-expanded', 'false')
+  }
+  const openMenu = () => {
+    document.querySelectorAll('[data-lang-menu]').forEach((m) => m.classList.add('hidden'))
+    menu.classList.remove('hidden')
+    chevron?.classList.add('rotate-180')
+    toggleBtn.setAttribute('aria-expanded', 'true')
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation()
+    menu.classList.contains('hidden') ? openMenu() : closeMenu()
+  })
+  document.addEventListener('click', (e) => {
+    if (!switcher.contains(e.target)) closeMenu()
+  })
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu()
+  })
+})
+
 // Lead-capture modal (opened from any [data-open-lead-modal] trigger)
 const modal = document.getElementById('lead-modal')
 

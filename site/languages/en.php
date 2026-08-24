@@ -7,7 +7,7 @@ return [
     'locale' => 'en_US',
     'name' => 'English',
     'translations' => [
-        'nav.startBooking' => 'Start Booking',
+        'nav.startBooking' => 'Book Now',
         'cta.joinWaitlist' => 'Join the waitlist',
         'cta.discover' => "Discover A'Marea",
         'cta.findYourPlace' => 'Find your place',

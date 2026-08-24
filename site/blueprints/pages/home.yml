@@ -15,7 +15,16 @@ tabs:
           heroVideo:
             type: files
             label: Hero background video
-            query: site.files
+            query: page.files
+            accept: video
+            multiple: false
+            layout: cards
+          heroPoster:
+            type: files
+            label: Hero poster image
+            help: Shown while the video loads, and as the background if it can't play
+            query: page.files
+            accept: image
             multiple: false
             layout: cards
           heroEyebrow:

@@ -21,7 +21,7 @@
   </section>
 
   <?php if ($page->showUgcFeed()->toBool() && $site->elfsightWidgetClass()->isNotEmpty()): ?>
-    <section class="max-w-6xl mx-auto px-4 py-16">
+    <section class="max-w-site mx-auto px-4 py-16">
       <div class="<?= $site->elfsightWidgetClass() ?>" data-elfsight-app-lazy></div>
     </section>
   <?php endif ?>

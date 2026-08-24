@@ -1,7 +1,7 @@
 <?php $navItems = $site->children()->listed() ?>
 
 <footer class="mt-auto bg-ink text-white">
-  <div class="max-w-6xl mx-auto px-4 py-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+  <div class="max-w-site mx-auto px-4 py-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
 
     <div class="lg:col-span-1">
       <img src="<?= url('assets/images/amarea-logo-textonly-white.svg') ?>" alt="<?= $site->title() ?>" class="h-7 w-auto mb-3">
@@ -38,7 +38,7 @@
   </div>
 
   <div class="border-t border-white/10">
-    <div class="max-w-6xl mx-auto px-4 py-4 text-xs text-white/50">
+    <div class="max-w-site mx-auto px-4 py-4 text-xs text-white/50">
       &copy; <?= date('Y') ?> <?= $site->title() ?>
     </div>
   </div>

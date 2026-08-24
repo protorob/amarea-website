@@ -26,7 +26,7 @@ $ctaSecondaryUrl ??= null;
 
   <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/20 to-ink/40"></div>
 
-  <div class="relative z-10 h-full max-w-6xl mx-auto px-4 flex flex-col justify-center items-start gap-6 text-white">
+  <div class="relative z-10 h-full max-w-site mx-auto px-4 flex flex-col justify-center items-start gap-6 text-white">
     <?php if ($eyebrow): ?>
       <p class="uppercase tracking-widest text-sm text-white/80"><?= $eyebrow ?></p>
     <?php endif ?>

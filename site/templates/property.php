@@ -11,7 +11,7 @@
   </section>
 
   <?php if ($page->gallery()->toFiles()->count()): ?>
-    <section class="max-w-6xl mx-auto px-4 pb-16">
+    <section class="max-w-site mx-auto px-4 pb-16">
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <?php foreach ($page->gallery()->toFiles() as $img): ?>
           <img src="<?= $img->url() ?>" alt="" class="rounded-xl aspect-square object-cover w-full">
@@ -22,7 +22,7 @@
 
   <?php if ($units = $page->children()->listed()->filterBy('intendedTemplate', 'unit')): ?>
     <?php if ($units->count()): ?>
-      <section id="units" class="max-w-6xl mx-auto px-4 py-16">
+      <section id="units" class="max-w-site mx-auto px-4 py-16">
         <?php if ($page->ctaLabel()->isNotEmpty()): ?>
           <h2 class="text-2xl font-title mb-10 text-center"><?= $page->ctaLabel() ?></h2>
         <?php endif ?>
@@ -53,7 +53,7 @@
 
   <?php if ($page->spaces()->toStructure()->count()): ?>
     <section class="bg-accent-soft/40">
-      <div class="max-w-6xl mx-auto px-4 py-16">
+      <div class="max-w-site mx-auto px-4 py-16">
         <h2 class="text-2xl font-title mb-10 text-center">The Spaces</h2>
         <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           <?php foreach ($page->spaces()->toStructure() as $space): ?>

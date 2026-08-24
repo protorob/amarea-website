@@ -6,6 +6,18 @@ Hashero: true
 
 ----
 
+Herovideo:
+
+- hero-ocean-waves.mp4
+
+----
+
+Heroposter:
+
+- hero-ocean-waves.jpg
+
+----
+
 Heroeyebrow: For remote workers, travelers & creatives
 
 ----

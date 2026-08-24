@@ -19,7 +19,7 @@
   </section>
 
   <?php if ($page->gallery()->toFiles()->count()): ?>
-    <section class="max-w-6xl mx-auto px-4 pb-10">
+    <section class="max-w-site mx-auto px-4 pb-10">
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
         <?php foreach ($page->gallery()->toFiles() as $img): ?>
           <img src="<?= $img->url() ?>" alt="" class="rounded-xl aspect-[4/3] object-cover w-full">
