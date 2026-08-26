@@ -146,24 +146,28 @@ them:
   `bg` (cream) option. The shared helper now inverts for any non-`ink`
   text color.
 
-### Step 4 — Default blueprint + template (About, Community, Workation, FAQ, Contact)
-- Rebuild `default.yml`: `heroImage` (single file) + `blocks` field.
-- Rebuild `default.php`: existing `page-hero.php` snippet + blocks render.
-- Repoint the 5 legacy pages onto it: delete `about.yml`/`community.yml`/
-  `workation.yml`/`faq.yml`/`contact.yml` and their templates, rename each
-  page's content file (e.g. `content/1_about-us/about.en.txt` →
-  `default.en.txt`) so Kirby resolves them to the new template. Folder
-  names/slugs/URLs are untouched.
-- Extend the block library only as needed, page by page — expected
-  additions: a **Team Block** (About), a **Form Block** (Contact — wraps
-  the existing `lead-form.php` snippet). Community/Workation's needs
-  (activity list, exclusive-booking inclusions checklist, calendar embed)
-  will likely reuse Hero/Slider/a Highlights block rather than needing
-  bespoke ones — confirm per page.
-- The FAQ page itself stays on today's bespoke `faq.yml` structure for now
-  (not migrated in this step) — it gets folded into the Default blueprint
-  as part of the FAQ Block work in **v2.1**, below, so it isn't rebuilt
-  twice.
+### Step 4 — Default blueprint + template (About, Community, Workation, Contact) ✅ done
+- Built `default.yml` (`heroImage` + `blocks` field) and `default.php`
+  (`page-hero.php` + blocks render + the FAQ widget, harmless no-op until
+  v2.1 since no FAQ entries have categories yet).
+- Two new block types, both with the standard Layout tab like every other
+  block: **Team** (photo/name/role/bio grid — About) and **Form** (wraps
+  `lead-form.php` + the WhatsApp CTA — Contact).
+- Repointed About, Community, Workation, and Contact onto Default:
+  deleted their bespoke blueprints/templates, renamed each content file
+  to `default.en.txt`. Content that didn't fit an existing block folded
+  into what was already there rather than growing the block library
+  further — About's philosophy pillars and Community/Workation's
+  bold-headed sub-sections became Highlights blocks; Community's flat
+  activity list and Workation's exclusive-booking inclusions became
+  bullet lists inside a Hero block's rich-text description; Workation's
+  outbound link became a secondary button on its intro Hero block.
+- FAQ stays on its bespoke `faq.yml` blueprint for now, per the v2.1 plan
+  below — not touched in this step.
+- Verified every page on the site (Home, About, Locations archive, Beach
+  House, a room, City Apartments, Community, Workation, FAQ, Contact)
+  with a full render pass — no errors or warnings — plus a direct
+  blueprint-resolution check for all 4 migrated pages.
 
 ### Step 5 — Locations Archive blueprint + template
 - Rebuild `locations.yml`: `subTitle`, `description` (rich text),
@@ -254,7 +258,21 @@ them:
 - Block polish pass landed (commit `c24aa65`): shared Layout tab on all
   5 blocks, icon sizing, redesigned Highlights/Slider carousels, and the
   text-color/prose bug fix.
+- Follow-up fixes: Home's hero-header regression (`348f450`), Slider
+  peek/scale + full-width redesign (`7cb9d4d`, `f7cfac8`), a Tailwind/
+  Swiper CSS cascade-layer bug (`78f0606`), lightbox removed from the
+  Slider block (`b9349dd`), background/text color fields switched to
+  Kirby's native `color` field with theme-preset swatches (`9e0d739`).
+- Step 4 landed (commits `976fd8a`, `fccba1f`, `f7235aa`, `76423e3`):
+  Default blueprint + Team/Form blocks built, About/Community/Workation/
+  Contact all migrated off their bespoke blueprints.
 
-Next up: **Step 4 — Default blueprint + template**, repointing About,
-Community, Workation, FAQ, and Contact onto it (FAQ content itself stays
-put until v2.1).
+**The "5 blueprints total" goal from the v2 notes is now met**: Home,
+Locations Archive (still on its v1 shape), Location Page/`property`
+(still v1), Room/Apartment/`unit` (still v1), and Default. Steps 5-7
+still need to rebuild Locations/Location Page/Unit's *fields* per the
+v2 notes — they're just not blocking the blueprint count anymore.
+
+Next up: **Step 5 — Locations Archive blueprint + template**, including
+its own open item (today's `areaGuide` section isn't in the v2 notes at
+all — confirm keep/drop/relocate before touching it).
