@@ -1,0 +1,32 @@
+label: Buttons
+type: structure
+fields:
+  label:
+    type: text
+    width: 1/3
+  openWaitlistModal:
+    type: toggle
+    label: Opens the waitlist form
+    width: 1/3
+    default: false
+  link:
+    type: link
+    width: 1/3
+    when:
+      openWaitlistModal: false
+  style:
+    type: select
+    width: 1/3
+    options:
+      primary: Primary
+      secondary: Secondary / ghost
+    default: primary
+columns:
+  label:
+    width: 1/3
+  openWaitlistModal:
+    width: 1/6
+  link:
+    width: 1/3
+  style:
+    width: 1/6

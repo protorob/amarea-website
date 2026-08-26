@@ -2,10 +2,6 @@ Title: Home
 
 ----
 
-Hashero: true
-
-----
-
 Herovideo: - file://e78srb85zp8qg1kz
 
 ----
@@ -22,114 +18,26 @@ Herotitle: Where the tide sets your pace.
 
 ----
 
-Herotext:
-
-A'Marea is for those who can work from anywhere, but want to feel somewhere. For remote workers, curious travelers and creative minds looking for a place to slow down, connect with good people, and find inspiration in the Mediterranean rhythm.
-
-Come for the lifestyle. Stay for the community.
+Herodescription: <p>A'Marea is for those who can work from anywhere, but want to feel somewhere. For remote workers, curious travelers and creative minds looking for a place to slow down, connect with good people, and find inspiration in the Mediterranean rhythm.</p><p>Come for the lifestyle. Stay for the community.</p>
 
 ----
 
-Ctasecondarylabel: Discover A'Marea
-
-----
-
-Ctasecondarytarget: #intro
-
-----
-
-Introtitle: Your new space & community are waiting
-
-----
-
-Introtext: A'Marea is a Mediterranean home for remote workers, travelers and creatives — a place to work, live, create and connect, all at your own pace. Come for the sea, stay for the people. Find your focus, share a long lunch, meet someone new, or simply slow down and enjoy the moment. Thoughtfully designed spaces, a warm community and the natural rhythm of Mediterranean life — all under one roof.
-
-----
-
-Teasertitle: Fontane Bianche, Siracusa. Work deeply, live freely, connect naturally.
-
-----
-
-Teasertext:
-
-A Mediterranean co-living space for remote workers, travelers and creatives looking for more than just a place to stay.
-
-Private rooms, inspiring shared spaces, fast Wi-Fi, and the sea just a few minutes away. A place where you can get things done, spark new ideas, meet interesting people and enjoy a slower way of living.
-
-**Opening 2027 — Waitlist now open**
-
-----
-
-Teaserimage: 
-
-----
-
-Whyamarea:
+Buttons:
 
 - 
-  title: 'Space to focus & create'
-  text: >
-    Thoughtfully designed spaces for deep
-    work, creative flow and everyday living.
-    Fast Wi-Fi, comfortable work areas and
-    plenty of room to find your own rhythm.
+  label: Join the waitlist
+  openwaitlistmodal: 'true'
+  link: ""
+  style: primary
 - 
-  title: A community that feels real
-  text: >
-    Meet remote workers, travelers and
-    creatives from all over the world. Share
-    a meal, exchange ideas, discover the
-    island together or simply enjoy being
-    around good people.
-- 
-  title: Let the Mediterranean set the pace
-  text: "Morning swims, slow lunches, sunset walks and life outdoors. In Fontane Bianche, the sea becomes your clock and there's always time for one more dip."
-- 
-  title: Feel at home, from day one
-  text: >
-    Our local team is here to make things
-    easy, welcoming and personal. From your
-    first day to your last, we take care of
-    the details so you can focus on living,
-    working and enjoying the experience.
+  label: "Discover A'Marea"
+  openwaitlistmodal: 'false'
+  link: page://ctarjkxwt1wyewd5
+  style: secondary
 
 ----
 
-Communitytitle: More than a place to stay
-
-----
-
-Communitytext:
-
-A'Marea is about the moments that happen in between.
-
-Shared dinners, morning swims, sunset adventures, terrace work sessions, creative workshops and spontaneous plans that turn into great memories.
-
-Come to work, travel or create and find a community to share it with.
-
-----
-
-Communitygallery: 
-
-----
-
-Instagramctalabel: A'Marea Instagram
-
-----
-
-Showugcfeed: true
-
-----
-
-Waitlisttitle: Ready to change the way you live & work?
-
-----
-
-Waitlisttext:
-
-A'Marea is opening in Fontane Bianche, Siracusa in 2027.
-
-Join the waitlist to be among the first to discover opening dates, available rooms and early-bird opportunities.
+Blocks: [{"content":{"icon":["file://jffz4ctgjt8ezcin"],"eyebrow":"","title":"Your new space & community are waiting","description":"<p>A'Marea is a Mediterranean home for remote workers, travelers and creatives — a place to work, live, create and connect, all at your own pace. Come for the sea, stay for the people. Find your focus, share a long lunch, meet someone new, or simply slow down and enjoy the moment. Thoughtfully designed spaces, a warm community and the natural rhythm of Mediterranean life — all under one roof.</p>","buttons":[{"label":"Book now","openwaitlistmodal":"true","link":"","style":"primary"}],"backgroundtype":"color","backgroundcolor":"bg","backgroundimage":[],"overlaycolor":"ink","backgroundvideo":[],"height":"normal","textcolor":"ink"},"id":"949ef330-fb5d-497a-9e14-569935244023","isHidden":false,"type":"hero"},{"content":{"icon":[],"eyebrow":"Work deeply, live freely, connect naturally","title":"Fontane Bianche & Siracusa","description":"<p>A Mediterranean co-living space for remote workers, travelers and creatives looking for more than just a place to stay.</p><p>Private rooms, inspiring shared spaces, fast Wi-Fi, and the sea just a few minutes away. A place where you can get things done, spark new ideas, meet interesting people and enjoy a slower way of living.</p>","buttons":[],"backgroundtype":"color","backgroundcolor":"accent","backgroundimage":[],"overlaycolor":"ink","backgroundvideo":[],"height":"normal","textcolor":"white"},"id":"0662be28-b11a-4358-a14a-a6c7ea25c94f","isHidden":false,"type":"hero"},{"content":{"images":[]},"id":"7be693bd-99b1-4b81-9854-0be8c3b5ed99","isHidden":false,"type":"slider"},{"content":{"icon":[],"eyebrow":"Opening 2027 — Waitlist now open","title":"","description":"","buttons":[{"label":"Join the waitlist","openwaitlistmodal":"true","link":"","style":"primary"}],"backgroundtype":"color","backgroundcolor":"accent","backgroundimage":[],"overlaycolor":"ink","backgroundvideo":[],"height":"normal","textcolor":"white"},"id":"63707a4b-20ee-40ab-99f8-d48ae3e33b0c","isHidden":false,"type":"hero"},{"content":{"eyebrow":"Your Mediterranean playground","title":"Our Locations","description":""},"id":"8a3569c2-839d-4283-a365-7e86e1cce106","isHidden":false,"type":"locations"},{"content":{"eyebrow":"Where deep work meets the Sicilian way of life","title":"Why A'Marea?","description":"","backgroundcolor":"accent","items":[{"icon":[],"title":"Space to focus & create","text":"Thoughtfully designed spaces for deep work, creative flow and everyday living. Fast Wi-Fi, comfortable work areas and plenty of room to find your own rhythm."},{"icon":[],"title":"A community that feels real","text":"Meet remote workers, travelers and creatives from all over the world. Share a meal, exchange ideas, discover the island together or simply enjoy being around good people."},{"icon":[],"title":"Let the Mediterranean set the pace","text":"Morning swims, slow lunches, sunset walks and life outdoors. In Fontane Bianche, the sea becomes your clock and there's always time for one more dip."},{"icon":[],"title":"Feel at home, from day one","text":"Our local team is here to make things easy, welcoming and personal. From your first day to your last, we take care of the details so you can focus on living, working and enjoying the experience."}]},"id":"20166c26-3267-42e2-9a3d-d1919f6e0f2d","isHidden":false,"type":"highlights"},{"content":{"eyebrow":"More than a place to stay","title":"Community & Experiences","description":"<p>A'Marea is about the moments that happen in between.</p><p>Shared dinners, morning swims, sunset adventures, terrace work sessions, creative workshops and spontaneous plans that turn into great memories.</p><p>Come to work, travel or create and find a community to share it with.</p>"},"id":"4f2f2a48-fa11-474c-9568-870c1181de18","isHidden":false,"type":"elfsight"},{"content":{"icon":[],"eyebrow":"","title":"Ready to change the way you live & work?","description":"<p>A'Marea is opening in Fontane Bianche, Siracusa in 2027. Join the waitlist to be among the first to discover opening dates, available rooms and early-bird opportunities.</p>","buttons":[{"label":"Join the waitlist","openwaitlistmodal":"true","link":"","style":"primary"}],"backgroundtype":"image","backgroundcolor":"ink","backgroundimage":["file://bhbyrhenpjmd02mb"],"overlaycolor":"ink","backgroundvideo":[],"height":"half","textcolor":"white"},"id":"217f9c94-1c6c-4467-8688-251ccbd53432","isHidden":false,"type":"hero"}]
 
 ----
 

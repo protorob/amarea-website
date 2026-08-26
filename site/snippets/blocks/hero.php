@@ -24,11 +24,6 @@ $heightClasses = [
   'half'   => 'min-h-[50vh] py-20 flex items-center',
   'full'   => 'min-h-screen py-24 flex items-center',
 ];
-$buttonStyleClasses = [
-  'primary'   => 'bg-primary hover:bg-primary-strong text-white',
-  'secondary' => 'border border-current hover:opacity-75',
-];
-
 $backgroundType = $block->backgroundType()->value() ?: 'color';
 $image          = $backgroundType === 'image' ? $block->backgroundImage()->toFile() : null;
 $video          = $backgroundType === 'video' ? $block->backgroundVideo()->toFile() : null;
@@ -66,22 +61,7 @@ $hasContent     = $block->eyebrow()->isNotEmpty() || $block->title()->isNotEmpty
         <div class="text-lg opacity-90 max-w-2xl prose prose-p:my-0 <?= $textColor === 'white' ? 'prose-invert' : '' ?>"><?= $block->description() ?></div>
       <?php endif ?>
 
-      <?php if ($buttons->count()): ?>
-        <div class="flex flex-wrap justify-center gap-4 mt-2">
-          <?php foreach ($buttons as $button): ?>
-            <?php $styleClass = $buttonStyleClasses[$button->style()->value()] ?? $buttonStyleClasses['primary'] ?>
-            <?php if ($button->openWaitlistModal()->toBool()): ?>
-              <button type="button" data-open-lead-modal class="inline-flex items-center rounded-full px-6 py-3 font-medium transition-colors <?= $styleClass ?>">
-                <?= $button->label()->or(t('cta.joinWaitlist')) ?>
-              </button>
-            <?php elseif ($url = $button->link()->toUrl()): ?>
-              <a href="<?= $url ?>" class="inline-flex items-center rounded-full px-6 py-3 font-medium transition-colors <?= $styleClass ?>">
-                <?= $button->label() ?>
-              </a>
-            <?php endif ?>
-          <?php endforeach ?>
-        </div>
-      <?php endif ?>
+      <?php snippet('partials/buttons', ['buttons' => $buttons]) ?>
     </div>
   <?php endif ?>
 </section>

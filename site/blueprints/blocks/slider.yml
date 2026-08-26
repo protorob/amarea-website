@@ -6,7 +6,6 @@ fields:
   images:
     type: structure
     label: Images
-    min: 1
     fields:
       image:
         type: files

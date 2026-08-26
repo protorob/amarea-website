@@ -1,6 +1,6 @@
 import './main.css'
 import Swiper from 'swiper'
-import { Navigation } from 'swiper/modules'
+import { Navigation, Pagination } from 'swiper/modules'
 import GLightbox from 'glightbox'
 
 // Scroll reveal: top-level sections inside <main> fade/slide in as they
@@ -77,6 +77,15 @@ document.querySelectorAll('[data-mobile-accordion]').forEach((accordion) => {
   })
 })
 
+// Hero scroll-down hint (site/snippets/hero.php) — scrolls to whatever
+// section follows the hero, rather than a fixed #intro id (Home's content
+// below the hero is now a variable stack of blocks).
+document.querySelectorAll('[data-scroll-next]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    btn.closest('section')?.nextElementSibling?.scrollIntoView({ behavior: 'smooth' })
+  })
+})
+
 // Slider Block carousels (site/snippets/blocks/slider.php) — each .js-slider
 // on the page gets its own Swiper instance.
 document.querySelectorAll('.js-slider').forEach((el) => {
@@ -89,6 +98,28 @@ document.querySelectorAll('.js-slider').forEach((el) => {
     slidesPerView: 1,
     spaceBetween: 16,
     loop: true,
+  })
+})
+
+// Highlights Block carousels (site/snippets/blocks/highlights.php) — 1
+// card per view on mobile, 3 on desktop, with arrows + dots.
+document.querySelectorAll('.js-highlights-slider').forEach((el) => {
+  new Swiper(el, {
+    modules: [Navigation, Pagination],
+    navigation: {
+      nextEl: el.querySelector('.swiper-button-next'),
+      prevEl: el.querySelector('.swiper-button-prev'),
+    },
+    pagination: {
+      el: el.querySelector('.swiper-pagination'),
+      clickable: true,
+    },
+    slidesPerView: 1,
+    spaceBetween: 24,
+    breakpoints: {
+      640: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
   })
 })
 

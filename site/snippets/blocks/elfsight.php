@@ -4,13 +4,16 @@
 if (site()->elfsightWidgetClass()->isEmpty()) return;
 ?>
 <section class="max-w-site mx-auto px-4 py-16">
-  <?php if ($block->eyebrow()->isNotEmpty() || $block->title()->isNotEmpty()): ?>
+  <?php if ($block->eyebrow()->isNotEmpty() || $block->title()->isNotEmpty() || $block->description()->isNotEmpty()): ?>
     <div class="max-w-2xl mx-auto text-center mb-10">
       <?php if ($block->eyebrow()->isNotEmpty()): ?>
         <p class="uppercase tracking-widest text-sm text-accent mb-2"><?= $block->eyebrow() ?></p>
       <?php endif ?>
       <?php if ($block->title()->isNotEmpty()): ?>
-        <h2 class="text-3xl font-logo"><?= $block->title() ?></h2>
+        <h2 class="text-3xl font-logo mb-4"><?= $block->title() ?></h2>
+      <?php endif ?>
+      <?php if ($block->description()->isNotEmpty()): ?>
+        <div class="prose max-w-none text-ink-soft"><?= $block->description() ?></div>
       <?php endif ?>
     </div>
   <?php endif ?>

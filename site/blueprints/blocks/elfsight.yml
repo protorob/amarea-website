@@ -7,6 +7,8 @@ fields:
     type: text
   title:
     type: text
+  description:
+    type: writer
   info:
     type: info
     text: Renders the Elfsight widget configured site-wide (Settings → Integrations). Leave this block out of a page if you don't want the feed there.

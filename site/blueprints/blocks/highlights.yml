@@ -1,0 +1,41 @@
+name: Highlights carousel
+icon: grid
+preview: fields
+
+fields:
+  eyebrow:
+    type: text
+  title:
+    type: text
+  description:
+    type: writer
+  backgroundColor:
+    type: select
+    label: Background
+    options:
+      none: None (page background)
+      ink: Ink (dark navy)
+      accent: Olive
+      bg: Cream
+    default: none
+  items:
+    type: structure
+    label: Cards
+    min: 1
+    fields:
+      icon:
+        type: files
+        query: page.files
+        multiple: false
+      title:
+        type: text
+      text:
+        type: textarea
+    columns:
+      icon:
+        type: files
+        width: 1/6
+      title:
+        width: 1/3
+      text:
+        width: 1/2
