@@ -2,7 +2,15 @@ Title: Cala
 
 ----
 
+Mainimage: - file://3mbery6s9udqwsqm
+
+----
+
 Roomnumber: 4
+
+----
+
+Roomid: 
 
 ----
 
@@ -10,11 +18,22 @@ Subtitle: Garden View
 
 ----
 
-Description: A quiet, light-filled room overlooking the Mediterranean garden. Simple, comfortable and made for slow mornings, deep focus and switching off at the end of the day.
+Description: <p>A quiet, light-filled room overlooking the Mediterranean garden. Simple, comfortable and made for slow mornings, deep focus and switching off at the end of the day.</p>
 
 ----
 
-Features: Double bed, Private bathroom, Garden view, Desk, Wardrobe, A/C
+Features: Double bed, Private bathroom, Garden view, Desk / workstation, Wardrobe, A/C
+
+----
+
+Gallery:
+
+- file://3mbery6s9udqwsqm
+- file://3mbery6s9udqwsqm
+
+----
+
+Ctalabel: Book now →
 
 ----
 

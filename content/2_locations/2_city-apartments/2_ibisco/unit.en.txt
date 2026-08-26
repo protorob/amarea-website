@@ -2,21 +2,38 @@ Title: Ibisco
 
 ----
 
+Mainimage: - file://ncjpnffsfo6je0qr
+
+----
+
+Roomnumber: 
+
+----
+
+Roomid: 
+
+----
+
 Subtitle: A Contemporary Sicilian Hideaway
 
 ----
 
-Description:
-
-Discover Ibisco, a beautifully renovated apartment where contemporary style meets the warmth of Sicilian living. Bright, comfortable and easy-going, it features a spacious double bedroom, a modern bathroom with separate anteroom, and an inviting living area with a fully equipped kitchen.
-
-Ibisco is a great place to slow down, settle in and feel at home in Syracuse.
-
-💡 Guests also enjoy access to all A'Marea Beach House events and are welcome to work from the coworking spaces.
+Description: <p>Discover Ibisco, a beautifully renovated apartment where contemporary style meets the warmth of Sicilian living. Bright, comfortable and easy-going, it features a spacious double bedroom, a modern bathroom with separate anteroom, and an inviting living area with a fully equipped kitchen.</p><p>Ibisco is a great place to slow down, settle in and feel at home in Syracuse.</p><p>💡 Guests also enjoy access to all A'Marea Beach House events and are welcome to work from the coworking spaces.</p>
 
 ----
 
-Features: 1 double bedroom, Private bathroom, Fully equipped kitchen, Living area, Modern interiors, Shared courtyard
+Features: Double bed, Private bathroom, Fully equipped kitchen, Living area, Modern interiors, Shared courtyard
+
+----
+
+Gallery:
+
+- file://ncjpnffsfo6je0qr
+- file://ncjpnffsfo6je0qr
+
+----
+
+Ctalabel: 
 
 ----
 

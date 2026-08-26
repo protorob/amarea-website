@@ -2,11 +2,15 @@ Title: Sole
 
 ----
 
+Mainimage: - file://ccncrtgh6tuutlpc
+
+----
+
 Roomnumber: 1
 
 ----
 
-Bookingengineid: 
+Roomid: 
 
 ----
 
@@ -14,17 +18,16 @@ Subtitle: Sea View & Private Terrace
 
 ----
 
-Description: Wake up to a glimpse of the Mediterranean and step outside onto your own private terrace. A cosy double room with a private bathroom, desk, wardrobe, and your own little outdoor lounge — perfect for slow mornings or an aperitivo at sunset.
+Description: <p>Wake up to a glimpse of the Mediterranean and step outside onto your own private terrace. A cosy double room with a private bathroom, desk, wardrobe, and your own little outdoor lounge — perfect for slow mornings or an aperitivo at sunset.</p>
 
 ----
 
-Features: Double bed, Private bathroom, Private terrace, Sea view, Desk, A/C
+Features: Double bed, Private bathroom, Private terrace, Sea view, Desk / workstation, A/C
 
 ----
 
 Gallery:
 
-- file://ccncrtgh6tuutlpc
 - file://th2xh2sge8ipyzsx
 - file://abqw6vx68mbe1hkw
 - file://6hoft3mdnd2mllie

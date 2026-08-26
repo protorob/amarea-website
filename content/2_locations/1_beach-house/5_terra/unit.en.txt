@@ -2,7 +2,15 @@ Title: Terra
 
 ----
 
+Mainimage: - file://w3halaepya7avvev
+
+----
+
 Roomnumber: 5
+
+----
+
+Roomid: 
 
 ----
 
@@ -10,11 +18,22 @@ Subtitle: Garden View & Private Balcony
 
 ----
 
-Description: Your own little corner of A'Marea. This cosy double room opens onto a private balcony overlooking the garden, with a small table and chairs for your morning coffee or a little work outside.
+Description: <p>Your own little corner of A'Marea. This cosy double room opens onto a private balcony overlooking the garden, with a small table and chairs for your morning coffee or a little work outside.</p>
 
 ----
 
-Features: Double bed, Private bathroom, Private balcony, Garden view, Desk, A/C
+Features: Double bed, Private bathroom, Private balcony, Garden view, Desk / workstation, A/C
+
+----
+
+Gallery:
+
+- file://w3halaepya7avvev
+- file://w3halaepya7avvev
+
+----
+
+Ctalabel: Book now →
 
 ----
 

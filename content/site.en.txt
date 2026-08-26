@@ -64,9 +64,21 @@ Unitfeatures:
 - 
   icon: 🧺
   label: Washing machine
-- 
+-
   icon: 🏡
   label: Shared courtyard
+-
+  icon: 🛏️
+  label: Two double bedrooms
+-
+  icon: 🪜
+  label: Mezzanine office
+-
+  icon: 🛋️
+  label: Living area
+-
+  icon: ✨
+  label: Modern interiors
 
 ----
 
