@@ -3,6 +3,8 @@
 use Kirby\Http\Response;
 use Kirby\Toolkit\V;
 
+require_once __DIR__ . '/helpers.php';
+
 return [
     'debug' => getenv('KIRBY_DEBUG') === 'true',
 

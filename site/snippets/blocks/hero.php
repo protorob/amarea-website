@@ -3,50 +3,32 @@
 // blueprint's Blocks field. Empty background + no content behaves as a
 // plain spacer between other blocks, per the v2 build notes.
 
-$bgColorClasses = [
-  'ink'     => 'bg-ink',
-  'bg'      => 'bg-bg',
-  'primary' => 'bg-primary',
-  'accent'  => 'bg-accent',
+$iconSizeClasses = [
+  'small'  => 'h-8',
+  'medium' => 'h-12',
+  'large'  => 'h-20',
 ];
-$overlayClasses = [
-  'ink'    => 'bg-gradient-to-t from-ink/70 via-ink/20 to-ink/40',
-  'accent' => 'bg-gradient-to-t from-accent/70 via-accent/20 to-accent/40',
-  'none'   => '',
-];
-$textColorClasses = [
-  'white' => 'text-white',
-  'ink'   => 'text-ink',
-  'bg'    => 'text-bg',
-];
-$heightClasses = [
-  'normal' => 'py-20 sm:py-24',
-  'half'   => 'min-h-[50vh] py-20 flex items-center',
-  'full'   => 'min-h-screen py-24 flex items-center',
-];
-$backgroundType = $block->backgroundType()->value() ?: 'color';
-$image          = $backgroundType === 'image' ? $block->backgroundImage()->toFile() : null;
-$video          = $backgroundType === 'video' ? $block->backgroundVideo()->toFile() : null;
-$icon           = $block->icon()->toFile();
-$textColor      = $block->textColor()->value() ?: 'white';
-$buttons        = $block->buttons()->toStructure();
-$hasContent     = $block->eyebrow()->isNotEmpty() || $block->title()->isNotEmpty() || $block->description()->isNotEmpty() || $buttons->count() || $icon;
+
+$layout     = block_layout($block);
+$icon       = $block->icon()->toFile();
+$buttons    = $block->buttons()->toStructure();
+$hasContent = $block->eyebrow()->isNotEmpty() || $block->title()->isNotEmpty() || $block->description()->isNotEmpty() || $buttons->count() || $icon;
 ?>
-<section class="relative w-full overflow-hidden <?= $backgroundType === 'color' ? ($bgColorClasses[$block->backgroundColor()->value()] ?? $bgColorClasses['ink']) : 'bg-ink' ?> <?= $heightClasses[$block->height()->value()] ?? $heightClasses['normal'] ?>">
-  <?php if ($video): ?>
+<section class="relative w-full overflow-hidden <?= $layout['sectionClass'] ?>">
+  <?php if ($layout['video']): ?>
     <video class="absolute inset-0 h-full w-full object-cover" autoplay muted loop playsinline>
-      <source src="<?= $video->url() ?>" type="<?= $video->mime() ?>">
+      <source src="<?= $layout['video']->url() ?>" type="<?= $layout['video']->mime() ?>">
     </video>
-    <div class="absolute inset-0 <?= $overlayClasses[$block->overlayColor()->value() ?: 'ink'] ?>"></div>
-  <?php elseif ($image): ?>
-    <img src="<?= $image->url() ?>" alt="" class="absolute inset-0 h-full w-full object-cover">
-    <div class="absolute inset-0 <?= $overlayClasses[$block->overlayColor()->value() ?: 'ink'] ?>"></div>
+    <div class="absolute inset-0 <?= $layout['overlayClass'] ?>"></div>
+  <?php elseif ($layout['image']): ?>
+    <img src="<?= $layout['image']->url() ?>" alt="" class="absolute inset-0 h-full w-full object-cover">
+    <div class="absolute inset-0 <?= $layout['overlayClass'] ?>"></div>
   <?php endif ?>
 
   <?php if ($hasContent): ?>
-    <div class="relative z-10 w-full max-w-4xl mx-auto px-4 flex flex-col items-center gap-6 text-center <?= $textColorClasses[$textColor] ?? $textColorClasses['white'] ?>">
+    <div class="relative z-10 w-full max-w-4xl mx-auto px-4 flex flex-col items-center gap-6 text-center <?= $layout['textColorClass'] ?>">
       <?php if ($icon): ?>
-        <img src="<?= $icon->url() ?>" alt="" class="h-10 w-auto">
+        <img src="<?= $icon->url() ?>" alt="" class="w-auto <?= $iconSizeClasses[$block->iconSize()->value()] ?? $iconSizeClasses['medium'] ?>">
       <?php endif ?>
 
       <?php if ($block->eyebrow()->isNotEmpty()): ?>
@@ -58,7 +40,7 @@ $hasContent     = $block->eyebrow()->isNotEmpty() || $block->title()->isNotEmpty
       <?php endif ?>
 
       <?php if ($block->description()->isNotEmpty()): ?>
-        <div class="text-lg opacity-90 max-w-2xl prose prose-p:my-0 <?= $textColor === 'white' ? 'prose-invert' : '' ?>"><?= $block->description() ?></div>
+        <div class="text-lg opacity-90 max-w-2xl prose prose-p:my-0 <?= $layout['proseInvertClass'] ?>"><?= $block->description() ?></div>
       <?php endif ?>
 
       <?php snippet('partials/buttons', ['buttons' => $buttons]) ?>

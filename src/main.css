@@ -2,7 +2,6 @@
 @plugin "@tailwindcss/typography";
 @import "swiper/css";
 @import "swiper/css/navigation";
-@import "swiper/css/pagination";
 @import "glightbox/dist/css/glightbox.min.css";
 
 /* amarea brand tokens — see docs/brand-guidelines.md */
@@ -68,4 +67,43 @@ body {
 .js-reveal main > section.is-revealed {
   opacity: 1;
   transform: none;
+}
+
+/* Swiper nav arrows (Slider + Highlights blocks) — circular outline
+   buttons colored via currentColor so they match whatever text color the
+   surrounding block set, instead of Swiper's default rectangular icons. */
+.swiper-button-prev,
+.swiper-button-next {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  border: 1px solid currentColor;
+  color: inherit;
+  background: color-mix(in srgb, var(--color-ink) 30%, transparent);
+  backdrop-filter: blur(2px);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 0.875rem;
+}
+
+/* Highlights carousel — arrows sit in a static row below the cards
+   instead of Swiper's default absolute overlay position. */
+.js-highlights-slider .swiper-button-prev,
+.js-highlights-slider .swiper-button-next {
+  position: static;
+  margin-top: 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+/* Slider block — non-active "peek" slides read as slightly receded. */
+.js-peek-slider .swiper-slide {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.js-peek-slider .swiper-slide-active {
+  opacity: 1;
 }

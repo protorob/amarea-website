@@ -2,13 +2,19 @@ name: Instagram feed
 icon: bricks
 preview: fields
 
-fields:
-  eyebrow:
-    type: text
-  title:
-    type: text
-  description:
-    type: writer
-  info:
-    type: info
-    text: Renders the Elfsight widget configured site-wide (Settings → Integrations). Leave this block out of a page if you don't want the feed there.
+tabs:
+  content:
+    label: Content
+    fields:
+      eyebrow:
+        type: text
+      title:
+        type: text
+      description:
+        type: writer
+      info:
+        type: info
+        text: Renders the Elfsight widget configured site-wide (Settings → Integrations). Leave this block out of a page if you don't want the feed there.
+
+  layout:
+    extends: tabs/layout

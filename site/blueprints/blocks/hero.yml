@@ -12,6 +12,16 @@ tabs:
         query: page.files
         multiple: false
         layout: cards
+      iconSize:
+        type: select
+        label: Icon size
+        options:
+          small: Small
+          medium: Medium
+          large: Large
+        default: medium
+        when:
+          icon: true
       eyebrow:
         type: text
       title:
@@ -29,6 +39,7 @@ tabs:
         type: select
         label: Background
         options:
+          none: None (page background)
           color: Color
           image: Full image
           video: Video
@@ -83,7 +94,7 @@ tabs:
         type: select
         label: Text color
         options:
-          white: White
           ink: Ink (dark navy)
+          white: White
           bg: Cream
         default: white

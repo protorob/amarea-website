@@ -1,6 +1,6 @@
 import './main.css'
 import Swiper from 'swiper'
-import { Navigation, Pagination } from 'swiper/modules'
+import { Navigation } from 'swiper/modules'
 import GLightbox from 'glightbox'
 
 // Scroll reveal: top-level sections inside <main> fade/slide in as they
@@ -86,8 +86,10 @@ document.querySelectorAll('[data-scroll-next]').forEach((btn) => {
   })
 })
 
-// Slider Block carousels (site/snippets/blocks/slider.php) — each .js-slider
-// on the page gets its own Swiper instance.
+// Slider Block carousels (site/snippets/blocks/slider.php) — a centered
+// "peek" carousel: the active slide reads large, neighbors show partially
+// at the container edges. Each .js-slider on the page gets its own
+// instance.
 document.querySelectorAll('.js-slider').forEach((el) => {
   new Swiper(el, {
     modules: [Navigation],
@@ -95,24 +97,25 @@ document.querySelectorAll('.js-slider').forEach((el) => {
       nextEl: el.querySelector('.swiper-button-next'),
       prevEl: el.querySelector('.swiper-button-prev'),
     },
-    slidesPerView: 1,
+    centeredSlides: true,
+    slidesPerView: 1.15,
     spaceBetween: 16,
     loop: true,
+    breakpoints: {
+      640: { slidesPerView: 1.4, spaceBetween: 24 },
+      1024: { slidesPerView: 1.7, spaceBetween: 32 },
+    },
   })
 })
 
 // Highlights Block carousels (site/snippets/blocks/highlights.php) — 1
-// card per view on mobile, 3 on desktop, with arrows + dots.
+// card per view on mobile, 3 on desktop, with arrows below the cards.
 document.querySelectorAll('.js-highlights-slider').forEach((el) => {
   new Swiper(el, {
-    modules: [Navigation, Pagination],
+    modules: [Navigation],
     navigation: {
       nextEl: el.querySelector('.swiper-button-next'),
       prevEl: el.querySelector('.swiper-button-prev'),
-    },
-    pagination: {
-      el: el.querySelector('.swiper-pagination'),
-      clickable: true,
     },
     slidesPerView: 1,
     spaceBetween: 24,
