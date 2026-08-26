@@ -1,7 +1,6 @@
 <?php
 // Slider Block — centered "peek" carousel (Swiper): the active photo reads
 // large and centered, with neighboring slides peeking in at the edges.
-// Each slide also opens in the shared GLightbox lightbox.
 $images = $block->images()->toStructure();
 if ($images->count() === 0) return;
 
@@ -24,9 +23,9 @@ $layout = block_layout($block);
         <?php foreach ($images as $item): ?>
           <?php if (!$img = $item->image()->toFile()) continue ?>
           <div class="swiper-slide w-[min(1220px,78vw)]">
-            <a href="<?= $img->url() ?>" class="js-lightbox block rounded-2xl overflow-hidden aspect-[4/3] shadow-lg" data-glightbox="description: <?= $item->alt()->esc() ?>">
+            <div class="rounded-2xl overflow-hidden aspect-[4/3] shadow-lg">
               <img src="<?= $img->url() ?>" alt="<?= $item->alt()->esc() ?>" class="w-full h-full object-cover">
-            </a>
+            </div>
           </div>
         <?php endforeach ?>
       </div>
