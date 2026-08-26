@@ -118,7 +118,33 @@ Add native-Kirby block support:
   difference from the mockup's overlap effect.
 - **Known content gaps** (no photo assets in the repo yet, left for the
   Panel): the Fontane Bianche Slider block has no images, and the Why
-  A'Marea highlight cards have no icons/photos.
+  A'Marea highlight cards have no icons/photos. *(Filled in via the Panel
+  shortly after — see the block-polish pass below.)*
+
+### Block polish pass (post-Step-3, pre-Step-4) ✅ done
+Review of Step 1-3 while testing in the Panel surfaced 5 fixes, applied
+before starting Step 4 so every later block built on Step 4+ inherits
+them:
+- Extracted Hero's background/height/text-color fields into
+  `site/blueprints/tabs/layout.yml`, added to all 5 blocks via
+  `extends: tabs/layout` (Slider, Locations, Elfsight, Highlights didn't
+  have any background control before).
+- Added a `block_layout()` helper (`site/config/helpers.php`) — one place
+  for the color/height/prose-invert class maps instead of copy-pasting
+  per block, which is what caused the text-color bug below.
+- Hero Block: icon now has a size select (small/medium/large).
+- Highlights Block: redesigned to photo-first cards (image on top, no
+  icon glyph/box), arrows moved to a static row below, dots dropped —
+  matches the "Why A'Marea" reference look.
+- Slider Block: rebuilt as a centered "peek" carousel (Swiper
+  `centeredSlides` + fractional `slidesPerView`) instead of a plain
+  one-at-a-time slider, matching the tidescape.framer.ai reference.
+- Fixed a bug where a block's own description text didn't always respect
+  its chosen text color — `@tailwindcss/typography`'s `.prose` hardcodes
+  its own dark palette unless told to invert, and the old per-block check
+  only added `prose-invert` for `textColor === 'white'`, missing the
+  `bg` (cream) option. The shared helper now inverts for any non-`ink`
+  text color.
 
 ### Step 4 — Default blueprint + template (About, Community, Workation, FAQ, Contact)
 - Rebuild `default.yml`: `heroImage` (single file) + `blocks` field.
@@ -225,6 +251,9 @@ Add native-Kirby block support:
   Locations, Elfsight blocks + shared card-grid partial).
 - Step 3 landed (commit `69201e4`): Home rebuilt on the blocks engine,
   5th block type (Highlights) added, content migrated and verified.
+- Block polish pass landed (commit `c24aa65`): shared Layout tab on all
+  5 blocks, icon sizing, redesigned Highlights/Slider carousels, and the
+  text-color/prose bug fix.
 
 Next up: **Step 4 — Default blueprint + template**, repointing About,
 Community, Workation, FAQ, and Contact onto it (FAQ content itself stays
