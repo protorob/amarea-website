@@ -88,22 +88,37 @@ Add native-Kirby block support:
   Highlights" grid in Step 6 — same visual pattern in both mockups, so
   it's worth extracting once rather than duplicating.
 
-### Step 3 — Home blueprint + template
-- Rebuild `home.yml`: top-level Hero fields (eyebrow, title, description
+### Step 3 — Home blueprint + template ✅ done
+- Rebuilt `home.yml`: top-level Hero fields (eyebrow, title, description
   rich text, buttons `structure`) — separate from the `blocks` field, per
   the notes' "Hero:" vs "Blocks:" split — plus a `blocks` field for
-  everything below the fold.
-- Rebuild `home.php`: adapted `hero.php` snippet (buttons structure instead
-  of the current fixed primary/secondary CTA fields) + `$page->blocks()->toBlocks()->toHtml()`.
-- Hand-migrate `content/home/home.en.txt` into the new fields (small enough
-  to do by hand rather than scripting a migration).
-- **Open item to resolve when we get here**: the mockup's "Why A'Marea"
-  section (3-card carousel, each with icon + title + text) and the
-  Fontane-Bianche section's slider-overlapping-a-colored-hero layout don't
-  map cleanly onto just the 4 named blocks. Likely resolution is either a
-  small additional "Highlights" block (reusing the Step 2 card-grid
-  partial) or composing it from Hero + Slider blocks — we'll decide with
-  the mockup in front of us.
+  everything below the fold. Extracted the buttons structure into a
+  reusable `site/blueprints/fields/buttons.yml` preset (also used by the
+  Hero Block) and a shared `partials/buttons.php` renderer, since both the
+  page-level hero and the Hero Block needed identical button behavior.
+- Rebuilt `home.php`: `hero.php` snippet now takes a `buttons` structure
+  instead of fixed primary/secondary CTA fields, followed by
+  `$page->blocks()->toBlocks()->toHtml()`.
+- Hand-migrated `content/home/home.en.txt` into the new hero + blocks
+  shape (scripted via `$page->update()` for the tricky nested
+  structure/JSON serialization, then hand-cleaned of leftover v1 fields).
+  Verified with a script-driven render of the real content plus a full
+  front-end request — no errors, Locations block correctly resolves the
+  Beach House/City Apartments child pages, `page://` link resolution works
+  for the secondary hero CTA.
+- **Resolved open item**: added a 5th block type, **Highlights**
+  (`site/blueprints/blocks/highlights.yml` + `.../highlights.php`) — an
+  icon+title+text card carousel (Swiper, 1 card/view mobile → 3
+  desktop+pagination dots) to cover "Why A'Marea", since none of the 4
+  named blocks fit icon/title/text cards. The Fontane-Bianche section
+  composes a Hero Block (olive bg, heading) → Slider Block (photos) →
+  another Hero Block (olive bg, "Opening 2027" + button) as three stacked
+  blocks sharing one background color, rather than a bespoke
+  slider-over-hero coupling — simpler and more robust, small visual
+  difference from the mockup's overlap effect.
+- **Known content gaps** (no photo assets in the repo yet, left for the
+  Panel): the Fontane Bianche Slider block has no images, and the Why
+  A'Marea highlight cards have no icons/photos.
 
 ### Step 4 — Default blueprint + template (About, Community, Workation, FAQ, Contact)
 - Rebuild `default.yml`: `heroImage` (single file) + `blocks` field.
@@ -205,12 +220,12 @@ Add native-Kirby block support:
 
 ## Progress / next step
 
-Steps 1 and 2 are landed (commit `b558569`): site-wide foundations
-(`socialLinks`, `unitFeatures`) and the block engine (Hero, Slider,
-Locations, Elfsight blocks + shared card-grid partial), verified with
-`bun run build` and a script-driven render smoke test of all four block
-types.
+- Steps 1–2 landed (commit `b558569`): site-wide foundations
+  (`socialLinks`, `unitFeatures`) and the block engine (Hero, Slider,
+  Locations, Elfsight blocks + shared card-grid partial).
+- Step 3 landed (commit `69201e4`): Home rebuilt on the blocks engine,
+  5th block type (Highlights) added, content migrated and verified.
 
-Next up: **Step 3 — Home blueprint + template**, starting with a decision
-on the "Why A'Marea" card-carousel / Fontane-Bianche overlap open item
-above.
+Next up: **Step 4 — Default blueprint + template**, repointing About,
+Community, Workation, FAQ, and Contact onto it (FAQ content itself stays
+put until v2.1).
