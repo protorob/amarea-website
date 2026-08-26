@@ -1,8 +1,14 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-@import "swiper/css";
-@import "swiper/css/navigation";
-@import "glightbox/dist/css/glightbox.min.css";
+/* Imported into Tailwind's `base` layer (lower priority than
+   `utilities`) — otherwise these plain, unlayered stylesheets would beat
+   any Tailwind utility class of equal specificity (e.g. .swiper-slide's
+   own `width: 100%` silently overriding a `w-[...]` utility on the same
+   element), since unlayered CSS always wins over layered CSS regardless
+   of source order. */
+@import "swiper/css" layer(base);
+@import "swiper/css/navigation" layer(base);
+@import "glightbox/dist/css/glightbox.min.css" layer(base);
 
 /* amarea brand tokens — see docs/brand-guidelines.md */
 
