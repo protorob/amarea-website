@@ -2,68 +2,76 @@ Title: A'Marea
 
 ----
 
-address: Fontane Bianche, Siracusa, Sicilia
+Email: info@amareacoliving.it
 
 ----
 
-socialLinks:
+Whatsapp: +39 3349951258
 
--
+----
+
+Address: Fontane Bianche, Siracusa, Sicilia
+
+----
+
+Sociallinks:
+
+- 
   platform: instagram
-  label: '@amarea_coliving'
-  url: ''
+  label: @amarea_coliving
+  url: ""
 
 ----
 
-unitFeatures:
+Unitfeatures:
 
--
+- 
   icon: 🛏️
   label: Double bed
--
+- 
   icon: 🚿
   label: Private bathroom
--
+- 
   icon: 🚻
   label: Shared bathroom
--
+- 
   icon: 🌅
   label: Private terrace
--
+- 
   icon: 🌿
   label: Private balcony
--
+- 
   icon: 🌊
   label: Sea view
--
+- 
   icon: 🌳
   label: Garden view
--
+- 
   icon: 🖥️
   label: Desk / workstation
--
+- 
   icon: ❄️
   label: A/C
--
+- 
   icon: 🚪
   label: Wardrobe
--
+- 
   icon: 🍳
   label: Fully equipped kitchen
--
+- 
   icon: 🛋️
   label: Living room
--
+- 
   icon: 🧺
   label: Washing machine
--
+- 
   icon: 🏡
   label: Shared courtyard
 
 ----
 
-footerClaim: Mediterranean Co-Living
+Footerclaim: Mediterranean Co-Living
 
 ----
 
-elfsightWidgetClass: elfsight-app-b9732c5e-fb14-494a-bebd-847bf5025bed
+Elfsightwidgetclass: elfsight-app-b9732c5e-fb14-494a-bebd-847bf5025bed
