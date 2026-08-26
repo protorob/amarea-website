@@ -88,8 +88,9 @@ document.querySelectorAll('[data-scroll-next]').forEach((btn) => {
 
 // Slider Block carousels (site/snippets/blocks/slider.php) — a centered
 // "peek" carousel: the active slide reads large, neighbors show partially
-// at the container edges. Each .js-slider on the page gets its own
-// instance.
+// at the container edges at a smaller scale (see main.css's
+// .js-peek-slider rules) and grow to full size as they become active.
+// Each .js-slider on the page gets its own instance.
 document.querySelectorAll('.js-slider').forEach((el) => {
   new Swiper(el, {
     modules: [Navigation],

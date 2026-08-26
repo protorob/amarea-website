@@ -98,12 +98,16 @@ body {
   backdrop-filter: none;
 }
 
-/* Slider block — non-active "peek" slides read as slightly receded. */
+/* Slider block — centered "peek" carousel: neighboring slides sit at a
+   smaller scale + dimmed, growing to full size/opacity as they become
+   active. Swiper applies swiper-slide-active/-next/-prev itself. */
 .js-peek-slider .swiper-slide {
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+  opacity: 0.65;
+  transform: scale(0.82);
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 .js-peek-slider .swiper-slide-active {
   opacity: 1;
+  transform: scale(1);
 }

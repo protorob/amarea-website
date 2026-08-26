@@ -1,9 +1,11 @@
 <?php
-// Templates that render the page-hero banner (see page-hero.php) get the
-// same transparent-over-hero / solid-on-scroll header treatment as Home.
-$pageHeroTemplates = ['about', 'locations', 'community', 'workation', 'faq', 'contact', 'property'];
+// Every one of these templates always renders a hero (Home's full-bleed
+// video/image hero, or the page-hero.php banner on interior pages) — they
+// get the transparent-over-hero / solid-on-scroll header treatment.
+// Templates without a hero (currently none) render solid from the start.
+$pageHeroTemplates = ['home', 'about', 'locations', 'community', 'workation', 'faq', 'contact', 'property'];
 $navItems = $site->children()->listed()->not($site->find('faq'));
-$hasHero  = $page->hasHero()->toBool() || in_array((string)$page->intendedTemplate(), $pageHeroTemplates);
+$hasHero  = in_array((string)$page->intendedTemplate(), $pageHeroTemplates);
 $langCode = $kirby->language()?->code() ?? 'en';
 ?>
 <!DOCTYPE html>

@@ -1,7 +1,7 @@
 <?php
 // Full-bleed hero: video background if $video is set, otherwise $image.
-// Used on Home; any other page can opt in by setting hasHero: true in its
-// blueprint and calling this snippet — the header already branches on it.
+// Used on Home — any other template that always renders a hero should be
+// added to header.php's $pageHeroTemplates list.
 $eyebrow ??= null;
 $title ??= $page->title()->value();
 $text ??= null;
