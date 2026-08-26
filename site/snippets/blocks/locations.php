@@ -2,9 +2,7 @@
 // Locations Block — auto-lists every Location page (Beach House, City
 // Apartments…) as a hover-reveal card grid. Nothing here is per-block
 // configurable beyond the optional heading above the grid.
-// NOTE: still filters by the 'property' template — rename alongside the
-// Location Page blueprint rename in v2 Step 6.
-$locations = page('locations')?->children()->listed()->filterBy('intendedTemplate', 'property');
+$locations = page('locations')?->children()->listed()->filterBy('intendedTemplate', 'location');
 if (!$locations || $locations->count() === 0) return;
 
 $items = [];
@@ -12,7 +10,7 @@ foreach ($locations as $location) {
   $items[] = [
     'image'       => $location->heroImage()->toFile(),
     'title'       => $location->title()->value(),
-    'text'        => $location->subtitle()->value(),
+    'text'        => $location->shortDescription()->or($location->subtitle())->value(),
     'url'         => $location->url(),
     'buttonLabel' => t('cta.discover'),
   ];

@@ -1,0 +1,128 @@
+Title: City Apartments
+
+----
+
+Heroimage: 
+
+----
+
+Subtitle: Live privately. Work freely. Feel at home. Between the city and the sea.
+
+----
+
+Description: <p>Two independent apartments in the heart of Syracuse — for those who want their own place, with the same A'Marea welcome, coworking spaces and community events close by.</p>
+
+----
+
+Shortdescription: Two independent apartments in the heart of Syracuse — for those who want their own place, with the same A'Marea welcome, coworking spaces and community events close by.
+
+----
+
+Address: 
+
+----
+
+Sliderimages:
+
+- 
+  image:
+    - file://stjqza3dheflmhmm
+  alt: "A'Marea City Apartments building"
+- 
+  image:
+    - file://stjqza3dheflmhmm
+  alt: Apartment interior
+- 
+  image:
+    - file://stjqza3dheflmhmm
+  alt: Syracuse street
+
+----
+
+Spaceseyebrow: 
+
+----
+
+Spacestitle: 
+
+----
+
+Spacesdescription: 
+
+----
+
+Spaces: 
+
+----
+
+Galleryeyebrow: 
+
+----
+
+Gallerytitle: Common gallery
+
+----
+
+Gallerydescription: 
+
+----
+
+Gallery:
+
+- file://stjqza3dheflmhmm
+- file://stjqza3dheflmhmm
+- file://stjqza3dheflmhmm
+- file://stjqza3dheflmhmm
+- file://stjqza3dheflmhmm
+
+----
+
+Amenitieseyebrow: 
+
+----
+
+Amenitiestitle: Everything you need, already here.
+
+----
+
+Amenitiesdescription: <p>A'Marea City Apartments gives you the comfort and freedom of having your own place, with everything you need for an easy Sicilian stay.</p>
+
+----
+
+Amenities:
+
+- 
+  icon: 🌿
+  text: Your own private apartment
+- 
+  icon: ⚡
+  text: All utilities + 1 Gbps high-speed Wi-Fi
+- 
+  icon: 🍋
+  text: Fully equipped private kitchen
+- 
+  icon: 💻
+  text: Your own comfortable workstation
+- 
+  icon: 🧹
+  text: Weekly cleaning service
+- 
+  icon: 🤿
+  text: Snorkeling gear
+- 
+  icon: 🖥️
+  text: "Access to A'Marea Beach House coworking spaces"
+- 
+  icon: 🥳
+  text: "Access to A'Marea Beach House events"
+- 
+  icon: ☀️
+  text: 'Your own space to work, relax & slow down'
+
+----
+
+Ctalabel: Find your apartment
+
+----
+
+Uuid: b0fn6zribckpckt2

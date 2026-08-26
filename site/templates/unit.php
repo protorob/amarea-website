@@ -18,27 +18,45 @@
     <?php endif ?>
   </section>
 
-  <?php if ($page->gallery()->toFiles()->count()): ?>
+  <?php $mainImage = $page->mainImage()->toFile() ?>
+  <?php $gallery = $page->gallery()->toFiles() ?>
+  <?php if ($mainImage || $gallery->count()): ?>
     <section class="max-w-site mx-auto px-4 pb-10">
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        <?php foreach ($page->gallery()->toFiles() as $img): ?>
-          <img src="<?= $img->url() ?>" alt="" class="rounded-xl aspect-[4/3] object-cover w-full">
-        <?php endforeach ?>
-      </div>
+      <?php if ($mainImage): ?>
+        <a href="<?= $mainImage->url() ?>" class="js-lightbox block rounded-2xl overflow-hidden aspect-[16/9] mb-4" data-glightbox>
+          <img src="<?= $mainImage->url() ?>" alt="" class="w-full h-full object-cover">
+        </a>
+      <?php endif ?>
+      <?php if ($gallery->count()): ?>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <?php foreach ($gallery as $img): ?>
+            <a href="<?= $img->url() ?>" class="js-lightbox block" data-glightbox>
+              <img src="<?= $img->url() ?>" alt="" class="rounded-xl aspect-[4/3] object-cover w-full">
+            </a>
+          <?php endforeach ?>
+        </div>
+      <?php endif ?>
     </section>
   <?php endif ?>
 
   <section class="max-w-4xl mx-auto px-4 py-10 grid gap-10 sm:grid-cols-3">
     <div class="sm:col-span-2 prose max-w-none text-ink-soft">
-      <?= $page->description()->kt() ?>
+      <?= $page->description() ?>
     </div>
 
-    <?php if ($page->features()->isNotEmpty()): ?>
+    <?php $featureLabels = $page->features()->split() ?>
+    <?php if (count($featureLabels)): ?>
+      <?php $featureCatalog = site()->unitFeatures()->toStructure() ?>
       <ul class="text-sm space-y-2 text-ink-soft">
-        <?php foreach ($page->features()->split() as $feature): ?>
+        <?php foreach ($featureLabels as $label): ?>
+          <?php $icon = $featureCatalog->filterBy('label', $label)->first()?->icon()->value() ?>
           <li class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>
-            <span><?= $feature ?></span>
+            <?php if ($icon): ?>
+              <span><?= $icon ?></span>
+            <?php else: ?>
+              <span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>
+            <?php endif ?>
+            <span><?= $label ?></span>
           </li>
         <?php endforeach ?>
       </ul>
@@ -53,7 +71,44 @@
     </div>
   </section>
 
-  <?php if ($parent = $page->parent()): ?>
+  <?php if ($parent && $parent->spaces()->toStructure()->count()): ?>
+    <section class="bg-accent-soft/40">
+      <div class="max-w-site mx-auto px-4 py-16">
+        <?php if ($parent->spacesTitle()->isNotEmpty()): ?>
+          <h2 class="text-2xl font-title mb-10 text-center"><?= $parent->spacesTitle() ?></h2>
+        <?php endif ?>
+        <?php
+        $spaceItems = [];
+        foreach ($parent->spaces()->toStructure() as $space) {
+          $spaceItems[] = [
+            'image' => $space->image()->toFile(),
+            'title' => $space->title()->value(),
+            'text'  => $space->description()->value(),
+          ];
+        }
+        ?>
+        <?php snippet('partials/hover-card-grid', ['items' => $spaceItems, 'columns' => 3]) ?>
+      </div>
+    </section>
+  <?php endif ?>
+
+  <?php if ($parent && $parent->amenities()->toStructure()->count()): ?>
+    <section class="max-w-4xl mx-auto px-4 py-16">
+      <?php if ($parent->amenitiesTitle()->isNotEmpty()): ?>
+        <h2 class="text-2xl font-title mb-8 text-center"><?= $parent->amenitiesTitle() ?></h2>
+      <?php endif ?>
+      <ul class="grid gap-3 sm:grid-cols-2 text-sm">
+        <?php foreach ($parent->amenities()->toStructure() as $amenity): ?>
+          <li class="flex items-center gap-2">
+            <span><?= $amenity->icon() ?></span>
+            <span><?= $amenity->text() ?></span>
+          </li>
+        <?php endforeach ?>
+      </ul>
+    </section>
+  <?php endif ?>
+
+  <?php if ($parent): ?>
     <?php snippet('faq-widget', ['category' => $parent->slug()]) ?>
   <?php endif ?>
 

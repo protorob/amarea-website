@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#fdf6cf"/>
+  <rect x="0.5" y="0.5" width="1199" height="899" fill="none" stroke="#8d821c" stroke-width="1" stroke-opacity="0.25"/>
+  <g fill="none" stroke="#8d821c" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity="0.45">
+    <rect x="420" y="360" width="360" height="260" rx="18"/>
+    <circle cx="512" cy="440" r="34"/>
+    <path d="M420 560 L540 470 L620 540 L700 470 L780 560" />
+  </g>
+  <text x="600" y="670" font-family="Helvetica, Arial, sans-serif" font-size="28" letter-spacing="2" fill="#1b2333" fill-opacity="0.55" text-anchor="middle">PHOTO PLACEHOLDER — REPLACE VIA PANEL</text>
+</svg>

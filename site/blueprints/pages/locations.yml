@@ -10,7 +10,7 @@ tabs:
         fields:
           heroImage:
             type: files
-            label: Hero image
+            label: Header image
             help: Full-width banner behind the page title. Leave empty to use the default A'Marea ocean-waves shot.
             query: page.files
             accept: image
@@ -20,47 +20,15 @@ tabs:
       intro:
         type: fields
         fields:
-          introTitle:
+          subTitle:
             type: text
-            default: Your Mediterranean playground
-          introText:
-            type: textarea
-          introGallery:
-            type: files
-            label: Gallery
+            label: Sub title
+          description:
+            type: writer
 
-      areaGuide:
-        type: fields
-        fields:
-          areaGuideTitle:
-            type: text
-            default: Around A'Marea
-          beachDaysText:
-            type: textarea
-            label: "Beach days & hidden coves"
-          syracuseOrtigiaText:
-            type: textarea
-            label: "Syracuse & Ortigia"
-          baroqueSicilyText:
-            type: textarea
-            label: "Baroque Sicily"
-          natureAdventureText:
-            type: textarea
-            label: "Nature & adventure"
-          foodWineText:
-            type: textarea
-            label: "Food, wine & local life"
-          slowDaysText:
-            type: textarea
-            label: "Slow days by the sea"
-          mapEmbed:
-            type: textarea
-            label: Interactive map embed (HTML/iframe)
-            help: Pasted embed code for the favourite spots map, once available
-
-      properties:
+      children:
         type: pages
-        label: Properties
+        label: Locations
         layout: cards
         template:
-          - property
+          - location

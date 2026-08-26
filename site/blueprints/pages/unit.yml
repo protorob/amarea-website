@@ -4,43 +4,49 @@ icon: bed
 tabs:
   content:
     label: Content
-    sections:
-      intro:
-        type: fields
-        fields:
-          roomNumber:
-            type: text
-            label: Room number
-            width: 1/3
-            help: Leave empty for apartments
-          bookingEngineId:
-            type: text
-            label: Booking-engine unit ID
-            width: 2/3
-            help: Filled in once the live booking engine is wired up (v1 ships waitlist-only)
-          subtitle:
-            type: text
-            help: "e.g. Sea View & Private Terrace"
-          description:
-            type: textarea
+    fields:
+      mainImage:
+        type: files
+        label: Main image
+        help: Used on this room's own page and in the parent Location's room-listing cards.
+        query: page.files
+        accept: image
+        multiple: false
+        layout: cards
+      roomNumber:
+        type: text
+        label: Room number
+        width: 1/3
+        help: Leave empty for apartments
+      roomId:
+        type: text
+        label: Booking-engine unit ID
+        width: 2/3
+        help: Filled in once the live booking engine is wired up (v1 ships waitlist-only)
+      subtitle:
+        type: text
+        help: "e.g. Sea View & Private Terrace"
+      description:
+        type: writer
 
       features:
-        type: fields
-        fields:
-          features:
-            type: tags
-            label: "Features (bed, bathroom, view, desk, A/C…)"
+        type: multiselect
+        label: Room features
+        help: Managed centrally in Settings → Room / apartment features
+        options:
+          type: query
+          query: site.unitFeatures.toStructure
+          text: "{{ item.label }}"
+          value: "{{ item.label }}"
 
       gallery:
-        type: fields
-        fields:
-          gallery:
-            type: files
-            label: Gallery
+        type: files
+        label: Gallery
+        query: page.files
+        accept: image
+        layout: cards
 
-      cta:
-        type: fields
-        fields:
-          ctaLabel:
-            type: text
-            default: Show availability & start booking
+      ctaLabel:
+        type: text
+        label: CTA label
+        default: Show availability & start booking

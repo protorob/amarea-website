@@ -1,0 +1,158 @@
+title: Location
+icon: home
+
+tabs:
+  content:
+    label: Content
+    sections:
+      hero:
+        type: fields
+        fields:
+          heroImage:
+            type: files
+            label: Hero image
+            help: Full-width banner behind the page title, and the image used for this location's card on the Locations Archive / Locations Block. Leave empty to use the default A'Marea ocean-waves shot for the banner.
+            query: page.files
+            accept: image
+            multiple: false
+            layout: cards
+
+      intro:
+        type: fields
+        fields:
+          subtitle:
+            type: text
+            help: "e.g. Work well. Live slowly. Feel at home."
+          description:
+            type: writer
+          shortDescription:
+            type: textarea
+            label: Short description
+            help: Used on the Locations Archive / Locations Block cards instead of the full description above.
+          address:
+            type: text
+
+      slider:
+        type: fields
+        fields:
+          sliderImages:
+            type: structure
+            label: Images for slider
+            fields:
+              image:
+                type: files
+                query: page.files
+                accept: image
+                multiple: false
+              alt:
+                type: text
+                label: Alt text
+            columns:
+              image:
+                type: files
+                width: 1/3
+              alt:
+                width: 2/3
+
+      spaces:
+        type: fields
+        fields:
+          spacesEyebrow:
+            type: text
+            label: Eyebrow
+          spacesTitle:
+            type: text
+            label: Title
+            default: The Spaces
+          spacesDescription:
+            type: writer
+            label: Description
+          spaces:
+            type: structure
+            label: Common Spaces Highlights
+            help: Rendered as a hover-reveal grid (3 columns desktop / 1 mobile).
+            fields:
+              image:
+                type: files
+                query: page.files
+                accept: image
+                multiple: false
+              title:
+                type: text
+              description:
+                type: textarea
+            columns:
+              image:
+                type: files
+                width: 1/4
+              title:
+                width: 1/4
+              description:
+                width: 1/2
+
+      units:
+        type: pages
+        label: Bookable units
+        layout: cards
+        template:
+          - unit
+
+  gallery:
+    label: Common Gallery & Amenities
+    sections:
+      commonGallery:
+        type: fields
+        fields:
+          galleryEyebrow:
+            type: text
+            label: Eyebrow
+          galleryTitle:
+            type: text
+            label: Title
+            default: Common gallery
+          galleryDescription:
+            type: writer
+            label: Description
+          gallery:
+            type: files
+            label: Files
+            query: page.files
+            accept: image
+            layout: cards
+
+      amenities:
+        type: fields
+        fields:
+          amenitiesEyebrow:
+            type: text
+            label: Eyebrow
+          amenitiesTitle:
+            type: text
+            label: Title
+            default: Everything you need, already here
+          amenitiesDescription:
+            type: writer
+            label: Description
+          amenities:
+            type: structure
+            label: Location Amenities
+            fields:
+              icon:
+                type: text
+                width: 1/6
+                help: emoji
+              text:
+                type: text
+                width: 5/6
+            columns:
+              icon:
+                width: 1/6
+              text:
+                width: 5/6
+
+      cta:
+        type: fields
+        fields:
+          ctaLabel:
+            type: text
+            help: "e.g. Find your place / Find your apartment — used as both the rooms-grid heading and the closing CTA button"

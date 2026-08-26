@@ -3,7 +3,7 @@
 // video/image hero, or the page-hero.php banner on interior pages) — they
 // get the transparent-over-hero / solid-on-scroll header treatment.
 // Templates without a hero (currently none) render solid from the start.
-$pageHeroTemplates = ['home', 'default', 'locations', 'faq', 'property'];
+$pageHeroTemplates = ['home', 'default', 'locations', 'faq', 'location'];
 $navItems = $site->children()->listed()->not($site->find('faq'));
 $hasHero  = in_array((string)$page->intendedTemplate(), $pageHeroTemplates);
 $langCode = $kirby->language()?->code() ?? 'en';
@@ -65,7 +65,7 @@ $langCode = $kirby->language()?->code() ?? 'en';
 
     <nav class="hidden lg:flex items-center gap-8 text-sm font-medium uppercase tracking-wide">
       <?php foreach ($navItems as $item): ?>
-        <?php $subItems = $item->intendedTemplate() == 'locations' ? $item->children()->listed()->filterBy('intendedTemplate', 'property') : null ?>
+        <?php $subItems = $item->intendedTemplate() == 'locations' ? $item->children()->listed()->filterBy('intendedTemplate', 'location') : null ?>
         <?php if ($subItems && $subItems->count()): ?>
           <div class="relative group">
             <a href="<?= $item->url() ?>" class="inline-flex items-center gap-1 hover:opacity-70 transition-opacity <?= $item->isActive() ? '' : 'opacity-90' ?>">
@@ -117,7 +117,7 @@ $langCode = $kirby->language()?->code() ?? 'en';
     <nav class="overflow-hidden">
       <div class="px-4 py-4 flex flex-col gap-1 max-h-[calc(100vh-5rem)] overflow-y-auto">
         <?php foreach ($navItems as $item): ?>
-          <?php $subItems = $item->intendedTemplate() == 'locations' ? $item->children()->listed()->filterBy('intendedTemplate', 'property') : null ?>
+          <?php $subItems = $item->intendedTemplate() == 'locations' ? $item->children()->listed()->filterBy('intendedTemplate', 'location') : null ?>
           <?php if ($subItems && $subItems->count()): ?>
             <div data-mobile-accordion>
               <div class="flex items-center">
