@@ -2,6 +2,10 @@ Title: Locations
 
 ----
 
+Heroimage: 
+
+----
+
 Introtitle: Your Mediterranean playground
 
 ----
@@ -13,6 +17,19 @@ Just outside Syracuse, Fontane Bianche is one of the most beautiful corners of S
 And when you feel like exploring beyond the beach, there's so much more to discover — ancient cities, baroque villages, nature reserves, local food, vineyards and some of Sicily's most iconic landscapes.
 
 Whether you're here for a few days or settling in for a while, there's always somewhere new to go, taste, swim or explore.
+
+----
+
+Introgallery:
+
+- file://rt0fdnnewiz3yfh5
+- file://redwnjzqd4giio4d
+- file://cbxrbhqm3vtla5ob
+- file://lt66oxq2vka7iz3p
+- file://2kpwmwbcvtphpxjv
+- file://5ebhq1zylrkyiqjq
+- file://v8bfurwx7naz974g
+- file://linupslv5rodycvm
 
 ----
 
@@ -41,6 +58,10 @@ Foodwinetext: Fresh seafood, arancini, pasta, granita, cannoli, local wines and 
 ----
 
 Slowdaystext: Sometimes the best plan is no plan. A morning swim, a long lunch, a book in the shade and a sunset aperitivo. This is the Mediterranean rhythm we love.
+
+----
+
+Mapembed: 
 
 ----
 

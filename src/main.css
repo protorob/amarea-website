@@ -30,6 +30,8 @@
   --color-ink: #1b2333;
   --color-ink-soft: #5b6478;
 
+  --color-bg: #fdf6cf; /* pale cream — overall site background, replaces pure white */
+
   --color-primary: #1c45d9; /* main blue — buttons, links, primary actions */
   --color-primary-strong: color-mix(in srgb, #1c45d9 82%, black);
   --color-secondary: #5475e8; /* pale blue — hover tints */
@@ -48,4 +50,18 @@ body {
 @keyframes page-fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+/* Scroll reveal — see main.js's IntersectionObserver. Gated behind
+   .js-reveal (added inline in header.php) so sections stay visible if JS
+   never runs. */
+.js-reveal main > section:not([data-no-reveal]) {
+  opacity: 0;
+  transform: translateY(1.75rem);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.js-reveal main > section.is-revealed {
+  opacity: 1;
+  transform: none;
 }

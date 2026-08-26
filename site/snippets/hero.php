@@ -31,7 +31,7 @@ $ctaSecondaryUrl ??= null;
       <p class="uppercase tracking-widest text-sm text-white/80"><?= $eyebrow ?></p>
     <?php endif ?>
 
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-title leading-tight max-w-5xl mx-auto"><?= $title ?></h1>
+    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-logo leading-tight max-w-5xl mx-auto"><?= $title ?></h1>
 
     <?php if ($text): ?>
       <div class="text-lg text-white/90 max-w-5xl mx-auto prose prose-invert prose-p:my-0"><?= $text ?></div>

@@ -6,15 +6,11 @@ Hashero: true
 
 ----
 
-Herovideo:
-
-- hero-ocean-waves.mp4
+Herovideo: - file://e78srb85zp8qg1kz
 
 ----
 
-Heroposter:
-
-- hero-ocean-waves.jpg
+Heroposter: - file://bhbyrhenpjmd02mb
 
 ----
 
@@ -28,9 +24,7 @@ Herotitle: Where the tide sets your pace.
 
 Herotext:
 
-A'Marea is for those who can work from anywhere, but want to feel somewhere.
-
-For remote workers, curious travelers and creative minds looking for a place to slow down, connect with good people, and find inspiration in the Mediterranean rhythm.
+A'Marea is for those who can work from anywhere, but want to feel somewhere. For remote workers, curious travelers and creative minds looking for a place to slow down, connect with good people, and find inspiration in the Mediterranean rhythm.
 
 Come for the lifestyle. Stay for the community.
 
@@ -48,13 +42,7 @@ Introtitle: Your new space & community are waiting
 
 ----
 
-Introtext:
-
-A'Marea is a Mediterranean home for remote workers, travelers and creatives — a place to work, live, create and connect, all at your own pace.
-
-Come for the sea, stay for the people. Find your focus, share a long lunch, meet someone new, or simply slow down and enjoy the moment.
-
-Thoughtfully designed spaces, a warm community and the natural rhythm of Mediterranean life — all under one roof.
+Introtext: A'Marea is a Mediterranean home for remote workers, travelers and creatives — a place to work, live, create and connect, all at your own pace. Come for the sea, stay for the people. Find your focus, share a long lunch, meet someone new, or simply slow down and enjoy the moment. Thoughtfully designed spaces, a warm community and the natural rhythm of Mediterranean life — all under one roof.
 
 ----
 
@@ -72,20 +60,38 @@ Private rooms, inspiring shared spaces, fast Wi-Fi, and the sea just a few minut
 
 ----
 
+Teaserimage: 
+
+----
+
 Whyamarea:
 
--
-  title: Space to focus & create
-  text: Thoughtfully designed spaces for deep work, creative flow and everyday living. Fast Wi-Fi, comfortable work areas and plenty of room to find your own rhythm.
--
+- 
+  title: 'Space to focus & create'
+  text: >
+    Thoughtfully designed spaces for deep
+    work, creative flow and everyday living.
+    Fast Wi-Fi, comfortable work areas and
+    plenty of room to find your own rhythm.
+- 
   title: A community that feels real
-  text: Meet remote workers, travelers and creatives from all over the world. Share a meal, exchange ideas, discover the island together or simply enjoy being around good people.
--
+  text: >
+    Meet remote workers, travelers and
+    creatives from all over the world. Share
+    a meal, exchange ideas, discover the
+    island together or simply enjoy being
+    around good people.
+- 
   title: Let the Mediterranean set the pace
-  text: Morning swims, slow lunches, sunset walks and life outdoors. In Fontane Bianche, the sea becomes your clock and there's always time for one more dip.
--
+  text: "Morning swims, slow lunches, sunset walks and life outdoors. In Fontane Bianche, the sea becomes your clock and there's always time for one more dip."
+- 
   title: Feel at home, from day one
-  text: Our local team is here to make things easy, welcoming and personal. From your first day to your last, we take care of the details so you can focus on living, working and enjoying the experience.
+  text: >
+    Our local team is here to make things
+    easy, welcoming and personal. From your
+    first day to your last, we take care of
+    the details so you can focus on living,
+    working and enjoying the experience.
 
 ----
 
@@ -100,6 +106,10 @@ A'Marea is about the moments that happen in between.
 Shared dinners, morning swims, sunset adventures, terrace work sessions, creative workshops and spontaneous plans that turn into great memories.
 
 Come to work, travel or create and find a community to share it with.
+
+----
+
+Communitygallery: 
 
 ----
 

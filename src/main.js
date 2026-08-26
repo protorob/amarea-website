@@ -1,5 +1,27 @@
 import './main.css'
 
+// Scroll reveal: top-level sections inside <main> fade/slide in as they
+// enter the viewport. The hidden starting state only applies under the
+// .js-reveal class (see the anti-FOUC inline script in header.php), so a
+// failed/blocked script never leaves content stuck invisible.
+if (document.documentElement.classList.contains('js-reveal')) {
+  const revealSections = document.querySelectorAll('main > section:not([data-no-reveal])')
+
+  if (revealSections.length && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return
+        entry.target.classList.add('is-revealed')
+        revealObserver.unobserve(entry.target)
+      })
+    }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' })
+
+    revealSections.forEach((section) => revealObserver.observe(section))
+  } else {
+    revealSections.forEach((section) => section.classList.add('is-revealed'))
+  }
+}
+
 // Reveal footer: the footer is fixed to the viewport bottom (see
 // footer.php) and #page-wrap sits above it at a higher z-index with an
 // opaque background, so it visually covers the footer until the page is
@@ -57,7 +79,8 @@ document.querySelectorAll('[data-mobile-accordion]').forEach((accordion) => {
 const header = document.getElementById('site-header')
 
 if (header && header.dataset.hasHero === 'true') {
-  const SOLID_CLASSES = ['bg-white/95', 'backdrop-blur', 'text-ink', 'shadow-sm']
+  const SOLID_CLASSES = ['bg-bg/95', 'backdrop-blur', 'text-ink', 'shadow-sm']
+  const headerInner = document.getElementById('site-header-inner')
   const logoLight = header.querySelector('img[data-logo-light]')
   const logoDark = header.querySelector('img[data-logo-dark]')
   const scrollThreshold = () => 24
@@ -70,6 +93,10 @@ if (header && header.dataset.hasHero === 'true') {
     // fully blue once the header background is already mostly solid.
     logoLight?.classList.toggle('opacity-0', isScrolled)
     logoDark?.classList.toggle('opacity-0', !isScrolled)
+    // Shrinks a little once it's sticking to the top instead of sitting
+    // over the hero at full height.
+    headerInner?.classList.toggle('h-20', !isScrolled)
+    headerInner?.classList.toggle('h-16', isScrolled)
   }
 
   let ticking = false

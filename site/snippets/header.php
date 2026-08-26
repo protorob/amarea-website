@@ -13,15 +13,24 @@ $langCode = $kirby->language()?->code() ?? 'en';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= $page->title() ?> — <?= $site->title() ?></title>
   <link rel="stylesheet" href="<?= url('assets/css/main.css') ?>">
+  <script>
+    // Anti-FOUC: only opt into the scroll-reveal hidden state (see main.css'
+    // .js-reveal rules + main.js's IntersectionObserver) when JS actually
+    // runs and the visitor hasn't asked for reduced motion — so content
+    // never gets stuck invisible if the script fails to load or execute.
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-reveal')
+    }
+  </script>
 </head>
-<body class="min-h-screen flex flex-col bg-white font-sans text-ink antialiased<?= $hasHero ? ' has-hero' : '' ?>">
+<body class="min-h-screen flex flex-col bg-bg font-sans text-ink antialiased<?= $hasHero ? ' has-hero' : '' ?>">
 
 <header
   id="site-header"
   data-has-hero="<?= $hasHero ? 'true' : 'false' ?>"
-  class="fixed top-0 inset-x-0 z-50 transition-colors duration-300 <?= $hasHero ? 'bg-transparent text-white' : 'bg-white text-ink shadow-sm' ?>"
+  class="fixed top-0 inset-x-0 z-50 transition-colors duration-300 <?= $hasHero ? 'bg-transparent text-white' : 'bg-bg text-ink shadow-sm' ?>"
 >
-  <div class="max-w-site mx-auto px-4 h-20 flex items-center justify-between gap-6">
+  <div id="site-header-inner" class="w-full px-6 lg:px-10 h-20 flex items-center justify-between gap-6 transition-[height] duration-300">
 
     <?php if ($hasHero): ?>
       <?php // Two stacked logos cross-fade on scroll — the blue one fades in
@@ -153,4 +162,4 @@ $langCode = $kirby->language()?->code() ?? 'en';
 // it — see footer.php, which closes this div and pins the footer to the
 // viewport bottom. main.js keeps its margin-bottom in sync with the
 // footer's actual height. ?>
-<div id="page-wrap" class="relative z-10 flex-1 flex flex-col bg-white">
+<div id="page-wrap" class="relative z-10 flex-1 flex flex-col bg-bg">
