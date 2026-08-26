@@ -15,6 +15,7 @@
 
 Icon
 .DS_Store
+*:Zone.Identifier
 
 # Temporary files
 # ---------------
