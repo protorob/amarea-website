@@ -37,10 +37,10 @@ $layout = block_layout($block);
         <?php foreach ($items as $item): ?>
           <div class="swiper-slide h-auto">
             <?php if ($photo = $item->icon()->toFile()): ?>
-              <img src="<?= $photo->url() ?>" alt="" class="w-full aspect-[4/3] object-cover rounded-2xl mb-5">
+              <img src="<?= $photo->url() ?>" alt="" class="w-full aspect-6/4 object-cover rounded-sm mb-5">
             <?php endif ?>
             <?php if ($item->title()->isNotEmpty()): ?>
-              <h3 class="text-xl font-logo mb-2"><?= $item->title() ?></h3>
+              <h3 class="text-xl mb-2"><?= $item->title() ?></h3>
             <?php endif ?>
             <?php if ($item->text()->isNotEmpty()): ?>
               <p class="text-sm opacity-85"><?= $item->text() ?></p>

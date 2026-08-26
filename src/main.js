@@ -104,6 +104,8 @@ document.querySelectorAll('.js-slider').forEach((el) => {
     // lets the active slide be a fixed ~1220px on desktop rather than a
     // fraction of the container.
     slidesPerView: 'auto',
+    // Gap between slides in px, by breakpoint (base/640/1024). Slide
+    // width + aspect ratio live in slider.php instead.
     spaceBetween: 16,
     loop: true,
     breakpoints: {
