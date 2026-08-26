@@ -2,15 +2,11 @@
 
 <main class="flex-1 w-full">
 
-  <div class="max-w-5xl mx-auto px-4 py-16">
-    <h1 class="text-3xl font-semibold tracking-tight"><?= $page->title() ?></h1>
+  <?php snippet('page-hero') ?>
 
-    <?php if ($page->text()->isNotEmpty()): ?>
-      <div class="mt-8 prose max-w-none">
-        <?= $page->text()->kt() ?>
-      </div>
-    <?php endif ?>
-  </div>
+  <?= $page->blocks()->toBlocks()->toHtml() ?>
+
+  <?php snippet('faq-widget', ['category' => $page->slug()]) ?>
 
 </main>
 

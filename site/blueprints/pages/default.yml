@@ -1,21 +1,32 @@
-title: Default Page
+title: Page
+icon: file
 
-columns:
-  main:
-    width: 2/3
+tabs:
+  content:
+    label: Content
     sections:
-      fields:
+      hero:
         type: fields
         fields:
-          text:
-            type: textarea
-            size: huge
-  sidebar:
-    width: 1/3
-    sections:
-      pages:
-        type: pages
-        template: default
-      files:
-        type: files
+          heroImage:
+            type: files
+            label: Hero image
+            help: Full-width banner behind the page title. Leave empty to use the default A'Marea ocean-waves shot.
+            query: page.files
+            accept: image
+            multiple: false
+            layout: cards
 
+      blocks:
+        type: fields
+        fields:
+          blocks:
+            type: blocks
+            fieldsets:
+              - hero
+              - slider
+              - highlights
+              - locations
+              - elfsight
+              - team
+              - form

@@ -1,0 +1,21 @@
+name: Contact form
+icon: email
+preview: fields
+
+tabs:
+  content:
+    label: Content
+    fields:
+      eyebrow:
+        type: text
+      title:
+        type: text
+      note:
+        type: writer
+        label: Note (shown above the form)
+      info:
+        type: info
+        text: Renders the shared lead-capture form (site/snippets/lead-form.php) — the same one used by the site-wide "Start Booking" modal.
+
+  layout:
+    extends: tabs/layout

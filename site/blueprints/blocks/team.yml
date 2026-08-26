@@ -1,0 +1,42 @@
+name: Team
+icon: users
+preview: fields
+
+tabs:
+  content:
+    label: Content
+    fields:
+      eyebrow:
+        type: text
+      title:
+        type: text
+        default: Meet the Team
+      members:
+        type: structure
+        label: Team members
+        min: 1
+        fields:
+          photo:
+            type: files
+            query: page.files
+            accept: image
+            multiple: false
+          name:
+            type: text
+          role:
+            type: text
+          bio:
+            type: textarea
+        columns:
+          photo:
+            type: files
+            width: 1/6
+          name:
+            width: 1/4
+          role:
+            width: 1/4
+          bio:
+            width: 1/3
+
+  layout:
+    extends: tabs/layout
