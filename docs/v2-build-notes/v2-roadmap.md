@@ -169,50 +169,54 @@ them:
   with a full render pass — no errors or warnings — plus a direct
   blueprint-resolution check for all 4 migrated pages.
 
-### Step 5 — Locations Archive blueprint + template
-- Rebuild `locations.yml`: `subTitle`, `description` (rich text),
-  `headerImage` (single file), and a `pages` section for the Location
-  children (renaming today's `properties` section).
-- Rebuild `locations.php`: render the child Location pages through the
-  Step 2 shared hover-card-grid partial (matches the mockup, which does
-  show a Beach House / City Apartments card grid on this page despite the
-  notes calling it "just a container").
-- **Open item**: today's `areaGuide` section (beach days / Ortigia /
-  baroque Sicily / etc. six-block area guide + map embed) isn't in the v2
-  notes for this blueprint at all. Confirm whether it's dropped, or moves
-  elsewhere (e.g. into an About/Default page as blocks), before deleting
-  that content.
+### Step 5 — Locations Archive blueprint + template ✅ done
+- Rebuilt `locations.yml` to exactly the v2-spec fields: `subTitle`,
+  `description` (writer), `heroImage`, and a `pages` section for the
+  Location children.
+- Rebuilt `locations.php`: page-hero → centered subTitle/description →
+  the Step 2 shared hover-card-grid partial for the child Location cards.
+- **Resolved open item**: the old `areaGuide` section isn't in the v2
+  notes for this page, so it's dropped from the live page — but
+  preserved verbatim in `docs/v2-build-notes/locations-area-guide-content.md`
+  (its 8 gallery photos are untouched on disk too) rather than deleted
+  outright, flagged there for a placement decision later.
 
-### Step 6 — Location Page blueprint + template (today's `property`)
-- Rebuild fields per the notes: `heroImage`, `subtitle`, `description`
-  (rich text), `shortDescription`, `address`, slider images, Space
-  Highlights eyebrow/title/description, a `structure` for "Common Spaces
-  Highlights" (image/title/description, rendered via the Step 2 shared
-  card-grid partial), then a second tab with Common Gallery
-  (eyebrow/title/description/files) and Location Amenities
-  (eyebrow/title/description/`structure` of icon+text), and a `pages`
-  section for the unit children.
-- Rebuild the template to match the Beach House mockup's section order:
-  intro → image slider → rooms grid (units, existing pattern kept) → "The
-  Spaces" (via shared partial) → amenities checklist → CTA.
-- **Naming**: consider renaming the blueprint/template file from
-  `property` to `location` for clarity, since "property" language is gone
-  from the notes/mockups/nav ("Locations"). Needs `header.php`'s
-  `$pageHeroTemplates` array and its `intendedTemplate() == 'property'`
-  dropdown/grid checks updated wherever the name changes — decide and
-  apply consistently in this step.
+### Step 6 — Location Page blueprint + template (renamed from `property`) ✅ done
+- Renamed `property` → `location` throughout: blueprint, template,
+  content files (`property.en.txt` → `location.en.txt`), and every
+  `intendedTemplate` check (`header.php`'s nav dropdown + hero-template
+  list, the Locations Block).
+- Built `location.yml`/`.php` to the v2 spec: `heroImage`, `subtitle`/
+  `description`/`shortDescription`/`address`, a slider-images structure
+  (rendered through a new shared `partials/photo-slider.php`, extracted
+  from the Slider Block so both reuse the same carousel), Space
+  Highlights (eyebrow/title/description + a structure through the
+  existing hover-card-grid partial), and a second tab for Common Gallery
+  + Location Amenities — matching the notes' exact field list and the
+  Beach House mockup's section order.
+- Beach House already had real photos + rich amenities/spaces copy from
+  an earlier pass — migrated directly. City Apartments had none, so its
+  slider/gallery use the shared placeholder image.
 
-### Step 7 — Room/Apartment (Unit) blueprint + template
-- Rebuild `unit.yml`: main image (also used in the Location page's room
-  cards), keep existing title/subtitle/description fields, `roomId`
-  (rename of `bookingEngineId`), gallery files.
-- Replace the `features` `tags` field with a `multiselect`/`checkboxes`
-  field whose `options` come from `site.unitFeatures.toStructure()` (Step
-  1's global catalog) instead of free text.
-- Update `unit.php` to resolve each selected feature back to its icon via
-  the site-level structure, and to keep pulling the parent Location's
-  Spaces/Amenities sections for display underneath the room's own details
-  (already how `faq-widget` finds its parent today — same pattern).
+### Step 7 — Room/Apartment (Unit) blueprint + template ✅ done
+- Rebuilt `unit.yml`: `mainImage`, `roomId` (renamed from
+  `bookingEngineId`), and — the one from the notes flagged as needing a
+  decision — `features` became a `multiselect` sourced via
+  `query: site.unitFeatures.toStructure` (verified through Kirby's real
+  `OptionsQuery` resolver, not just the raw query language).
+- `unit.php` resolves each selected feature back to its catalog icon by
+  matching on label, and still pulls the parent Location's Spaces/
+  Amenities sections for display underneath the room's own details.
+- Migrated content for all 10 rooms/apartments from their existing
+  `unit.en.txt` files (already accurate per `beach-house-rooms.md` /
+  `city-apartments-units.md`) rather than re-authoring. Sole's 6 real
+  photos carried over as-is; the other 9 units use the shared
+  placeholder. Extended the site-wide feature catalog with 4 entries
+  (Two double bedrooms, Mezzanine office, Living area, Modern interiors)
+  needed for Zagara/Ibisco that the room-only original set didn't cover.
+- Verified with a full render of all 19 URLs on the site — zero errors —
+  plus a feature-icon-lookup spot check and confirmation that Sole's
+  real photos render in the right main/gallery order.
 
 ### Step 8 — Cross-cutting cleanup
 - `header.php`'s `$pageHeroTemplates` array and the nav dropdown's
@@ -267,12 +271,14 @@ them:
   Default blueprint + Team/Form blocks built, About/Community/Workation/
   Contact all migrated off their bespoke blueprints.
 
-**The "5 blueprints total" goal from the v2 notes is now met**: Home,
-Locations Archive (still on its v1 shape), Location Page/`property`
-(still v1), Room/Apartment/`unit` (still v1), and Default. Steps 5-7
-still need to rebuild Locations/Location Page/Unit's *fields* per the
-v2 notes — they're just not blocking the blueprint count anymore.
+- Steps 5-7 landed (commits `2d759c9`, `5db1508`): Locations Archive,
+  Location Page (renamed from `property`), and Unit all rebuilt to the
+  v2 field spec and content-migrated — all 10 rooms/apartments, both
+  Locations, and the Archive page itself.
 
-Next up: **Step 5 — Locations Archive blueprint + template**, including
-its own open item (today's `areaGuide` section isn't in the v2 notes at
-all — confirm keep/drop/relocate before touching it).
+**The full v2 roadmap (Steps 1-7) is done.** Every page on the site (19
+URLs) renders cleanly on the new blueprint/block system. Remaining:
+Step 8 (cross-cutting cleanup — mostly already done incrementally along
+the way, worth a final pass), Step 9 (manual QA pass in a browser — the
+verification so far has been render/error-level, not visual), and v2.1
+(centralized FAQ system, deliberately deferred).
