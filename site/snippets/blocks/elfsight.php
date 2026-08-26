@@ -5,7 +5,7 @@ if (site()->elfsightWidgetClass()->isEmpty()) return;
 
 $layout = block_layout($block);
 ?>
-<section class="relative w-full overflow-hidden <?= $layout['sectionClass'] ?>">
+<section class="relative w-full overflow-hidden <?= $layout['heightClass'] ?>" style="<?= $layout['backgroundStyle'] ?>">
   <?php if ($layout['video']): ?>
     <video class="absolute inset-0 h-full w-full object-cover" autoplay muted loop playsinline>
       <source src="<?= $layout['video']->url() ?>" type="<?= $layout['video']->mime() ?>">
@@ -16,7 +16,7 @@ $layout = block_layout($block);
     <div class="absolute inset-0 <?= $layout['overlayClass'] ?>"></div>
   <?php endif ?>
 
-  <div class="relative z-10 max-w-site mx-auto px-4 <?= $layout['textColorClass'] ?>">
+  <div class="relative z-10 max-w-site mx-auto px-4" style="<?= $layout['textStyle'] ?>">
     <?php if ($block->eyebrow()->isNotEmpty() || $block->title()->isNotEmpty() || $block->description()->isNotEmpty()): ?>
       <div class="max-w-2xl mx-auto text-center mb-10">
         <?php if ($block->eyebrow()->isNotEmpty()): ?>

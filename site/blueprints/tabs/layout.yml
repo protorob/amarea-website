@@ -10,14 +10,15 @@ fields:
       video: Video
     default: none
   backgroundColor:
-    type: select
+    type: color
     label: Background color
+    mode: options
     options:
-      ink: Ink (dark navy)
-      bg: Cream
-      primary: Blue
-      accent: Olive
-    default: ink
+      "#1b2333": Ink (dark navy)
+      "#fdf6cf": Cream
+      "#1c45d9": Blue
+      "#8d821c": Olive
+    default: "#1b2333"
     when:
       backgroundType: color
   backgroundImage:
@@ -56,10 +57,11 @@ fields:
       full: Full height
     default: normal
   textColor:
-    type: select
+    type: color
     label: Text color
+    mode: options
     options:
-      ink: Ink (dark navy)
-      white: White
-      bg: Cream
-    default: ink
+      "#1b2333": Ink (dark navy)
+      "#ffffff": White
+      "#fdf6cf": Cream
+    default: "#1b2333"

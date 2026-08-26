@@ -33,68 +33,11 @@ tabs:
         extends: fields/buttons
 
   layout:
-    label: Layout
+    extends: tabs/layout
     fields:
+      # Hero is usually the colorful full-bleed section, so it defaults
+      # differently than the other blocks (which default to no background).
       backgroundType:
-        type: select
-        label: Background
-        options:
-          none: None (page background)
-          color: Color
-          image: Full image
-          video: Video
         default: color
-      backgroundColor:
-        type: select
-        label: Background color
-        options:
-          ink: Ink (dark navy)
-          bg: Cream
-          primary: Blue
-          accent: Olive
-        default: ink
-        when:
-          backgroundType: color
-      backgroundImage:
-        type: files
-        label: Background image
-        query: page.files
-        accept: image
-        multiple: false
-        layout: cards
-        when:
-          backgroundType: image
-      overlayColor:
-        type: select
-        label: Gradient overlay color
-        options:
-          ink: Ink (dark navy)
-          accent: Olive
-          none: None
-        default: ink
-        when:
-          backgroundType: image
-      backgroundVideo:
-        type: files
-        label: Background video
-        query: page.files
-        accept: video
-        multiple: false
-        layout: cards
-        when:
-          backgroundType: video
-      height:
-        type: select
-        options:
-          normal: Normal
-          half: Half height
-          full: Full height
-        default: normal
       textColor:
-        type: select
-        label: Text color
-        options:
-          ink: Ink (dark navy)
-          white: White
-          bg: Cream
-        default: white
+        default: "#ffffff"

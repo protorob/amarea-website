@@ -14,7 +14,7 @@ $icon       = $block->icon()->toFile();
 $buttons    = $block->buttons()->toStructure();
 $hasContent = $block->eyebrow()->isNotEmpty() || $block->title()->isNotEmpty() || $block->description()->isNotEmpty() || $buttons->count() || $icon;
 ?>
-<section class="relative w-full overflow-hidden <?= $layout['sectionClass'] ?>">
+<section class="relative w-full overflow-hidden <?= $layout['heightClass'] ?>" style="<?= $layout['backgroundStyle'] ?>">
   <?php if ($layout['video']): ?>
     <video class="absolute inset-0 h-full w-full object-cover" autoplay muted loop playsinline>
       <source src="<?= $layout['video']->url() ?>" type="<?= $layout['video']->mime() ?>">
@@ -26,7 +26,7 @@ $hasContent = $block->eyebrow()->isNotEmpty() || $block->title()->isNotEmpty() |
   <?php endif ?>
 
   <?php if ($hasContent): ?>
-    <div class="relative z-10 w-full max-w-4xl mx-auto px-4 flex flex-col items-center gap-6 text-center <?= $layout['textColorClass'] ?>">
+    <div class="relative z-10 w-full max-w-4xl mx-auto px-4 flex flex-col items-center gap-6 text-center" style="<?= $layout['textStyle'] ?>">
       <?php if ($icon): ?>
         <img src="<?= $icon->url() ?>" alt="" class="w-auto <?= $iconSizeClasses[$block->iconSize()->value()] ?? $iconSizeClasses['medium'] ?>">
       <?php endif ?>

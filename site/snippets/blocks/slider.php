@@ -6,7 +6,7 @@ if ($images->count() === 0) return;
 
 $layout = block_layout($block);
 ?>
-<section class="relative w-full overflow-hidden <?= $layout['sectionClass'] ?>">
+<section class="relative w-full overflow-hidden <?= $layout['heightClass'] ?>" style="<?= $layout['backgroundStyle'] ?>">
   <?php if ($layout['video']): ?>
     <video class="absolute inset-0 h-full w-full object-cover" autoplay muted loop playsinline>
       <source src="<?= $layout['video']->url() ?>" type="<?= $layout['video']->mime() ?>">
