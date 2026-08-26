@@ -99,12 +99,16 @@ document.querySelectorAll('.js-slider').forEach((el) => {
       prevEl: el.querySelector('.swiper-button-prev'),
     },
     centeredSlides: true,
-    slidesPerView: 1.15,
+    // 'auto' reads each slide's own CSS width (see the w-[...] classes in
+    // slider.php) instead of dividing the container evenly — that's what
+    // lets the active slide be a fixed ~1220px on desktop rather than a
+    // fraction of the container.
+    slidesPerView: 'auto',
     spaceBetween: 16,
     loop: true,
     breakpoints: {
-      640: { slidesPerView: 1.4, spaceBetween: 24 },
-      1024: { slidesPerView: 1.7, spaceBetween: 32 },
+      640: { spaceBetween: 24 },
+      1024: { spaceBetween: 32 },
     },
   })
 })
