@@ -1,0 +1,14 @@
+name: Locations grid
+icon: pin
+preview: fields
+
+fields:
+  eyebrow:
+    type: text
+  title:
+    type: text
+  description:
+    type: writer
+  info:
+    type: info
+    text: Lists every Location page (Beach House, City Apartments…) automatically — nothing to configure per location here.

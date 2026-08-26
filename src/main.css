@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "glightbox/dist/css/glightbox.min.css";
 
 /* amarea brand tokens — see docs/brand-guidelines.md */
 

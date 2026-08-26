@@ -1,4 +1,7 @@
 import './main.css'
+import Swiper from 'swiper'
+import { Navigation } from 'swiper/modules'
+import GLightbox from 'glightbox'
 
 // Scroll reveal: top-level sections inside <main> fade/slide in as they
 // enter the viewport. The hidden starting state only applies under the
@@ -73,6 +76,27 @@ document.querySelectorAll('[data-mobile-accordion]').forEach((accordion) => {
     trigger.setAttribute('aria-expanded', String(!isOpen))
   })
 })
+
+// Slider Block carousels (site/snippets/blocks/slider.php) — each .js-slider
+// on the page gets its own Swiper instance.
+document.querySelectorAll('.js-slider').forEach((el) => {
+  new Swiper(el, {
+    modules: [Navigation],
+    navigation: {
+      nextEl: el.querySelector('.swiper-button-next'),
+      prevEl: el.querySelector('.swiper-button-prev'),
+    },
+    slidesPerView: 1,
+    spaceBetween: 16,
+    loop: true,
+  })
+})
+
+// Shared lightbox for any gallery image site-wide (Slider Block slides,
+// Location/Unit galleries, etc.) — anything marked .js-lightbox.
+if (document.querySelector('.js-lightbox')) {
+  GLightbox({ selector: '.js-lightbox' })
+}
 
 // Header: transparent-over-hero at the top, solid + sticky once scrolled.
 // Pages without a hero render the solid state from the start (see header.php).

@@ -1,0 +1,120 @@
+name: Hero
+icon: image
+preview: fields
+
+tabs:
+  content:
+    label: Content
+    fields:
+      icon:
+        type: files
+        label: Icon
+        query: page.files
+        multiple: false
+        layout: cards
+      eyebrow:
+        type: text
+      title:
+        type: text
+      description:
+        type: writer
+        label: Description
+      buttons:
+        type: structure
+        label: Buttons
+        fields:
+          label:
+            type: text
+            width: 1/3
+          openWaitlistModal:
+            type: toggle
+            label: Opens the waitlist form
+            width: 1/3
+            default: false
+          link:
+            type: link
+            width: 1/3
+            when:
+              openWaitlistModal: false
+          style:
+            type: select
+            width: 1/3
+            options:
+              primary: Primary
+              secondary: Secondary / ghost
+            default: primary
+        columns:
+          label:
+            width: 1/3
+          openWaitlistModal:
+            width: 1/6
+          link:
+            width: 1/3
+          style:
+            width: 1/6
+
+  layout:
+    label: Layout
+    fields:
+      backgroundType:
+        type: select
+        label: Background
+        options:
+          color: Color
+          image: Full image
+          video: Video
+        default: color
+      backgroundColor:
+        type: select
+        label: Background color
+        options:
+          ink: Ink (dark navy)
+          bg: Cream
+          primary: Blue
+          accent: Olive
+        default: ink
+        when:
+          backgroundType: color
+      backgroundImage:
+        type: files
+        label: Background image
+        query: page.files
+        accept: image
+        multiple: false
+        layout: cards
+        when:
+          backgroundType: image
+      overlayColor:
+        type: select
+        label: Gradient overlay color
+        options:
+          ink: Ink (dark navy)
+          accent: Olive
+          none: None
+        default: ink
+        when:
+          backgroundType: image
+      backgroundVideo:
+        type: files
+        label: Background video
+        query: page.files
+        accept: video
+        multiple: false
+        layout: cards
+        when:
+          backgroundType: video
+      height:
+        type: select
+        options:
+          normal: Normal
+          half: Half height
+          full: Full height
+        default: normal
+      textColor:
+        type: select
+        label: Text color
+        options:
+          white: White
+          ink: Ink (dark navy)
+          bg: Cream
+        default: white

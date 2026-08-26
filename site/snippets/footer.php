@@ -47,11 +47,17 @@ $footerPoster = page('home')?->file('hero-ocean-waves.jpg');
       <?php endif ?>
     </div>
 
-    <?php if ($site->instagramUrl()->isNotEmpty()): ?>
-      <div class="text-sm">
-        <a href="<?= $site->instagramUrl() ?>" target="_blank" rel="noopener" class="text-white/80 hover:text-white transition-colors">
-          Instagram <?= $site->instagramHandle() ?>
-        </a>
+    <?php if ($site->socialLinks()->toStructure()->count()): ?>
+      <div class="flex flex-col gap-2 text-sm">
+        <?php foreach ($site->socialLinks()->toStructure() as $social): ?>
+          <?php if ($social->url()->isEmpty()) continue ?>
+          <a href="<?= $social->url() ?>" target="_blank" rel="noopener" class="text-white/80 hover:text-white transition-colors">
+            <?= $social->platform()->value() ? ucfirst($social->platform()->value()) : 'Link' ?>
+            <?php if ($social->label()->isNotEmpty()): ?>
+              <?= $social->label() ?>
+            <?php endif ?>
+          </a>
+        <?php endforeach ?>
       </div>
     <?php endif ?>
   </div>

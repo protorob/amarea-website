@@ -1,0 +1,24 @@
+name: Slider
+icon: images
+preview: fields
+
+fields:
+  images:
+    type: structure
+    label: Images
+    min: 1
+    fields:
+      image:
+        type: files
+        query: page.files
+        accept: image
+        multiple: false
+      alt:
+        type: text
+        label: Alt text
+    columns:
+      image:
+        type: files
+        width: 1/3
+      alt:
+        width: 2/3
