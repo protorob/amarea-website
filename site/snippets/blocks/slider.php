@@ -18,12 +18,12 @@ $layout = block_layout($block);
     <div class="absolute inset-0 <?= $layout['overlayClass'] ?>"></div>
   <?php endif ?>
 
-  <div class="relative z-10 w-full px-4 sm:px-6 lg:px-10">
+  <div class="relative z-10 w-full px-4">
     <div class="js-slider js-peek-slider swiper">
       <div class="swiper-wrapper">
         <?php foreach ($images as $item): ?>
           <?php if (!$img = $item->image()->toFile()) continue ?>
-          <div class="swiper-slide w-[85vw] sm:w-[75vw] lg:w-[1220px]">
+          <div class="swiper-slide w-[min(1220px,78vw)]">
             <a href="<?= $img->url() ?>" class="js-lightbox block rounded-2xl overflow-hidden aspect-[4/3] shadow-lg" data-glightbox="description: <?= $item->alt()->esc() ?>">
               <img src="<?= $img->url() ?>" alt="<?= $item->alt()->esc() ?>" class="w-full h-full object-cover">
             </a>
