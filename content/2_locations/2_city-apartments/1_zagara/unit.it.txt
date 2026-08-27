@@ -1,0 +1,36 @@
+Title: Zagara
+
+----
+
+Mainimage: - file://naub2e8vqvrya0zs
+
+----
+
+Roomnumber: 
+
+----
+
+Roomid: 
+
+----
+
+Subtitle: Una Casa Siciliana nel Cuore di Siracusa
+
+----
+
+Description: <p>Scopri Zagara, l'appartamento più spazioso di A'Marea City Apartments. Una casa privata e completamente attrezzata, pensata per chi desidera il comfort e l'intimità di vivere per conto proprio, restando nel cuore di Siracusa.</p><p>A pochi passi da tutti i servizi quotidiani, dal mercato locale, dal porto di Santa Lucia, dal mare, e a due passi da Ortigia, Zagara offre il perfetto equilibrio tra vita cittadina e fuga mediterranea.</p><p>Con due ampie camere da letto, un accogliente soggiorno, un affascinante soppalco adibito a libreria e una cucina completamente attrezzata che si apre sul cortile condiviso, Zagara è pensata per mattine lente, una vita semplice e per sentirsi davvero a casa in Sicilia.</p><p>💡 Gli ospiti hanno anche accesso a tutti gli eventi di A'Marea Beach House e sono i benvenuti a lavorare dagli spazi coworking.</p>
+
+----
+
+Features: Due camere matrimoniali, Bagno privato, Angolo studio soppalcato, Soggiorno, Cucina attrezzata, Lavatrice, Cortile condiviso
+
+----
+
+Gallery:
+
+- file://naub2e8vqvrya0zs
+- file://naub2e8vqvrya0zs
+
+----
+
+Ctalabel: 

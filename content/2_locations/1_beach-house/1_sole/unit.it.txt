@@ -1,0 +1,39 @@
+Title: Sole
+
+----
+
+Mainimage: - file://ccncrtgh6tuutlpc
+
+----
+
+Roomnumber: 1
+
+----
+
+Roomid: 
+
+----
+
+Subtitle: Vista Mare & Terrazza Privata
+
+----
+
+Description: <p>Svegliati con uno scorcio del Mediterraneo e esci sulla tua terrazza privata. Una accogliente camera matrimoniale con bagno privato, scrivania, armadio e un piccolo angolo lounge tutto tuo — perfetta per mattine lente o un aperitivo al tramonto.</p>
+
+----
+
+Features: Letto matrimoniale, Bagno privato, Terrazza privata, Vista mare, Scrivania / postazione di lavoro, Aria condizionata
+
+----
+
+Gallery:
+
+- file://th2xh2sge8ipyzsx
+- file://abqw6vx68mbe1hkw
+- file://6hoft3mdnd2mllie
+- file://qh6r7a2yvnpmeuo9
+- file://2jmwo1gzxcyuydbm
+
+----
+
+Ctalabel: Prenota ora →

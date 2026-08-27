@@ -1,0 +1,36 @@
+Title: Onda
+
+----
+
+Mainimage: - file://ofbazoxp6gclccd9
+
+----
+
+Roomnumber: 2
+
+----
+
+Roomid: 
+
+----
+
+Subtitle: Vista Mare & Terrazza Privata
+
+----
+
+Description: <p>Svegliati con uno scorcio del Mediterraneo e esci sulla tua terrazza privata. Una accogliente camera matrimoniale con bagno privato, scrivania, armadio e un piccolo angolo lounge tutto tuo — perfetta per mattine lente o un aperitivo al tramonto.</p>
+
+----
+
+Features: Letto matrimoniale, Bagno privato, Terrazza privata, Vista mare, Scrivania / postazione di lavoro, Aria condizionata
+
+----
+
+Gallery:
+
+- file://ofbazoxp6gclccd9
+- file://ofbazoxp6gclccd9
+
+----
+
+Ctalabel: Prenota ora →

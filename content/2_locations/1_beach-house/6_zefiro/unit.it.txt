@@ -1,0 +1,36 @@
+Title: Zefiro
+
+----
+
+Mainimage: - file://lmxzuvxry27ylk38
+
+----
+
+Roomnumber: 6
+
+----
+
+Roomid: 
+
+----
+
+Subtitle: Vista Giardino & Balcone Privato
+
+----
+
+Description: <p>Il tuo piccolo angolo di A'Marea. Questa accogliente camera matrimoniale si affaccia su un balcone privato con vista sul giardino, con un tavolino e sedie per il caffè del mattino o per lavorare un po' all'aperto.</p>
+
+----
+
+Features: Letto matrimoniale, Bagno privato, Balcone privato, Vista giardino, Scrivania / postazione di lavoro, Aria condizionata
+
+----
+
+Gallery:
+
+- file://lmxzuvxry27ylk38
+- file://lmxzuvxry27ylk38
+
+----
+
+Ctalabel: Prenota ora →

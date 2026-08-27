@@ -1,0 +1,36 @@
+Title: Luna
+
+----
+
+Mainimage: - file://lwg4lzgkqi9krvkf
+
+----
+
+Roomnumber: 3
+
+----
+
+Roomid: 
+
+----
+
+Subtitle: Vista Giardino
+
+----
+
+Description: <p>Una camera tranquilla e luminosa affacciata sul giardino mediterraneo. Semplice, confortevole e pensata per mattine lente, concentrazione profonda e per staccare a fine giornata.</p>
+
+----
+
+Features: Letto matrimoniale, Bagno privato, Vista giardino, Scrivania / postazione di lavoro, Armadio, Aria condizionata
+
+----
+
+Gallery:
+
+- file://lwg4lzgkqi9krvkf
+- file://lwg4lzgkqi9krvkf
+
+----
+
+Ctalabel: Prenota ora →

@@ -1,0 +1,36 @@
+Title: Azzurra
+
+----
+
+Mainimage: - file://rigpjkrmxruqlqap
+
+----
+
+Roomnumber: 7
+
+----
+
+Roomid: 
+
+----
+
+Subtitle: Bagno Condiviso & Vista Mare
+
+----
+
+Description: <p>Una accogliente camera privata con uno scorcio di mare e tutto il necessario per un soggiorno semplice. Il tuo spazio per riposare, lavorare e ricaricarti, con un bagno condiviso con una sola altra camera.</p>
+
+----
+
+Features: Letto matrimoniale, Bagno condiviso, Vista mare, Scrivania / postazione di lavoro, Armadio, Aria condizionata
+
+----
+
+Gallery:
+
+- file://rigpjkrmxruqlqap
+- file://rigpjkrmxruqlqap
+
+----
+
+Ctalabel: Prenota ora →

@@ -1,0 +1,36 @@
+Title: Isola
+
+----
+
+Mainimage: - file://l33lfkzfrqljbfgp
+
+----
+
+Roomnumber: 8
+
+----
+
+Roomid: 
+
+----
+
+Subtitle: Bagno Condiviso & Vista Giardino
+
+----
+
+Description: <p>Una tranquilla camera privata affacciata sul giardino, pensata per una vita mediterranea semplice. Uno spazio confortevole dove sistemarti, rallentare e sentirti a casa, con un bagno condiviso con una sola altra camera.</p>
+
+----
+
+Features: Letto matrimoniale, Bagno condiviso, Vista giardino, Scrivania / postazione di lavoro, Armadio, Aria condizionata
+
+----
+
+Gallery:
+
+- file://l33lfkzfrqljbfgp
+- file://l33lfkzfrqljbfgp
+
+----
+
+Ctalabel: Prenota ora →

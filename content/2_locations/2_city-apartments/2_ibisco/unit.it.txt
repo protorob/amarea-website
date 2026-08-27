@@ -1,0 +1,36 @@
+Title: Ibisco
+
+----
+
+Mainimage: - file://ncjpnffsfo6je0qr
+
+----
+
+Roomnumber: 
+
+----
+
+Roomid: 
+
+----
+
+Subtitle: Un Rifugio Siciliano Contemporaneo
+
+----
+
+Description: <p>Scopri Ibisco, un appartamento splendidamente ristrutturato dove lo stile contemporaneo incontra il calore della vita siciliana. Luminoso, confortevole e informale, dispone di un'ampia camera matrimoniale, un bagno moderno con anticamera separata e una accogliente zona giorno con cucina completamente attrezzata.</p><p>Ibisco è il posto ideale per rallentare, sistemarti e sentirti a casa a Siracusa.</p><p>💡 Gli ospiti hanno anche accesso a tutti gli eventi di A'Marea Beach House e sono i benvenuti a lavorare dagli spazi coworking.</p>
+
+----
+
+Features: Letto matrimoniale, Bagno privato, Cucina attrezzata, Zona giorno, Interni moderni, Cortile condiviso
+
+----
+
+Gallery:
+
+- file://ncjpnffsfo6je0qr
+- file://ncjpnffsfo6je0qr
+
+----
+
+Ctalabel: 
