@@ -219,14 +219,15 @@ them:
   real photos render in the right main/gallery order.
 
 ### Step 8 — Cross-cutting cleanup
-- `header.php`'s `$pageHeroTemplates` array and the nav dropdown's
-  `intendedTemplate() == 'property'`/`'locations'` checks: reconcile with
-  whatever templates exist after Steps 3-7 (Default pages always carry a
-  `heroImage` now, so the "has a hero" check likely simplifies).
-- Re-check `footer.php`, `lead-form.php`/`lead-form-modal.php` for any
-  other now-stale field references (`$site->instagramUrl()` etc.).
-- Superseding note in `docs/v1-build-plan.md`/`docs/site-structure-notes.md`
-  pointing at the v2 docs, if still worth keeping around.
+- ✅ `header.php`'s `$pageHeroTemplates` array reconciled with the final
+  template set (`home`, `default`, `locations`, `faq`, `location`) as part
+  of the Step 6 `property` → `location` rename; the old `hasHero()` field
+  check was dead code by then and got removed too.
+- ✅ `footer.php`'s stale `$site->instagramUrl()`/`instagramHandle()`
+  references replaced by the `socialLinks` structure back in Step 1.
+- **Still open**: a superseding note in `docs/v1-build-plan.md`/
+  `docs/site-structure-notes.md` pointing at the v2 docs — low priority,
+  hasn't blocked anything.
 
 ### Step 9 — QA pass
 - `composer start` + `bun run dev`, walk every page in a browser: Panel
@@ -252,6 +253,69 @@ them:
   template" here means this Block+snippet pairing, not a separate page
   template.
 
+## Post-roadmap polish & launch work (done after Step 7, outside the numbered steps)
+
+- **Unit page rebuilt to match the mockup**: was still rendering the v1
+  layout (stacked full-width sections + a separate dark CTA banner)
+  instead of the mockup's two-column hero (main image + 4-thumbnail strip
+  left, title/subtitle/description/feature-pills/CTA right). Room
+  features now render as bordered pill tags instead of a bullet list.
+- **Header sticky/scroll behavior**: fixed a Step-3 regression where
+  Home's transparent-over-hero → solid-on-scroll header silently broke
+  (dropping the old `hasHero` toggle field left `header.php`'s check
+  always false). Then redesigned the solid state itself per feedback: it
+  now stays dark navy with the white logo throughout (no more cross-fade
+  to a second blue logo) instead of switching to pale cream, and the
+  scrolled state is translucent (`bg-ink/70` + `backdrop-blur-md`) rather
+  than nearly opaque, so it actually reads as a glass effect.
+- **Slider Block iteration**: went through several passes based on visual
+  feedback — centered "peek" carousel with scale/opacity on inactive
+  slides, full-width container instead of a capped max-width, slide width
+  driven by `w-[min(1220px,vw)]` instead of a fixed px value (so there's
+  always visible peek margin instead of the active slide swallowing the
+  whole container on common laptop widths), lightbox removed from this
+  block specifically, and a Tailwind/Swiper CSS cascade-layer bug fixed
+  (unlayered `swiper/css` was silently beating layered Tailwind utilities
+  of equal specificity — now imported into Tailwind's `base` layer).
+- **Block background/text colors** switched from a semantic-key `select`
+  to Kirby's native `color` field in `mode: options`
+  ([docs](https://getkirby.com/docs/reference/panel/fields/color#options)),
+  preset to the theme palette — real swatches in the Panel instead of a
+  dropdown of color names.
+- **Image optimization**: every `<img>` site-wide now goes through
+  Kirby's `->crop()`/`->resize()` thumb generator sized to its actual
+  display context, instead of serving whatever the client uploaded at
+  full resolution. `thumbs.quality` set to 82 site-wide in `config.php`.
+  Verified concretely: a 2.8MB uploaded photo produces a 221KB thumb at
+  the requested dimensions. `loading="lazy"` added to below-the-fold
+  images. SVGs (icons) pass through untouched — Kirby skips non-
+  rasterizable files automatically.
+- **Italian translation** (first language beyond English): every page's
+  content translated, not just the UI strings (which were already done)
+  — Home, About, Locations Archive, both Locations, all 10 rooms/
+  apartments, Community, Workation, Contact, FAQ, and page titles. The
+  site-wide `unitFeatures` catalog got its own Italian labels, extended
+  with 4 apartment-only entries. Hit and fixed a real bug: the room-
+  features `multiselect`'s dynamic options query
+  (`site.unitFeatures.toStructure`) resolves against Kirby's *current*
+  app language, not the language being written — writing Italian
+  `update()` calls without first calling
+  `$kirby->setCurrentLanguage('it')` silently validated the Italian
+  values against the English catalog and dropped them. es/de/fr still
+  have no translated content (English fallback only) — same mechanism,
+  just needs someone to write the copy.
+- **Deployment**: `.env`/`.env.example` added (a small dependency-free
+  loader, `site/config/env.php`, reads a gitignored `.env` into the
+  environment before `config.php`'s `getenv()` calls run — needed because
+  true OS-level env vars aren't reliably exposed per-domain on DreamHost
+  shared hosting) alongside the existing `deploy.sh`/`deploy-example.sh`
+  pair. **First real deploy to DreamHost completed successfully** — hit
+  and resolved a Composer-path mismatch (`~/composer` vs. DreamHost's own
+  documented `~/.php/composer/composer` install location). `.env` is
+  currently empty on the live server (no SMTP configured yet), so the
+  lead-capture form fails gracefully instead of sending mail — that's
+  expected until real SMTP credentials are added.
+
 ## Progress / next step
 
 - Steps 1–2 landed (commit `b558569`): site-wide foundations
@@ -275,10 +339,28 @@ them:
   Location Page (renamed from `property`), and Unit all rebuilt to the
   v2 field spec and content-migrated — all 10 rooms/apartments, both
   Locations, and the Archive page itself.
+- Post-roadmap polish landed (see the section above for full detail):
+  Unit page mockup match (`7d4d149`), header sticky color/blur
+  (`348f450`, `6641482`, `12527a1`), further Slider iteration
+  (`7cb9d4d`, `f7cfac8`, `78f0606`, `b9349dd`), block color field switch
+  (`9e0d739`), site-wide image optimization via Kirby thumbs (`ec49d4c`),
+  `.env`/deploy setup (`a6562f4`), and the full Italian translation
+  (`c9b13d4` … `9bd4598`).
 
-**The full v2 roadmap (Steps 1-7) is done.** Every page on the site (19
-URLs) renders cleanly on the new blueprint/block system. Remaining:
-Step 8 (cross-cutting cleanup — mostly already done incrementally along
-the way, worth a final pass), Step 9 (manual QA pass in a browser — the
-verification so far has been render/error-level, not visual), and v2.1
-(centralized FAQ system, deliberately deferred).
+**The full v2 roadmap (Steps 1-7) is done, plus a first real deploy to
+DreamHost has landed successfully.** Every page on the site (19 URLs)
+renders cleanly, in both English and Italian. What's actually left:
+
+- **Step 9 — manual QA pass in a browser.** Everything so far has been
+  verified at the render/error level (curl + grep for fatal errors), not
+  visually. Worth an actual click-through, especially now that real
+  content/photos are in place and it's live on a real server.
+- **SMTP credentials** — `.env` is empty on the live server, so the
+  lead-capture form doesn't send mail yet. Needs real SMTP details from
+  the client/host.
+- **es/de/fr translations** — same mechanism as Italian (see the
+  Italian-translation section above for the multiselect-language gotcha
+  to watch for), just needs the copy written. Not started.
+- **v2.1 — centralized FAQ system**, deliberately deferred (see its own
+  section above).
+- The low-priority Step 8 leftover (superseding note in the old v1 docs).
