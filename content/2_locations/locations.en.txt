@@ -2,7 +2,7 @@ Title: Locations
 
 ----
 
-Heroimage:
+Heroimage: 
 
 ----
 
@@ -10,7 +10,7 @@ Subtitle: Your Mediterranean playground
 
 ----
 
-Description: <p>Just outside Syracuse, Fontane Bianche is one of the most beautiful corners of Sicily's south-eastern coast. Think crystal-clear water, white sandy beaches, hidden coves and long days spent outdoors.</p><p>And when you feel like exploring beyond the beach, there's so much more to discover — ancient cities, baroque villages, nature reserves, local food, vineyards and some of Sicily's most iconic landscapes.</p><p>Whether you're here for a few days or settling in for a while, there's always somewhere new to go, taste, swim or explore.</p>
+Description: <p>Just outside Syracuse, Fontane Bianche is one of the most beautiful corners of Sicily's south-eastern coast. Think crystal-clear water, white sandy beaches, hidden coves and long days spent outdoors. And when you feel like exploring beyond the beach, there's so much more to discover — ancient cities, baroque villages, nature reserves, local food, vineyards and some of Sicily's most iconic landscapes.</p><p><strong>Whether you're here for a few days or settling in for a while, there's always somewhere new to go, taste, swim or explore.</strong></p>
 
 ----
 

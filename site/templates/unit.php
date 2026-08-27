@@ -2,72 +2,69 @@
 
 <main class="flex-1 w-full pt-32">
 
-  <section class="max-w-4xl mx-auto px-4 pb-10">
-    <?php if ($parent = $page->parent()): ?>
-      <a href="<?= $parent->url() ?>" class="text-sm text-ink-soft hover:text-ink transition-colors">&larr; <?= $parent->title() ?></a>
-    <?php endif ?>
-
-    <h1 class="text-3xl sm:text-4xl font-title mt-4 mb-2">
-      <?= $page->title() ?>
-      <?php if ($page->roomNumber()->isNotEmpty()): ?>
-        <span class="text-ink-soft font-normal text-2xl">(<?= $page->roomNumber() ?>)</span>
-      <?php endif ?>
-    </h1>
-    <?php if ($page->subtitle()->isNotEmpty()): ?>
-      <p class="text-lg text-ink-soft"><?= $page->subtitle() ?></p>
-    <?php endif ?>
-  </section>
-
+  <?php $parent = $page->parent() ?>
   <?php $mainImage = $page->mainImage()->toFile() ?>
   <?php $gallery = $page->gallery()->toFiles() ?>
-  <?php if ($mainImage || $gallery->count()): ?>
-    <section class="max-w-site mx-auto px-4 pb-10">
-      <?php if ($mainImage): ?>
-        <a href="<?= $mainImage->url() ?>" class="js-lightbox block rounded-2xl overflow-hidden aspect-[16/9] mb-4" data-glightbox>
-          <img src="<?= $mainImage->url() ?>" alt="" class="w-full h-full object-cover">
-        </a>
-      <?php endif ?>
-      <?php if ($gallery->count()): ?>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <?php foreach ($gallery as $img): ?>
-            <a href="<?= $img->url() ?>" class="js-lightbox block" data-glightbox>
-              <img src="<?= $img->url() ?>" alt="" class="rounded-xl aspect-[4/3] object-cover w-full">
+  <?php $thumbnails = $gallery->limit(4) ?>
+  <?php $featureLabels = $page->features()->split() ?>
+  <?php $featureCatalog = site()->unitFeatures()->toStructure() ?>
+
+  <section class="max-w-site mx-auto px-4 pb-16">
+    <?php if ($parent): ?>
+      <a href="<?= $parent->url() ?>" class="inline-block mb-6 text-sm text-ink-soft hover:text-ink transition-colors">&larr; Back to <?= $parent->title() ?></a>
+    <?php endif ?>
+
+    <div class="grid gap-10 lg:grid-cols-2 items-start">
+      <?php if ($mainImage || $thumbnails->count()): ?>
+        <div>
+          <?php if ($mainImage): ?>
+            <a href="<?= $mainImage->url() ?>" class="js-lightbox block rounded-2xl overflow-hidden aspect-[4/3] mb-4" data-glightbox>
+              <img src="<?= $mainImage->url() ?>" alt="" class="w-full h-full object-cover">
             </a>
-          <?php endforeach ?>
+          <?php endif ?>
+          <?php if ($thumbnails->count()): ?>
+            <div class="grid grid-cols-4 gap-4">
+              <?php foreach ($thumbnails as $img): ?>
+                <a href="<?= $img->url() ?>" class="js-lightbox block" data-glightbox>
+                  <img src="<?= $img->url() ?>" alt="" class="rounded-xl aspect-square object-cover w-full">
+                </a>
+              <?php endforeach ?>
+            </div>
+          <?php endif ?>
         </div>
       <?php endif ?>
-    </section>
-  <?php endif ?>
 
-  <section class="max-w-4xl mx-auto px-4 py-10 grid gap-10 sm:grid-cols-3">
-    <div class="sm:col-span-2 prose max-w-none text-ink-soft">
-      <?= $page->description() ?>
-    </div>
+      <div>
+        <h1 class="text-3xl sm:text-4xl font-title mb-2">
+          <?= $page->title() ?>
+          <?php if ($page->roomNumber()->isNotEmpty()): ?>
+            <span class="text-ink-soft font-normal text-2xl">(<?= $page->roomNumber() ?>)</span>
+          <?php endif ?>
+        </h1>
+        <?php if ($page->subtitle()->isNotEmpty()): ?>
+          <p class="text-lg text-ink-soft mb-4"><?= $page->subtitle() ?></p>
+        <?php endif ?>
+        <?php if ($page->description()->isNotEmpty()): ?>
+          <div class="prose max-w-none text-ink-soft mb-6"><?= $page->description() ?></div>
+        <?php endif ?>
 
-    <?php $featureLabels = $page->features()->split() ?>
-    <?php if (count($featureLabels)): ?>
-      <?php $featureCatalog = site()->unitFeatures()->toStructure() ?>
-      <ul class="text-sm space-y-2 text-ink-soft">
-        <?php foreach ($featureLabels as $label): ?>
-          <?php $icon = $featureCatalog->filterBy('label', $label)->first()?->icon()->value() ?>
-          <li class="flex items-center gap-2">
-            <?php if ($icon): ?>
-              <span><?= $icon ?></span>
-            <?php else: ?>
-              <span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>
-            <?php endif ?>
-            <span><?= $label ?></span>
-          </li>
-        <?php endforeach ?>
-      </ul>
-    <?php endif ?>
-  </section>
+        <?php if (count($featureLabels)): ?>
+          <h2 class="font-title text-xl mb-3">Room features</h2>
+          <div class="flex flex-wrap gap-3 mb-8">
+            <?php foreach ($featureLabels as $label): ?>
+              <?php $icon = $featureCatalog->filterBy('label', $label)->first()?->icon()->value() ?>
+              <span class="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm">
+                <?php if ($icon): ?><span><?= $icon ?></span><?php endif ?>
+                <span><?= $label ?></span>
+              </span>
+            <?php endforeach ?>
+          </div>
+        <?php endif ?>
 
-  <section class="bg-ink text-white">
-    <div class="max-w-3xl mx-auto px-4 py-16 text-center">
-      <button type="button" data-open-lead-modal class="inline-flex items-center rounded-full bg-primary px-8 py-3.5 text-white font-medium hover:bg-primary-strong transition-colors">
-        <?= $page->ctaLabel()->or(t('form.submit')) ?>
-      </button>
+        <button type="button" data-open-lead-modal class="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-white font-medium hover:bg-primary-strong transition-colors">
+          <?= $page->ctaLabel()->or(t('form.submit')) ?>
+        </button>
+      </div>
     </div>
   </section>
 

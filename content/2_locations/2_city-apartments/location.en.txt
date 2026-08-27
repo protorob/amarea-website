@@ -2,7 +2,7 @@ Title: City Apartments
 
 ----
 
-Heroimage: 
+Heroimage: - file://f93xowmhwm1hfwqo
 
 ----
 
