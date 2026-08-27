@@ -32,7 +32,7 @@ $layout = block_layout($block);
       <?php foreach ($members as $member): ?>
         <div class="text-center">
           <?php if ($photo = $member->photo()->toFile()): ?>
-            <img src="<?= $photo->url() ?>" alt="<?= $member->name()->esc() ?>" class="w-32 h-32 rounded-full object-cover mx-auto mb-4">
+            <img src="<?= $photo->crop(256, 256)->url() ?>" alt="<?= $member->name()->esc() ?>" class="w-32 h-32 rounded-full object-cover mx-auto mb-4" loading="lazy">
           <?php endif ?>
           <?php if ($member->name()->isNotEmpty()): ?>
             <h3 class="font-semibold"><?= $member->name() ?></h3>

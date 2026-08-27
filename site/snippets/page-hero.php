@@ -9,7 +9,7 @@ $title ??= $page->title()->value();
 ?>
 <section data-no-reveal class="relative h-64 sm:h-72 lg:h-80 w-full overflow-hidden bg-ink">
   <?php if ($image): ?>
-    <img src="<?= $image->url() ?>" alt="" class="absolute inset-0 h-full w-full object-cover">
+    <img src="<?= $image->resize(1920)->url() ?>" alt="" class="absolute inset-0 h-full w-full object-cover">
   <?php endif ?>
   <div class="absolute inset-0 bg-linear-to-t from-ink/60 via-ink/20 to-ink/40"></div>
 

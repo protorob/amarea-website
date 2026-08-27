@@ -37,7 +37,9 @@ function block_layout(object $block): array
 
     return [
         'backgroundType'   => $backgroundType,
-        'image'            => $backgroundType === 'image' ? $block->backgroundImage()->toFile() : null,
+        // resize(1920): these are always full-bleed section backgrounds, so
+        // cap at a sane max instead of serving whatever the editor uploaded.
+        'image'            => $backgroundType === 'image' ? $block->backgroundImage()->toFile()?->resize(1920) : null,
         'video'            => $backgroundType === 'video' ? $block->backgroundVideo()->toFile() : null,
         'backgroundStyle'  => $backgroundType === 'color'
             ? 'background-color: ' . ($block->backgroundColor()->value() ?: BLOCK_LAYOUT_INK)

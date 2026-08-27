@@ -9,6 +9,15 @@ require_once __DIR__ . '/helpers.php';
 return [
     'debug' => getenv('KIRBY_DEBUG') === 'true',
 
+    // Applies to every ->crop()/->resize()/->thumb() call site-wide (see
+    // the size helpers in site/config/helpers.php). 90 is Kirby's own
+    // default — 82 is still visually lossless for photos at web sizes but
+    // meaningfully smaller files, which is the whole point of resizing
+    // client-uploaded originals in the first place.
+    'thumbs' => [
+        'quality' => 82,
+    ],
+
     // SMTP credentials come from the environment — set via a gitignored
     // .env file (see .env.example) both locally and on the deploy target,
     // never committed.

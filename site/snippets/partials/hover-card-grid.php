@@ -21,7 +21,7 @@ $columnsClass = $columns === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2';
     ?>
     <<?= $tag ?> <?= $card ? 'href="' . $card . '"' : '' ?> class="group relative block aspect-[1/1] rounded-sm overflow-hidden bg-ink">
       <?php if ($image): ?>
-        <img src="<?= $image->url() ?>" alt="" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 sm:group-hover:scale-105">
+        <img src="<?= $image->crop(800, 800)->url() ?>" alt="" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 sm:group-hover:scale-105" loading="lazy">
       <?php endif ?>
       <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent"></div>
 

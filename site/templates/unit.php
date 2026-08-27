@@ -18,15 +18,15 @@
       <?php if ($mainImage || $thumbnails->count()): ?>
         <div>
           <?php if ($mainImage): ?>
-            <a href="<?= $mainImage->url() ?>" class="js-lightbox block rounded-2xl overflow-hidden aspect-[4/3] mb-4" data-glightbox>
-              <img src="<?= $mainImage->url() ?>" alt="" class="w-full h-full object-cover">
+            <a href="<?= $mainImage->resize(2400)->url() ?>" class="js-lightbox block rounded-2xl overflow-hidden aspect-[4/3] mb-4" data-glightbox>
+              <img src="<?= $mainImage->crop(1400, 1050)->url() ?>" alt="" class="w-full h-full object-cover">
             </a>
           <?php endif ?>
           <?php if ($thumbnails->count()): ?>
             <div class="grid grid-cols-4 gap-4">
               <?php foreach ($thumbnails as $img): ?>
-                <a href="<?= $img->url() ?>" class="js-lightbox block" data-glightbox>
-                  <img src="<?= $img->url() ?>" alt="" class="rounded-xl aspect-square object-cover w-full">
+                <a href="<?= $img->resize(2400)->url() ?>" class="js-lightbox block" data-glightbox>
+                  <img src="<?= $img->crop(400, 400)->url() ?>" alt="" class="rounded-xl aspect-square object-cover w-full" loading="lazy">
                 </a>
               <?php endforeach ?>
             </div>

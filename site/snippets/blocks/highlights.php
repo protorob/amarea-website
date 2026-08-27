@@ -37,7 +37,7 @@ $layout = block_layout($block);
         <?php foreach ($items as $item): ?>
           <div class="swiper-slide h-auto">
             <?php if ($photo = $item->icon()->toFile()): ?>
-              <img src="<?= $photo->url() ?>" alt="" class="w-full aspect-6/4 object-cover rounded-sm mb-5">
+              <img src="<?= $photo->crop(900, 600)->url() ?>" alt="" class="w-full aspect-6/4 object-cover rounded-sm mb-5" loading="lazy">
             <?php endif ?>
             <?php if ($item->title()->isNotEmpty()): ?>
               <h3 class="text-xl mb-2"><?= $item->title() ?></h3>

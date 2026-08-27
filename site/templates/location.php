@@ -26,7 +26,7 @@
         <?php foreach ($units as $unit): ?>
           <a href="<?= $unit->url() ?>" class="group block rounded-2xl overflow-hidden bg-white border border-line hover:shadow-md transition-shadow">
             <?php if ($img = $unit->mainImage()->toFile()): ?>
-              <img src="<?= $img->url() ?>" alt="" class="w-full aspect-[4/3] object-cover">
+              <img src="<?= $img->crop(900, 675)->url() ?>" alt="" class="w-full aspect-[4/3] object-cover" loading="lazy">
             <?php endif ?>
             <div class="p-5">
               <h3 class="font-semibold mb-1">
@@ -95,8 +95,8 @@
 
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <?php foreach ($page->gallery()->toFiles() as $img): ?>
-          <a href="<?= $img->url() ?>" class="js-lightbox block" data-glightbox>
-            <img src="<?= $img->url() ?>" alt="" class="rounded-xl aspect-square object-cover w-full">
+          <a href="<?= $img->resize(2400)->url() ?>" class="js-lightbox block" data-glightbox>
+            <img src="<?= $img->crop(700, 700)->url() ?>" alt="" class="rounded-xl aspect-square object-cover w-full" loading="lazy">
           </a>
         <?php endforeach ?>
       </div>

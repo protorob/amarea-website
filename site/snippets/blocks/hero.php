@@ -28,7 +28,7 @@ $hasContent = $block->eyebrow()->isNotEmpty() || $block->title()->isNotEmpty() |
   <?php if ($hasContent): ?>
     <div class="relative z-10 w-full max-w-4xl mx-auto px-4 flex flex-col items-center gap-6 text-center" style="<?= $layout['textStyle'] ?>">
       <?php if ($icon): ?>
-        <img src="<?= $icon->url() ?>" alt="" class="w-auto <?= $iconSizeClasses[$block->iconSize()->value()] ?? $iconSizeClasses['medium'] ?>">
+        <img src="<?= $icon->resize(200)->url() ?>" alt="" class="w-auto <?= $iconSizeClasses[$block->iconSize()->value()] ?? $iconSizeClasses['medium'] ?>">
       <?php endif ?>
 
       <?php if ($block->eyebrow()->isNotEmpty()): ?>

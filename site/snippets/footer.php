@@ -11,12 +11,12 @@ $footerPoster = page('home')?->file('hero-ocean-waves.jpg');
     <video
       class="absolute inset-0 h-full w-full object-cover"
       autoplay muted loop playsinline
-      <?= $footerPoster ? 'poster="' . $footerPoster->url() . '"' : '' ?>
+      <?= $footerPoster ? 'poster="' . $footerPoster->resize(1920)->url() . '"' : '' ?>
     >
       <source src="<?= $footerVideo->url() ?>" type="<?= $footerVideo->mime() ?>">
     </video>
   <?php elseif ($footerPoster): ?>
-    <img src="<?= $footerPoster->url() ?>" alt="" class="absolute inset-0 h-full w-full object-cover">
+    <img src="<?= $footerPoster->resize(1920)->url() ?>" alt="" class="absolute inset-0 h-full w-full object-cover">
   <?php endif ?>
   <div class="absolute inset-0 bg-ink/80"></div>
 

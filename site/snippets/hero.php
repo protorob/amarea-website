@@ -14,12 +14,12 @@ $buttons ??= null;
     <video
       class="absolute inset-0 h-full w-full object-cover"
       autoplay muted loop playsinline
-      <?= $image ? 'poster="' . $image->url() . '"' : '' ?>
+      <?= $image ? 'poster="' . $image->resize(1920)->url() . '"' : '' ?>
     >
       <source src="<?= $video->url() ?>" type="<?= $video->mime() ?>">
     </video>
   <?php elseif ($image): ?>
-    <img src="<?= $image->url() ?>" alt="" class="absolute inset-0 h-full w-full object-cover">
+    <img src="<?= $image->resize(1920)->url() ?>" alt="" class="absolute inset-0 h-full w-full object-cover">
   <?php endif ?>
 
   <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/20 to-ink/40"></div>

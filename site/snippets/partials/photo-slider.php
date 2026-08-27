@@ -25,7 +25,7 @@ if (!$images || $images->count() === 0) return;
           <?php // aspect-[16/9] = image frame ratio (width/height) —
           // swap for aspect-[4/3], aspect-[1/1], aspect-[3/4], etc. ?>
           <div class="rounded-sm overflow-hidden aspect-[16/9] shadow-lg">
-            <img src="<?= $img->url() ?>" alt="<?= $item->alt()->esc() ?>" class="w-full h-full object-cover">
+            <img src="<?= $img->crop(1600, 900)->url() ?>" alt="<?= $item->alt()->esc() ?>" class="w-full h-full object-cover" loading="lazy">
           </div>
         </div>
       <?php endforeach ?>
