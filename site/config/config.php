@@ -3,13 +3,15 @@
 use Kirby\Http\Response;
 use Kirby\Toolkit\V;
 
+require_once __DIR__ . '/env.php';
 require_once __DIR__ . '/helpers.php';
 
 return [
     'debug' => getenv('KIRBY_DEBUG') === 'true',
 
-    // SMTP credentials come from the server environment (set on Coolify /
-    // the deploy target) — never committed. See docs/v1-build-plan.md §4.
+    // SMTP credentials come from the environment — set via a gitignored
+    // .env file (see .env.example) both locally and on the deploy target,
+    // never committed.
     'email' => [
         'transport' => [
             'type'     => 'smtp',

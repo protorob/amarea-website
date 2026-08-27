@@ -44,6 +44,8 @@ rsync -avz --progress \
   --exclude='kirby/' \
   --exclude='deploy.sh' \
   --exclude='deploy-example.sh' \
+  --exclude='.env' \
+  --exclude='.env.example' \
   --exclude='README.md' \
   --exclude='site/accounts' \
   --exclude='site/sessions' \
