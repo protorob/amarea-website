@@ -19,7 +19,7 @@ $columnsClass = $columns === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2';
     $text    = $item['text'] ?? '';
     $button  = $item['buttonLabel'] ?? null;
     ?>
-    <<?= $tag ?> <?= $card ? 'href="' . $card . '"' : '' ?> class="group relative block aspect-[4/5] rounded-2xl overflow-hidden bg-ink">
+    <<?= $tag ?> <?= $card ? 'href="' . $card . '"' : '' ?> class="group relative block aspect-[1/1] rounded-sm overflow-hidden bg-ink">
       <?php if ($image): ?>
         <img src="<?= $image->url() ?>" alt="" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 sm:group-hover:scale-105">
       <?php endif ?>

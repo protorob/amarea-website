@@ -6,7 +6,7 @@
 
   <section class="max-w-3xl mx-auto px-4 pt-16 pb-10 text-center">
     <?php if ($page->subtitle()->isNotEmpty()): ?>
-      <h2 class="text-lg text-ink-soft mb-6"><?= $page->subtitle() ?></h2>
+      <h2 class="text-2xl sm:text-3xl font-title uppercase mb-6"><?= $page->subtitle() ?></h2>
     <?php endif ?>
     <?php if ($page->description()->isNotEmpty()): ?>
       <div class="prose max-w-none mx-auto text-ink-soft"><?= $page->description() ?></div>

@@ -35,22 +35,13 @@ $langCode = $kirby->language()?->code() ?? 'en';
   <div id="site-header-inner" class="w-full px-6 lg:px-10 h-20 flex items-center justify-between gap-6 transition-[height] duration-300">
 
     <?php if ($hasHero): ?>
-      <?php // Two stacked logos cross-fade on scroll — the blue one fades in
-      // on a delay (see main.js) so it never shows blue while the header is
-      // still mostly transparent behind it. ?>
-      <a href="<?= $site->url() ?>" class="shrink-0 relative block h-7 w-auto">
+      <?php // Solid-on-scroll state is dark navy too (see main.js), so the
+      // white logo stays correct throughout — no cross-fade needed. ?>
+      <a href="<?= $site->url() ?>" class="shrink-0 block h-7 w-auto">
         <img
           src="<?= url('assets/images/amarea-logo-textonly-white.svg') ?>"
           alt="<?= $site->title() ?>"
-          data-logo-light
-          class="h-7 w-auto transition-opacity duration-200"
-        >
-        <img
-          src="<?= url('assets/images/amarea-logo-textonly-blue.svg') ?>"
-          alt=""
-          aria-hidden="true"
-          data-logo-dark
-          class="h-7 w-auto absolute inset-0 opacity-0 transition-opacity duration-200 delay-200"
+          class="h-7 w-auto"
         >
       </a>
     <?php else: ?>

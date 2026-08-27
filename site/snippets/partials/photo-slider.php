@@ -21,7 +21,7 @@ if (!$images || $images->count() === 0) return;
         // slide takes at any screen size (lower vw = more neighbor
         // peek, higher vw = less). See src/main.js's `spaceBetween` for
         // the gap between slides. ?>
-        <div class="swiper-slide w-[min(1220px,60vw)]">
+        <div class="swiper-slide w-[min(1000px,60vw)]">
           <?php // aspect-[16/9] = image frame ratio (width/height) —
           // swap for aspect-[4/3], aspect-[1/1], aspect-[3/4], etc. ?>
           <div class="rounded-sm overflow-hidden aspect-[16/9] shadow-lg">

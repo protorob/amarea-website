@@ -144,20 +144,16 @@ if (document.querySelector('.js-lightbox')) {
 const header = document.getElementById('site-header')
 
 if (header && header.dataset.hasHero === 'true') {
-  const SOLID_CLASSES = ['bg-bg/95', 'backdrop-blur', 'text-ink', 'shadow-sm']
+  // Solid state stays dark navy (not the pale cream page background) so
+  // the white logo/text never need to swap — only the background itself
+  // (transparent -> solid) and a slight height shrink change on scroll.
+  const SOLID_CLASSES = ['bg-ink/95', 'backdrop-blur', 'shadow-sm']
   const headerInner = document.getElementById('site-header-inner')
-  const logoLight = header.querySelector('img[data-logo-light]')
-  const logoDark = header.querySelector('img[data-logo-dark]')
   const scrollThreshold = () => 24
 
   const setScrolled = (isScrolled) => {
     header.classList.toggle('bg-transparent', !isScrolled)
-    header.classList.toggle('text-white', !isScrolled)
     SOLID_CLASSES.forEach((cls) => header.classList.toggle(cls, isScrolled))
-    // The blue logo has a transition-delay (see header.php) so it only turns
-    // fully blue once the header background is already mostly solid.
-    logoLight?.classList.toggle('opacity-0', isScrolled)
-    logoDark?.classList.toggle('opacity-0', !isScrolled)
     // Shrinks a little once it's sticking to the top instead of sitting
     // over the hero at full height.
     headerInner?.classList.toggle('h-20', !isScrolled)
