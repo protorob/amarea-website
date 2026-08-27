@@ -147,7 +147,7 @@ if (header && header.dataset.hasHero === 'true') {
   // Solid state stays dark navy (not the pale cream page background) so
   // the white logo/text never need to swap — only the background itself
   // (transparent -> solid) and a slight height shrink change on scroll.
-  const SOLID_CLASSES = ['bg-ink/95', 'backdrop-blur', 'shadow-sm']
+  const SOLID_CLASSES = ['bg-ink/70', 'backdrop-blur-md', 'shadow-sm']
   const headerInner = document.getElementById('site-header-inner')
   const scrollThreshold = () => 24
 
