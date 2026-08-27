@@ -1,0 +1,13 @@
+Title: Locations
+
+----
+
+Heroimage: 
+
+----
+
+Subtitle: Il tuo parco giochi mediterraneo
+
+----
+
+Description: <p>Appena fuori Siracusa, Fontane Bianche è uno degli angoli più belli della costa sud-orientale della Sicilia. Acqua cristallina, spiagge di sabbia bianca, calette nascoste e lunghe giornate all'aperto. E quando hai voglia di esplorare oltre la spiaggia, c'è molto altro da scoprire — città antiche, borghi barocchi, riserve naturali, cibo locale, vigneti e alcuni dei paesaggi più iconici della Sicilia.</p><p><strong>Che tu sia qui per pochi giorni o per restare più a lungo, c'è sempre un posto nuovo dove andare, assaggiare, nuotare o esplorare.</strong></p>

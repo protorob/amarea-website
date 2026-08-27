@@ -1,0 +1,162 @@
+Title: Beach House
+
+----
+
+Heroimage: - file://ohfkz2yewrcyoygc
+
+----
+
+Subtitle: Lavora bene. Vivi con calma. Sentiti a casa. Con il mare a darti il ritmo.
+
+----
+
+Description: <p>Spazi pensati con cura per il lavoro profondo, il flusso creativo e la vita di tutti i giorni — otto stanze private in una casa mediterranea condivisa a Fontane Bianche.</p>
+
+----
+
+Shortdescription: Spazi pensati con cura per il lavoro profondo, il flusso creativo e la vita di tutti i giorni — otto stanze private in una casa mediterranea condivisa a Fontane Bianche.
+
+----
+
+Address: 
+
+----
+
+Sliderimages:
+
+- 
+  image:
+    - file://la0mvrtmpwyay7za
+  alt: ""
+- 
+  image:
+    - file://df2oneccvvmo6qx2
+  alt: ""
+- 
+  image:
+    - file://amgtchsz91b5f6yq
+  alt: ""
+- 
+  image:
+    - file://qlq0zaj3gs1tdblx
+  alt: ""
+- 
+  image:
+    - file://xh2lsehfoknbktum
+  alt: ""
+
+----
+
+Spaceseyebrow: Pensata per accompagnare la tua giornata
+
+----
+
+Spacestitle: Gli Spazi
+
+----
+
+Spacesdescription: <p>A'Marea è pensata per accompagnare la tua giornata. Trova un angolo tranquillo per concentrarti, un posto assolato per rallentare, o un tavolo condiviso dove un saluto veloce si trasforma in una lunga cena.</p>
+
+----
+
+Spaces:
+
+- 
+  image:
+    - file://rnqjfhtlqvnwfjfm
+  title: Il Soggiorno
+  description: "Il cuore di vetro della casa. Uno spazio luminoso e climatizzato al centro di A'Marea che si trasforma con il ritmo della giornata — un luogo tranquillo per lavorare e concentrarsi di giorno, e uno spazio caldo per connettersi, condividere e rilassarsi insieme la sera."
+- 
+  image:
+    - file://h66ez34cja30fiuz
+  title: La Cucina e la cucina esterna
+  description: "Una cucina completamente attrezzata e un'area pranzo condivisa, con la possibilità di cucinare dentro o nella cucina esterna circondata dal giardino — pensata per cucinare insieme, pranzi lunghi e cene che in qualche modo durano tutta la sera."
+- 
+  image:
+    - file://b5ub2xngrehamdjm
+  title: Il Giardino e la Terrazza
+  description: "La parte migliore è forse proprio fuori. Un giardino mediterraneo, un'ampia terrazza, vista mare — con tutto lo spazio per il caffè del mattino, i drink al tramonto e tutto quello che sta in mezzo."
+
+----
+
+Galleryeyebrow: 
+
+----
+
+Gallerytitle: Galleria comune
+
+----
+
+Gallerydescription: 
+
+----
+
+Gallery:
+
+- file://rnqjfhtlqvnwfjfm
+- file://h66ez34cja30fiuz
+- file://b5ub2xngrehamdjm
+- file://gc2rjwvoxga4iecv
+- file://yuy2unzqd1sz2dpf
+
+----
+
+Amenitieseyebrow: 
+
+----
+
+Amenitiestitle: Tutto ciò di cui hai bisogno, già qui.
+
+----
+
+Amenitiesdescription: <p>Dal lavoro concentrato ai pomeriggi lenti al mare, pensiamo noi all'essenziale.</p>
+
+----
+
+Amenities:
+
+- 
+  icon: 🌿
+  text: La tua camera privata con bagno annesso
+- 
+  icon: ⚡
+  text: >
+    Tutte le utenze + Wi-Fi ad alta
+    velocità 1 Gbps
+- 
+  icon: 🍋
+  text: >
+    Cucina condivisa completamente
+    attrezzata
+- 
+  icon: 🍅
+  text: Pasta + frutta e verdura locale fresca
+- 
+  icon: 💻
+  text: La tua comoda postazione di lavoro
+- 
+  icon: 🧹
+  text: Servizio di pulizia settimanale
+- 
+  icon: 🏄
+  text: >
+    Tavole da stand-up paddle e attrezzatura
+    per lo snorkeling
+- 
+  icon: 🌿
+  text: "Palestra all'aperto circondata dal nostro giardino"
+- 
+  icon: 🖥️
+  text: Spazi coworking in tutta la casa
+- 
+  icon: 🧼
+  text: Accesso alla lavanderia
+- 
+  icon: ☀️
+  text: >
+    Tanto spazio per lavorare, rilassarti e
+    rallentare
+
+----
+
+Ctalabel: Trova la tua stanza

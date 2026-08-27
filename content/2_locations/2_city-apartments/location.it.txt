@@ -1,0 +1,128 @@
+Title: City Apartments
+
+----
+
+Heroimage: - file://f93xowmhwm1hfwqo
+
+----
+
+Subtitle: Vivi in privato. Lavora liberamente. Sentiti a casa. Tra la città e il mare.
+
+----
+
+Description: <p>Due appartamenti indipendenti nel cuore di Siracusa — per chi vuole uno spazio tutto suo, con la stessa accoglienza A'Marea, gli spazi coworking e gli eventi della community a due passi.</p>
+
+----
+
+Shortdescription: Due appartamenti indipendenti nel cuore di Siracusa — per chi vuole uno spazio tutto suo, con la stessa accoglienza A'Marea, gli spazi coworking e gli eventi della community a due passi.
+
+----
+
+Address: 
+
+----
+
+Sliderimages:
+
+- 
+  image:
+    - file://stjqza3dheflmhmm
+  alt: "L'edificio di A'Marea City Apartments"
+- 
+  image:
+    - file://stjqza3dheflmhmm
+  alt: "Interno dell'appartamento"
+- 
+  image:
+    - file://stjqza3dheflmhmm
+  alt: Una strada di Siracusa
+
+----
+
+Spaceseyebrow: 
+
+----
+
+Spacestitle: 
+
+----
+
+Spacesdescription: 
+
+----
+
+Spaces: 
+
+----
+
+Galleryeyebrow: 
+
+----
+
+Gallerytitle: Galleria comune
+
+----
+
+Gallerydescription: 
+
+----
+
+Gallery:
+
+- file://stjqza3dheflmhmm
+- file://stjqza3dheflmhmm
+- file://stjqza3dheflmhmm
+- file://stjqza3dheflmhmm
+- file://stjqza3dheflmhmm
+
+----
+
+Amenitieseyebrow: 
+
+----
+
+Amenitiestitle: Tutto ciò di cui hai bisogno, già qui.
+
+----
+
+Amenitiesdescription: <p>A'Marea City Apartments ti offre il comfort e la libertà di avere un posto tutto tuo, con tutto ciò che serve per un soggiorno siciliano senza pensieri.</p>
+
+----
+
+Amenities:
+
+- 
+  icon: 🌿
+  text: Il tuo appartamento privato
+- 
+  icon: ⚡
+  text: >
+    Tutte le utenze + Wi-Fi ad alta
+    velocità 1 Gbps
+- 
+  icon: 🍋
+  text: Cucina privata completamente attrezzata
+- 
+  icon: 💻
+  text: La tua comoda postazione di lavoro
+- 
+  icon: 🧹
+  text: Servizio di pulizia settimanale
+- 
+  icon: 🤿
+  text: Attrezzatura per lo snorkeling
+- 
+  icon: 🖥️
+  text: "Accesso agli spazi coworking di A'Marea Beach House"
+- 
+  icon: 🥳
+  text: "Accesso agli eventi di A'Marea Beach House"
+- 
+  icon: ☀️
+  text: >
+    Il tuo spazio per lavorare, rilassarti e
+    rallentare
+
+----
+
+Ctalabel: Trova il tuo appartamento
