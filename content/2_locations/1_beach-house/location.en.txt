@@ -26,16 +26,24 @@ Sliderimages:
 
 - 
   image:
-    - file://rnqjfhtlqvnwfjfm
-  alt: "A'Marea Beach House"
+    - file://la0mvrtmpwyay7za
+  alt: ""
 - 
   image:
-    - file://h66ez34cja30fiuz
-  alt: "A'Marea Beach House"
+    - file://df2oneccvvmo6qx2
+  alt: ""
 - 
   image:
-    - file://b5ub2xngrehamdjm
-  alt: "A'Marea Beach House"
+    - file://amgtchsz91b5f6yq
+  alt: ""
+- 
+  image:
+    - file://qlq0zaj3gs1tdblx
+  alt: ""
+- 
+  image:
+    - file://xh2lsehfoknbktum
+  alt: ""
 
 ----
 
