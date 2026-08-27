@@ -1,0 +1,40 @@
+Title: Home
+
+----
+
+Herovideo: - file://e78srb85zp8qg1kz
+
+----
+
+Heroposter: - file://bhbyrhenpjmd02mb
+
+----
+
+Heroeyebrow: Per lavoratori da remoto, viaggiatori e creativi
+
+----
+
+Herotitle: Dove è la marea a darti il ritmo.
+
+----
+
+Herodescription: <p>A'Marea è per chi può lavorare da qualsiasi luogo, ma vuole sentirsi da qualche parte. Per lavoratori da remoto, viaggiatori curiosi e menti creative in cerca di un posto dove rallentare, incontrare persone genuine e trovare ispirazione nel ritmo mediterraneo.</p><p>Vieni per lo stile di vita. Resta per la community.</p>
+
+----
+
+Buttons:
+
+- 
+  label: Iscriviti alla waitlist
+  openwaitlistmodal: 'true'
+  link: ""
+  style: primary
+- 
+  label: "Scopri A'Marea"
+  openwaitlistmodal: 'false'
+  link: page://ctarjkxwt1wyewd5
+  style: secondary
+
+----
+
+Blocks: [{"content":{"icon":["file://jffz4ctgjt8ezcin"],"iconsize":"","eyebrow":"","title":"Il tuo nuovo spazio e la tua community ti aspettano","description":"<p>A'Marea è una casa mediterranea per lavoratori da remoto, viaggiatori e creativi — un luogo dove lavorare, vivere, creare e connettersi, al tuo ritmo. Vieni per il mare, resta per le persone. Trova il tuo focus, condividi un pranzo lungo, incontra qualcuno di nuovo o semplicemente rallenta e goditi il momento. Spazi pensati con cura, una community accogliente e il ritmo naturale della vita mediterranea — tutto sotto lo stesso tetto.</p>","buttons":[{"label":"Prenota ora","openwaitlistmodal":"true","link":"","style":"primary"}],"backgroundtype":"color","backgroundcolor":"#fdf6cf","backgroundimage":[],"overlaycolor":"ink","backgroundvideo":[],"height":"normal","textcolor":"#1b2333"},"id":"949ef330-fb5d-497a-9e14-569935244023","isHidden":false,"type":"hero"},{"content":{"icon":[],"iconsize":"","eyebrow":"Lavora a fondo, vivi libero, connettiti in modo naturale","title":"Fontane Bianche & Siracusa","description":"<p><strong>Uno spazio di co-living mediterraneo per lavoratori da remoto, viaggiatori e creativi in cerca di più di un semplice posto dove stare.</strong></p><p>Stanze private, spazi comuni che ispirano, Wi-Fi veloce e il mare a pochi minuti. Un posto dove portare a termine le cose, trovare nuove idee, incontrare persone interessanti e vivere con più lentezza.</p>","buttons":[],"backgroundtype":"color","backgroundcolor":"#8d821c","backgroundimage":[],"overlaycolor":"ink","backgroundvideo":[],"height":"normal","textcolor":"#fdf6cf"},"id":"0662be28-b11a-4358-a14a-a6c7ea25c94f","isHidden":false,"type":"hero"},{"content":{"images":[{"image":["file://5qewx1eoeznelgpe"],"alt":"Prima immagine"},{"image":["file://0jzxlkgpzhzizsdh"],"alt":"Seconda immagine"},{"image":["file://akza0uwapl4knrfr"],"alt":"Terza immagine"},{"image":["file://344znphhtewvphvu"],"alt":"Quarta immagine"}],"backgroundtype":"color","backgroundcolor":"#8d821c","backgroundimage":[],"overlaycolor":"","backgroundvideo":[],"height":"","textcolor":""},"id":"7be693bd-99b1-4b81-9854-0be8c3b5ed99","isHidden":false,"type":"slider"},{"content":{"icon":[],"iconsize":"","eyebrow":"Apertura 2027","title":"Waitlist aperta","description":"","buttons":[{"label":"Iscriviti alla waitlist","openwaitlistmodal":"true","link":"","style":"primary"}],"backgroundtype":"color","backgroundcolor":"#8d821c","backgroundimage":[],"overlaycolor":"ink","backgroundvideo":[],"height":"normal","textcolor":"#ffffff"},"id":"63707a4b-20ee-40ab-99f8-d48ae3e33b0c","isHidden":false,"type":"hero"},{"content":{"eyebrow":"Il tuo parco giochi mediterraneo","title":"Le nostre location","description":"","backgroundtype":"","backgroundcolor":"","backgroundimage":[],"overlaycolor":"","backgroundvideo":[],"height":"","textcolor":""},"id":"8a3569c2-839d-4283-a365-7e86e1cce106","isHidden":false,"type":"locations"},{"content":{"eyebrow":"Dove il lavoro profondo incontra lo stile di vita siciliano","title":"Perché A'Marea?","description":"","items":[{"icon":["file://akza0uwapl4knrfr"],"title":"Spazio per concentrarti e creare","text":"Spazi pensati con cura per il lavoro profondo, il flusso creativo e la vita di tutti i giorni. Wi-Fi veloce, aree di lavoro comode e tutto lo spazio per trovare il tuo ritmo."},{"icon":["file://344znphhtewvphvu"],"title":"Una community autentica","text":"Incontra lavoratori da remoto, viaggiatori e creativi da tutto il mondo. Condividi un pasto, scambia idee, scopri l'isola insieme o semplicemente goditi la compagnia di persone genuine."},{"icon":["file://5qewx1eoeznelgpe"],"title":"Lascia che sia il Mediterraneo a darti il ritmo","text":"Nuotate mattutine, pranzi lenti, passeggiate al tramonto e vita all'aperto. A Fontane Bianche il mare diventa il tuo orologio e c'è sempre tempo per un altro tuffo."},{"icon":["file://0jzxlkgpzhzizsdh"],"title":"Sentiti a casa fin dal primo giorno","text":"Il nostro team locale è qui per rendere tutto semplice, accogliente e personale. Dal primo all'ultimo giorno, ci occupiamo noi dei dettagli, così tu puoi concentrarti su vivere, lavorare e goderti l'esperienza."}],"backgroundtype":"","backgroundcolor":"#8d821c","backgroundimage":[],"overlaycolor":"","backgroundvideo":[],"height":"","textcolor":""},"id":"20166c26-3267-42e2-9a3d-d1919f6e0f2d","isHidden":false,"type":"highlights"},{"content":{"eyebrow":"Più di un semplice posto dove stare","title":"Community & Esperienze","description":"<p>A'Marea parla dei momenti che accadono nel mezzo.</p><p>Cene condivise, nuotate mattutine, avventure al tramonto, sessioni di lavoro in terrazza, workshop creativi e piani improvvisati che diventano ricordi speciali.</p><p>Vieni per lavorare, viaggiare o creare, e trova una community con cui condividerlo.</p>","backgroundtype":"","backgroundcolor":"","backgroundimage":[],"overlaycolor":"","backgroundvideo":[],"height":"","textcolor":""},"id":"4f2f2a48-fa11-474c-9568-870c1181de18","isHidden":false,"type":"elfsight"},{"content":{"icon":[],"iconsize":"","eyebrow":"","title":"Pronto a cambiare il modo in cui vivi e lavori?","description":"<p>A'Marea apre a Fontane Bianche, Siracusa, nel 2027. Iscriviti alla waitlist per essere tra i primi a scoprire le date di apertura, le stanze disponibili e le offerte early-bird.</p>","buttons":[{"label":"Iscriviti alla waitlist","openwaitlistmodal":"true","link":"","style":"primary"}],"backgroundtype":"color","backgroundcolor":"#1b2333","backgroundimage":[],"overlaycolor":"ink","backgroundvideo":[],"height":"half","textcolor":"#ffffff"},"id":"217f9c94-1c6c-4467-8688-251ccbd53432","isHidden":false,"type":"hero"}]

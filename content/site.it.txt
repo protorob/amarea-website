@@ -1,0 +1,64 @@
+Title: A'Marea
+
+----
+
+Unitfeatures:
+
+- 
+  icon: 🛏️
+  label: Letto matrimoniale
+- 
+  icon: 🚿
+  label: Bagno privato
+- 
+  icon: 🚻
+  label: Bagno condiviso
+- 
+  icon: 🌅
+  label: Terrazza privata
+- 
+  icon: 🌿
+  label: Balcone privato
+- 
+  icon: 🌊
+  label: Vista mare
+- 
+  icon: 🌳
+  label: Vista giardino
+- 
+  icon: 🖥️
+  label: Scrivania / postazione di lavoro
+- 
+  icon: ❄️
+  label: Aria condizionata
+- 
+  icon: 🚪
+  label: Armadio
+- 
+  icon: 🍳
+  label: Cucina attrezzata
+- 
+  icon: 🛋️
+  label: Soggiorno
+- 
+  icon: 🧺
+  label: Lavatrice
+- 
+  icon: 🏡
+  label: Cortile condiviso
+- 
+  icon: 🛏️
+  label: Due camere matrimoniali
+- 
+  icon: 🪜
+  label: Angolo studio soppalcato
+- 
+  icon: 🛋️
+  label: Zona giorno
+- 
+  icon: ✨
+  label: Interni moderni
+
+----
+
+Footerclaim: Co-Living Mediterraneo
