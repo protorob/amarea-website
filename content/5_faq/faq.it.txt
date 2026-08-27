@@ -1,0 +1,49 @@
+Title: FAQ
+
+----
+
+Heroimage: 
+
+----
+
+Introtext: Tutto quello che devi sapere prima di iscriverti alla waitlist di A'Marea. Hai un'altra domanda? Contattaci.
+
+----
+
+Faqs:
+
+- 
+  question: "Quando aprirà A'Marea e quando potrò prenotare?"
+  answer: "A'Marea aprirà a Fontane Bianche, Siracusa, nel 2027. Iscriviti alla nostra waitlist per essere tra i primi a sapere la data di apertura, le stanze disponibili e per avere accesso anticipato alle prenotazioni."
+  category: booking
+- 
+  question: Qual è la durata minima del soggiorno?
+  answer: >
+    Condivideremo presto i requisiti sulla
+    durata minima del soggiorno. Iscriviti
+    alla waitlist per essere il primo a
+    ricevere i dettagli sulle prenotazioni e
+    sulla disponibilità.
+  category: booking
+- 
+  question: Cosa è incluso nel prezzo?
+  answer: "Il tuo soggiorno da A'Marea include: la tua camera privata con bagno annesso, tutte le utenze più Wi-Fi ad alta velocità 1 Gbps, una cucina condivisa completamente attrezzata, pasta e frutta e verdura locale fresca, la tua comoda postazione di lavoro, servizio di pulizia settimanale, tavole da stand-up paddle e attrezzatura per lo snorkeling, una palestra all'aperto circondata dal nostro giardino, spazi coworking in tutta la casa, accesso alla lavanderia e tanto spazio per lavorare, rilassarti e rallentare."
+  category: beach-house
+- 
+  question: "Come si arriva a Fontane Bianche dall'aeroporto?"
+  answer: "A'Marea si trova a Fontane Bianche, appena fuori Siracusa, a circa 70 km dall'Aeroporto di Catania Fontanarossa. Indirizzo: Via Bordighera, 4 — Fontane Bianche, Siracusa. In auto sono circa 50 minuti dall'Aeroporto di Catania, 15 minuti da Siracusa e 20 minuti da Noto. La stazione ferroviaria di Fontane Bianche è a 10 minuti a piedi, una fermata da Siracusa e due da Noto. Le linee di autobus locali 21 e 22 collegano Fontane Bianche a Siracusa, e Interbus collega Catania a Siracusa. È disponibile parcheggio gratuito su strada proprio davanti ad A'Marea."
+  category: location
+- 
+  question: >
+    Posso lavorare da remoto con una
+    connessione internet affidabile?
+  answer: "Assolutamente sì! A'Marea è pensata per i lavoratori da remoto, con Wi-Fi ad alta velocità 1 Gbps in tutta la casa, postazioni di lavoro comode e spazi coworking. Ci sono anche angoli tranquilli in giro per la casa per quando hai bisogno di concentrarti, oltre a tanti spazi all'aperto per cambiare aria."
+  category: beach-house
+- 
+  question: Gli animali domestici sono ammessi?
+  answer: "Siamo felici di accogliere gli animali domestici quando possibile. Se viaggi con un animale, contattaci in anticipo e valuteremo insieme la tua richiesta in base all'animale e al tipo di sistemazione. Vogliamo che sia i nostri ospiti che i loro amici a quattro zampe si sentano a proprio agio da A'Marea. 🐾"
+  category: booking
+- 
+  question: "Posso affittare l'intera struttura per un evento privato?"
+  answer: "Sì. A'Marea Beach House può essere prenotata in esclusiva per retreat, team offsite, raduni creativi ed eventi privati. Le prenotazioni esclusive includono tutte le 8 camere, fino a 18 persone, oltre all'accesso completo al soggiorno, alla cucina, agli spazi conviviali, alla terrazza, al giardino mediterraneo, alle aree coworking e agli spazi esterni. È possibile organizzare anche servizi ed esperienze opzionali, tra cui colazione, sessioni di benessere, attività ed esperienze locali. La nostra event manager e co-fondatrice, Diane, può aiutarti a organizzare tutto per il tuo soggiorno."
+  category: workation-and-retreats
