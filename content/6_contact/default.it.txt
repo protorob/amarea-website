@@ -1,0 +1,9 @@
+Title: Contact
+
+----
+
+Heroimage: 
+
+----
+
+Blocks: [{"content":{"icon":[],"iconsize":"","eyebrow":"","title":"Hai un'altra domanda?","description":"<p>Ci farebbe piacere sentirti. Contatta il nostro team e saremo felici di aiutarti.</p>","buttons":[],"backgroundtype":"none","backgroundcolor":"#1b2333","backgroundimage":[],"overlaycolor":"ink","backgroundvideo":[],"height":"normal","textcolor":"#1b2333"},"id":"78ef60aa-8500-4437-9058-3c4cef361cfa","isHidden":false,"type":"hero"},{"content":{"eyebrow":"","title":"","note":"","backgroundtype":"none","backgroundcolor":"#1b2333","backgroundimage":[],"overlaycolor":"ink","backgroundvideo":[],"height":"normal","textcolor":"#1b2333"},"id":"fb7adbaf-b5a3-4e07-a082-ceeba097084c","isHidden":false,"type":"form"}]
